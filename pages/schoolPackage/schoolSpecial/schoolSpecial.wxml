@@ -1,0 +1,30 @@
+<view class='com_box'>
+      <view class='com_width main'>
+
+        <view class='ListOne list_border' data-skuid="{{itemSon.sku_id}}"
+          wx:for='{{allList}}' wx:key="" wx:for-item="itemSon"
+          wx:if="{{itemSon.sku_type == 0}}">
+
+          <image class='column_img' src='{{itemSon.sku_pic_url}}'>
+          </image>
+
+          <view class='column_msg'>
+              <view class='overflow column_title'>{{itemSon.sku_title}}</view>
+              <view class='color_f8 overflow'>{{itemSon.sku_info}}</view>
+              <text class='label bg_orange'>{{itemSon.label}}</text>
+              <view class='space_between  column_pic'>
+                  <text class='color_orange'>{{itemSon.sku_price}}</text>
+                  <text wx:if="{{sku_status == 1}}" class='color_f8'>已订阅</text>
+                  <text wx:else class='color_f8'>未订阅</text> 
+              </view>
+          </view>
+        </view>
+
+        <view wx:for='{{allList}}' wx:key="" wx:for-item="itemSon"
+          wx:if="{{itemSon.sku_type == 1}}" class='special' bindtap='goSpecial'>
+            <!-- <view class='list_header'>{{itemSon.sku_title}}</view> -->
+            <image class="special_img" src='{{itemSon.sku_pic_url}}'></image>
+        </view>
+
+      </view>
+</view>

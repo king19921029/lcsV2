@@ -1,0 +1,13 @@
+<view class="userNumber">
+	<view class="tellNumber">
+		<view class="tell"><image src="../../images/shouji@2x.png"></image>{{phone}}</view>
+	</view>
+	<view class="public_item">
+		<view class="item_text" bindtap="to_revise">修改密码</view>
+		<image class="arrow" src="../../images/icn_arrow.png"></image>
+	</view>
+	<!-- <view class="public_item">
+		<view class="item_text" bindtap="changePhone">更换手机号</view>
+		<image class="arrow" src="../../images/icn_arrow.png"></image>
+	</view> -->
+</view>

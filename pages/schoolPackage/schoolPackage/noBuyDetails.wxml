@@ -1,0 +1,199 @@
+<view class='boxs'>
+    <view class='banner'></view>
+    <view class='banner_size com_width'>
+      <view class='font_weight'>刘彦斌：有深度有内涵的金融课</view>
+      <view class='space_between som_size'>
+          <view>每晚8点准时告诉你成功的秘诀</view>
+          <view class='display_flex'>
+              <view class='label'>宏观</view>
+              <view class='label'>财富</view>
+          </view>
+          
+      </view>
+    </view>
+    <view class='bg_fff hedaer border_bottom display_flex'>
+      <view class='flex_direction border_right'>
+            <view>2343人正在学习</view>
+            <view class='display_flex'>
+              <text></text>
+              <text></text>
+              <text></text>
+              <text></text>
+              <text></text>
+              <text></text>              
+            </view>
+      </view>
+      <view class='flex_direction'>
+          <view>2527条</view>
+          <view class='color_f8'>课程笔记</view>
+      </view>
+    </view>
+    <!-- 老师介绍 -->
+    <!-- <view class='bg_fff border_bottom teacher'>
+        <view class='com_width border_bottom list_header'>老师简介</view>
+        <view class='t_list com_width space_between border_bottom '>
+            <view>刘彦斌：有深度有内涵的金融课每晚8点准时告诉你成功的秘诀</view>
+            <image class='right_icon'
+             src='../../../images/icn_arrow.png'></image>
+        </view>
+        <view class='t_list com_width space_between border_bottom'>
+            <view>刘彦斌：有深度有内涵的金融课每晚8点准时告诉你成功的秘诀</view>
+            <image class='right_icon'
+             src='../../../images/icn_arrow.png'></image>
+        </view>
+    </view> -->
+
+    <!-- 课程亮点 -->
+    <!-- <view class='bg_fff bright margin_top border_bottom'>
+      <view class='com_width  list_header'>课程亮点</view>
+      <view class='com_width'>
+        刘彦斌：有深度有内涵的金融课每晚8点准时告诉你成功的
+        秘诀涵的金融课每晚8点准时告诉你秘诀涵的金融课每晚8
+        点准时告诉你成秘诀涵的金融课每晚8点准时告诉你成
+      </view>
+    </view> -->
+
+    <!-- 课程大纲 -->
+    <!-- <view class='course margin_top bg_fff border_bottom'>
+        <view class='com_width space_between list_header'>
+            <text>课程大纲</text>  
+            <view class='course_num'>4/50讲</view>
+        </view>
+        <view class='course_box com_width {{isAll?"":"course_box_noall"}}'>
+      
+            <view class='border_top course_list'>
+                <view class='display_flex'>
+                    <image class='course_icon' src="../../../images/palyer.png"></image>
+                    <text class='course_name'>试听·本课程中的学习重点</text>
+                    <text class='test bg_orange'>试听</text>
+                </view>
+            </view>
+            <view class='border_top course_list'>
+              <view class='display_flex color_gray'>
+                    <view>1</view>
+                    <view class='course_size'>·</view>
+                    <text class='course_name'>试听·本课程中的学习重点</text>
+                </view>
+            </view>
+            <view class='border_top course_list'>
+              <view class='display_flex color_gray'>
+                    <view>2</view>
+                    <view class='course_size'>·</view>
+                    <text class='course_name'>试听·本课程中的学习重点</text>
+                </view>
+            </view>
+            <view class='border_top course_list'>
+              <view class='display_flex color_gray'>
+                    <view>3</view>
+                    <view class='course_size'>·</view>
+                    <text class='course_name'>试听·本课程中的学习重点</text>
+                </view>
+            </view>
+            <view class='border_top course_list'>
+              <view class='display_flex color_gray'>
+                    <view>4</view>
+                    <view class='course_size'>·</view>
+                    <text class='course_name'>试听·本课程中的学习重点</text>
+                </view>
+            </view>
+            <view class='border_top course_list'>
+              <view class='display_flex color_gray'>
+                    <view>5</view>
+                    <view class='course_size'>·</view>
+                    <text class='course_name'>试听·本课程中的学习重点</text>
+                </view>
+            </view>
+            <view class='border_top course_list'>
+              <view class='display_flex color_gray'>
+                    <view>6</view>
+                    <view class='course_size'>·</view>
+                    <text class='course_name'>试听·本课程中的学习重点</text>
+                </view>
+            </view>
+
+        </view>
+        <view>
+            <view  wx:if="{{isAll}}" bindtap='noAllTap' 
+            class='com_width border_top course_list'>
+                <view class='display_flex color_gray'>
+                      <image class='course_icon' src="../../../images/top.png"></image>
+                      <text class='course_name'>收起</text>
+                  </view>
+            </view>
+
+            <view wx:else  bindtap='allTap' class='com_width border_top course_list'>
+                <view class='display_flex color_gray'>
+                      <image class='course_icon' src="../../../images/bottom.png"></image>
+                      <text class='course_name'>展开全部课程</text>
+                  </view>
+            </view>
+
+            
+        </view>
+       
+    </view> -->
+
+    <!-- 底部 -->
+    <view class='footer bg_fff border_top'>
+      <view>免费试听</view>
+      <view class='bg_orange'>99学习贝/立即订阅</view>
+    </view>
+
+    <!-- 精选笔记 -->
+    <view class='bg_fff margin_top'>
+        <view class='com_width space_between list_header'>
+            <text>精选笔记</text>  
+            <view class='course_num'>查看全部</view>
+        </view>
+        <scroll-view scroll-x="true" class='good_notes'>
+            <view class='notes_list'>
+              <view class='notes_top com_width display_flex'>
+                  <text class='top_icon'></text>
+                  <view class='flex_direction'> 
+                      <text class='font_weight'>李雷雷</text>
+                      <text class='color_f8'>保险从业三年</text>
+                  </view> 
+              </view>
+
+              <view class='com_width notes_bottom'>
+                  刘彦斌：有深度有内涵的金融课每晚8点准时告诉你成功的
+                  秘诀涵的金融课每晚8点准时告诉你秘诀涵的金融课每晚8
+                  点准时告诉你成秘诀涵的金融课每晚8点准时告诉你成
+              </view>
+            </view>
+            
+            <view class='notes_list'>
+              <view class='notes_top com_width display_flex'>
+                  <text class='top_icon'></text>
+                  <view class='flex_direction'> 
+                      <text class='font_weight'>李雷雷</text>
+                      <text class='color_f8'>保险从业三年</text>
+                  </view> 
+              </view>
+
+              <view class='com_width notes_bottom'>
+                  刘彦斌：有深度有内涵的金融课每晚8点准时告诉你成功的
+                  
+              </view>
+            </view>
+            <view class='notes_list'>
+              <view class='notes_top com_width display_flex'>
+                  <text class='top_icon'></text>
+                  <view class='flex_direction'> 
+                      <text class='font_weight'>李雷雷</text>
+                      <text class='color_f8'>保险从业三年</text>
+                  </view> 
+              </view>
+
+              <view class='com_width notes_bottom'>
+                  刘彦斌：有深度有内涵的金融课每晚8点准时告诉你成功的
+                  秘诀涵的金融课每晚8点准时告诉你秘诀涵的金融课每晚8
+                  点准时告诉你成秘诀涵的金融课每晚8点准时告诉你成
+              </view>
+            </view>
+  
+            <view class='view_block'></view>
+        </scroll-view >
+    </view>
+
+</view>

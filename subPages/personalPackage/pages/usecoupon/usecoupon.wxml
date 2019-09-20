@@ -1,0 +1,21 @@
+<view class="coupon">
+	<view class="coupon_box">
+		<view class="top_input">
+			不使用优惠券
+		</view>
+
+
+
+		<view class="coupon_list">
+			<view class="coupon_item" wx:for="{{CouponList}}" wx:key="item" wx:for-index="index" data-id="{{item.user_coupon_id}}" data-index="{{index}}" bindtap="choose">
+				<view class="item_money {{item.status != 0?'nouse_color_text':''}}">{{item.name}}</view>
+				<!-- <view class="touse" bindtap="to_buyCuse">立即使用<image class="touse_img_arrow" src="../../images/cc-right.png"></image></view> -->
+				<view class="chooseBox" bindtap="choose">
+					<image wx:if="{{item.checked == true}}" src="../../images/check.png"></image>
+				</view>
+				<view class="item_time {{item.status != 0?'nouse_color_text':''}}">有效期至：{{item.end_time}}</view>
+				<view class="item_rule {{item.status != 0?'nouse_color_text':''}}">{{item.info}}<text class="rule_tip {{item.status != 0?'nouse_color_text':''}}">活动优惠券</text></view>
+			</view>
+		</view>
+	</view>
+</view>

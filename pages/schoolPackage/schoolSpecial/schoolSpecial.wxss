@@ -1,0 +1,10 @@
+@import "../../school/school.wxss";
+.com_box{
+  background-color: #fafafa;
+  font-size: 32rpx;
+  padding-bottom: 200rpx;
+  height: 100vh;
+}
+.list_border{
+  background: #fff;
+}

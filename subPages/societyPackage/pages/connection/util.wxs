@@ -1,0 +1,6 @@
+function splitNum(str){
+  return parseInt(str.split("位")[0]);
+}
+module.exports = {
+  splitNum:splitNum
+}

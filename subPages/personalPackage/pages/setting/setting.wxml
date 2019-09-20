@@ -1,0 +1,19 @@
+<view class="setting">
+	<!-- <view class="public_item" bindtap="to_userNumber">
+		<view class="item_text font_28">账号管理</view>
+		<image class="arrow" src="../../images/icn_arrow.png"></image>
+	</view> -->
+
+	<view class="public_item marginTop22">
+		<view class="item_text font_28">软件版本<text>V2.0.0</text></view>
+		<image class="arrow" src="../../images/icn_arrow.png"></image>
+	</view>
+	<view class="public_item" bindtap="to_about">
+		<view class="item_text font_28">关于我们</view>
+		<image class="arrow" src="../../images/icn_arrow.png"></image>
+	</view>
+
+	<view class="public_item marginTop22">
+		<view class="item_out font_28" bindtap="login_out">退出登录</view>
+	</view>
+</view>

@@ -1,0 +1,460 @@
+.box{
+  overflow-y: hidden;
+}
+/* 浮层 */
+.isFirst_img{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  height: 65vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.isFirst_font{
+  width: 475rpx;
+  height: 87rpx;
+}
+.isFirst_btn{
+  width: 251rpx;
+  height: 129rpx;
+  margin-top: 60rpx;
+}
+.isFirst_key{
+  width: 70rpx;
+  height: 93rpx;
+  position:fixed;
+  right:44rpx;
+  bottom:242rpx;
+}
+.isFirst_pen{
+  background: #fff;
+  width:130rpx;
+  height: 130rpx;
+  border-radius: 50%; 
+  position:fixed;
+  right:16rpx;
+  bottom:86rpx;
+}
+
+.video_box,.audio_box{
+  width: 100%;
+  height: 450rpx;
+}
+#myVideo{
+  width: 100%;
+  height: 100%;
+}
+.audio_box{
+  background: #455161;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  position: relative;
+  height: 450rpx;
+}
+.slider{
+  width: 100%;
+  margin:0;
+  position: absolute;
+  bottom:-4%;
+  z-index: 100;
+}
+.t_phone{
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 50%;
+  background: #daa690;
+  border: 20rpx solid #fff;
+  overflow: hidden;
+}
+.phone_animation{
+  animation: headRotate 8s linear infinite;
+}
+.t_phone image{
+  width: 100%;
+  height: 100%;
+}
+@keyframes headRotate{
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}
+.icon_box{
+  width: 420rpx;
+  height: 220rpx;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mic_com_icon{
+  width: 30rpx;
+  height: 38rpx;
+}
+.mic_play{
+  width: 43rpx;
+  height: 52rpx;
+}
+.msg{
+  padding: 20rpx 0;
+  background: #fefefe;
+  position: relative;
+}
+.msg_title{
+  width: 77%;
+}
+.mic_time{
+  position: absolute;
+  right: 0;
+  top: 28rpx;
+}
+.cw_title{
+  font-size: 32rpx;
+}
+.cw_info{
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+.msg_title text{
+  display: block;
+}
+.mic_table{
+  font-size: 28rpx;
+  padding: 10rpx 15rpx;
+  border-radius: 13rpx;
+  font-weight: bold;
+}
+.see_video{
+  position: absolute;
+  top:8%;
+  right:5%;
+  z-index: 100;
+}
+.main_name{
+  width: 62%;
+}
+.main_time{
+  width: 38%;
+  text-align: end;
+}
+.header .font_weight{
+  font-size: 34rpx;
+}
+.details_main{
+  height: 64vh;
+  overflow: auto;
+  width: 100%;
+  font-size: 32rpx;
+  background: #fff;
+  -webkit-overflow-scrolling: touch
+}
+/* 导航 */
+.header{
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;
+  color: #8f8f8f;
+  background: #fefefe;
+}
+.header_icon{
+  width: 42rpx;
+  height: 42rpx;
+}
+.margin_left{
+  margin-left: 20rpx;
+}
+.header_view view{
+  height: 94rpx;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  font-weight: 500;
+  padding: 0 20rpx;
+}
+.header .hover_color{
+  border-bottom: 4rpx solid #f9552f;
+  color: #f9552f;
+}
+.header_right_view{
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #343434;
+}
+.header_right_view image{
+  margin-left: 10px;
+}
+
+.padding{
+  padding: 30rpx 0;
+  font-size: 34rpx;
+}
+.richText{
+  background: #fefefe;
+  margin-top: 20rpx;
+}
+/* 笔记 */
+.notes{
+  background: #fefefe;
+  margin-top: 20rpx;
+}
+.notes_say{
+  border: 1px solid #f3f3f3;
+  box-shadow: 0 0 20rpx rgba(178, 178, 178, 0.4);
+  margin-bottom:30rpx;
+  padding:20rpx 0 30rpx 0;
+  position: relative;
+}
+.details_header{
+  height: 110rpx;
+}
+.details_header text{
+  display: block;
+}
+/* 笔记内容 */
+.notes_content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+.is_All{
+  width: 90%;
+  height: 80rpx;
+  justify-content: center;
+  border-bottom: 1px solid #e8e8e8;
+  background:rgba(255,255,255,.93);
+  position: absolute;
+  left: 0;
+  bottom: 18%;
+}
+.no_All{
+  width: 90%;
+  height: 80rpx;
+  justify-content: center;
+  border-bottom: 1px solid #e8e8e8;
+}
+.som_content{
+  height: 330rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.notes_more_pic .img_boxs{
+  display: inline-block;
+  width: 32%;
+  height: 210rpx;
+  border-radius: 10rpx;
+  margin-left: 2%;
+}
+.notes_more_pic :first-child{
+  margin: 0;
+}
+.notes_one_pic .one_pic{
+  width: 100%;
+  height: 290rpx;
+  border-radius: 20rpx;
+}
+.notes_more_pic,.notes_one_pic{
+  /* margin-bottom: 30rpx; */
+}
+.copy_font{
+  background: #f6fafb;
+  border:1px solid #e8e8e8;
+  color: #929697;
+  font-size: 28rpx;
+  padding: 20rpx 0;
+  overflow-x: hidden
+}
+.copy_img{
+  background: #f6fafb;
+  border:1px solid #e8e8e8;
+  height: 370rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.copy_img image{
+  width: 90%;
+  height: 80%;
+}
+.copy_bottom{
+  padding-top: 16rpx;
+  width: 90%;
+  justify-content: space-between;
+}
+.copy_bottom text{
+  display: block;
+  color:#8f8f8f;
+  font-size: 26rpx;
+}
+.copy_tit{
+  width: 82%;
+}
+.copy_time{
+  width: 30%;
+  text-align: end;
+}
+.good_noetes{
+  padding: 30rpx 0;
+  font-weight: 500;
+  font-size: 36rpx;
+}
+
+/* 笔记内容底部 */
+.notes_footer{
+  justify-content: space-between;
+  padding: 30rpx 0 0 0;
+}
+.notes_footer .color_fff{
+  color: #fff;
+}
+.phone_icon{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+.zz_icon{
+  width: 31rpx;
+  height: 25rpx;
+  margin-right: 10rpx;
+}
+.fx_icon{
+  width: 31rpx;
+  height: 33rpx;
+  margin-right: 10rpx;
+}
+.notes_say_font{
+  font-size: 30rpx;
+  overflow:hidden;
+}
+/* 课程选集 */
+.course_list{
+  background: #fefefe;
+  padding-bottom: 30rpx;
+}
+.com_list{
+  height: 110rpx;
+  font-size: 30rpx;
+}
+.list_msg{
+  width: 95%;
+}
+.list_icon{
+  width: 22rpx;
+  height: 24rpx;
+  margin-left: 16rpx;
+}
+.list_icon2{
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 16rpx;
+}
+.list_titles{
+  width: 89%;
+  margin-left: 30rpx;
+}
+.progress{
+  color: #414141;
+  font-size: 26rpx;
+}
+.listen{
+  font-size: 26rpx;
+  color: #fff;
+  background:#ff4f34;
+  padding: 5rpx 18rpx;
+  border-radius: 25rpx;
+}
+.music{
+  width: 42rpx;
+  height: 42rpx;
+  position: relative;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.music text{
+  width: 4rpx;
+  position: absolute;
+  bottom:0;
+  background-color: #ff512f;
+}
+.music text:nth-of-type(1){
+  left:0;
+  height: 25rpx;
+}
+.music text:nth-of-type(2){
+  left:8px;
+  height: 15rpx;
+}
+.music text:nth-of-type(3){
+  left:16px;
+  height: 25rpx;
+}
+
+.music.active text:nth-of-type(1){
+  animation:jump 0.66s linear infinite;
+}
+.music.active text:nth-of-type(2){
+  animation:jump 0.8s linear infinite;
+}
+.music.active text:nth-of-type(3){
+  animation:jump 0.7s linear infinite;
+}
+
+@keyframes jump{
+	0%{height:8rpx}
+	50%{height: 35rpx}
+}
+	
+/* 浮窗 */
+.pen{
+  position: fixed;
+  right: 30rpx;
+  bottom: 100rpx;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius:50%;
+}
+.menu{
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pen image{
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.no_notes_status{
+  background: #fff;
+  height: 37vh;
+}
+
+.course_icon{
+  width: 20rpx;
+  height: 24rpx;
+  margin-right: 20rpx;
+  margin:0 20rpx 0 5%;
+}
+.more_btn{
+  padding: 30rpx 0;
+  font-size: 26rpx;
+  background: #fff;
+  margin-bottom: 30rpx;
+}
+
+.notes_com_padding{
+  padding: 20rpx 0;
+}

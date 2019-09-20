@@ -1,0 +1,27 @@
+<view class="purchaseSuccess">
+	<view class="purchaseTitle">
+		恭喜您,获得[理财师体系] - [投资规划] 系列进阶课程
+	</view>
+
+	<view class="purchaseCard">
+    <image hidden='{{fontData == "加入计划"}}' class='yjr_img' src="/images/yjr.png"></image>
+		<image class="headerImg" src="/images/hiou.png"></image>
+
+		<view class="bigTitle">万人同学计划邀请书</view>
+
+		<view class="bigTip">每天学习<text class="pointText">10</text>分钟</view>
+
+		<view class="havePeople">已有8934728347人</view>
+
+		<view class="bottomTip marginTop">加入[万人同学会]</view>
+		<view class="bottomTip">邀请你共同成长为</view>
+		<view class="bottomTip">专业理财师</view>
+
+		<view class="purchaseBtn">
+			<button bindtap='go_dayCard'>{{fontData}}</button>
+			<view bindtap='ts_dayCard'>调整计划</view>
+		</view>
+	</view>
+
+	<view bindtap='go_home' class="beginBtn">开始学习</view>
+</view>

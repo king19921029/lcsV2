@@ -1,0 +1,167 @@
+
+<view class='boxs'>
+    <view class='banner'>
+      <image class='banner_img image_bg' 
+      src='{{queryColumnInfo.pic_url_top}}'>
+      </image>
+      <view class='banner_size com_width'>
+        <view class='font_weight'>{{queryColumnInfo.sku_title}}</view>
+        <view class='space_between font_26'>
+            <view class='overflow banner_size_info'>{{queryColumnInfo.sku_info}}</view>
+            <view class='display_flex'>
+
+              <view wx:for="{{queryColumnInfo.label_list}}" wx:key="" 
+              wx:item="item" wx:for-index="idx" class='label font_20'>
+                {{item.label_title}} 
+              </view>
+              <!-- <view class='label'>
+                label
+              </view> -->
+            </view>
+            
+        </view>
+      </view>
+    </view>
+  
+    <!-- 在学人数 -->
+    <view class='bg_fff hedaer display_flex'>
+      <view class='flex_direction border_right'>
+        <view class='font_30'>{{queryColumnInfo.study_count}}</view>
+        <view class='display_flex'>
+          <image wx:for="{{queryColumnInfo.user_list}}"
+          wx:key="" wx:for-item="item" src="{{item.header_url}}"></image>  
+        </view>
+        <view class='boders'></view>
+      </view>
+      <view class='flex_direction'>
+          <view class='font_30'>{{queryColumnInfo.note_count}}</view>
+          <view class='color_f8'>课程笔记</view>
+      </view>
+    </view>
+
+    <!-- 老师介绍 -->
+    <view class='bg_fff border_bottom teacher' >
+      <view class='com_width border_bottom list_header'>老师简介</view>
+
+      <view class='t_list com_width space_between border_bottom '
+        wx:for="{{teacherList}}" wx:key="" wx:for-item="item"
+        data-id="{{item.teacher_id}}" bindtap='goTeacher'>
+          <view class='overflow_tow'>{{item.nick_name}}：{{item.teacher_info}}</view>
+          <image class='right_icon'
+            src='../../../images/icn_arrow_block.png'></image>
+      </view>
+    </view>
+
+    <!-- 课程亮点 -->
+    <view class='com_block'></view>
+    <view class='bg_fff bright border_bottom'
+      wx:for="{{skuDetailList}}" wx:key="" wx:item="item"
+      wx:for-index="idx">
+      <view class='com_width list_header'>{{item.title}}</view>
+
+      <view wx:if='{{item.content}}' class="com_width">
+        <rich-text nodes="{{item.content}}"></rich-text>
+      </view>
+    
+    </view>
+
+    <!-- 课程大纲 -->
+    <view class='com_block'></view>
+    <view class='course bg_fff border_bottom'>
+      <view class='com_width space_between list_header'>
+        <text>课程大纲</text>  
+        <view class='course_num'>
+        {{skuCWList.length}}/{{queryColumnInfo.cw_count}}讲</view>
+      </view>
+
+      <view class='course_box com_width'>
+
+        <block wx:for="{{skuCWList}}" wx:key="" 
+          wx:item="item" wx:for-index="idx">
+
+          <view class='border_top course_list' 
+            data-cwid="{{item.cw_id}}"
+            data-free="{{item.is_free}}"
+            data-cwtype="{{item.cw_type}}"
+            data-progress="{{item.progress}}"
+            data-historyplaytime="{{item.history_play_time}}"
+            bindtap='goDetails'>
+              <!-- 未购 -->
+              <view wx:if="{{queryColumnInfo.is_buy == '0'}}" class='display_flex'>
+
+                <block wx:if='{{item.cw_type == 0}}'>
+                  <image wx:if="{{item.is_free == '1'}}" class='course_icon'
+                    src="../../../images/no_player.png"></image>
+                  <image wx:else class='course_icon'
+                  src="../../../images/no_player.png"></image>
+                </block>
+
+                <image hidden='{{item.cw_type == 0}}' class='no_buy_exam'
+                  src="../../../images/no_buy_exam.png"></image>
+                  
+                <text class='course_name {{queryColumnInfo.is_buy == "1" || item.is_free == "1"  ? "color_block" : "color_gray" }}'>{{item.cw_title}}</text>
+                <text wx:if="{{item.is_free == '1' && queryColumnInfo.is_buy == '0'}}" class='test bg_orange'>试听</text>
+              </view>
+
+              <!-- 已购 -->
+              <view wx:else class='display_flex'>
+                <image hidden='{{item.cw_type == 1}}' class='course_icon'
+                src="../../../images/palyer.png"></image>
+                <image hidden='{{item.cw_type == 0}}' class='no_buy_exam'
+                src="../../../images/exam.png"></image>
+              <text class='course_name {{queryColumnInfo.is_buy == "1" || item.is_free == "1"  ? "color_block" : "color_gray" }}'>{{item.cw_title}}</text>
+              </view>
+          </view>
+        </block>
+      </view>
+
+      <!-- 展开收起 -->
+      <view hidden='{{skuCWList.length < 9}}' 
+        class='com_width all_btn border_top course_list'
+        bindtap='allTap' >
+          <view class='display_flex color_gray'>
+            <image class='course_icon'
+              src="../../../images/bottom.png"></image>
+            <text class='course_name'>点击加载更多</text>
+          </view>
+      </view>
+    </view>
+
+    <!-- 精选笔记 -->
+    <view hidden='{{NoteList.length == 0}}' class='bg_fff display_cul'>
+        <view class='com_block'></view>
+        <view class='com_width space_between list_header_bottom' >
+            <text>精选笔记</text>  
+            <view bindtap='goAllNotes' class='course_num'>查看全部</view>
+        </view>
+
+        <view class='good_notes'>
+          <view class='notes_list {{ idx == 0 ? "first_notes_list" : "" }}' wx:for="{{NoteList}}" wx:key="" wx:for-item="item" wx:for-index="idx">
+
+            <view class='display_cul'>
+               <view class='notes_top com_width display_flex'>
+                <image class='top_icon' src="{{item.header_pic_url}}"></image>
+                <view class='flex_direction'> 
+                    <text class='font_26 font_weight'>{{item.nick_name}}</text>
+                    <text class='color_f8'>{{item.user_title}}</text>
+                </view> 
+            </view>
+            <view class='com_width notes_bottom'>{{item.content}}</view>
+            </view>
+           
+          </view>
+        </view>
+    </view>
+
+
+    <!-- 底部 -->
+    <view hidden='{{queryColumnInfo.is_buy== "1"}}' class='footer bg_fff border_top'>
+      <view bindtap='testGoDetails'>免费试听</view>
+      <!-- <view wx:if='{{model == "android" || model == "devtools"}}'  -->
+      <view wx:if='{{model == "android" || queryColumnInfo.price == 0 || model == "devtools" }}' class='bg_orange' bindtap='goBuy'>{{queryColumnInfo.price_str}}/立即订阅</view>
+      <view wx:else class='bg_orange' bindtap='iosGoBuy'>查看详情</view>
+      
+    </view>
+
+   
+</view>

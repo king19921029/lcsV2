@@ -1,0 +1,45 @@
+<view class="login">
+	<view class="login_title">账号登录</view>
+<!-- 
+	<view class="login_tel">
+		<input  maxlength="11" type="number" placeholder="请输入手机号" placeholder-style="color:#ff906e;" bindinput="bindTel" value="{{tel}}" />
+	</view>
+	
+	<view class="login_vcode" wx:if="{{!passwordLogin}}">
+		<input  maxlength="6" type="number" placeholder="请输入验证码" placeholder-style="color:#ff906e;" bindinput="bindVcode" />
+		
+		<view class="send_box" wx:if="{{getVcode}}">
+			<view class="send_vcode">{{ time }}s后重发</view>
+		</view>
+		<view class="send_box" wx:else>
+			<view class="send_vcode" bindtap="getVcode">发送验证码</view>
+		</view>
+	</view>
+
+	<view class="login_password" wx:if="{{passwordLogin}}">
+		<input  maxlength="24" type="password" placeholder="请输入密码" placeholder-style="color:#ff906e;" bindinput="bindPassword" />
+	</view>
+
+	<view class="login_tip">
+		<view class="forget">
+			<text class="forget_tip" bindtap="to_forget" wx:if="{{passwordLogin}}">忘记密码?</text>
+			<text class="forget_tip" bindtap="call_code" wx:else>使用语音验证码?</text>
+			<text class="checkout_tip" bindtap="checkout_tip" wx:if="{{passwordLogin}}">验证码登录</text>
+			<text class="checkout_tip" bindtap="checkout_tip" wx:else>密码登录</text>
+		</view>
+	</view>
+
+	<view class="login_btn">
+		<button bindtap="submit_login" disabled="{{!isRight}}">登陆</button>
+	</view>
+
+	<view class="new_user_login" bindtap="to_sign">新用户注册</view> -->
+
+
+
+
+	<button class="wechat_login" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+          <image src="../../images/wechat@3x.png"></image>
+		  <view>使用微信快捷登录</view>
+    </button>
+</view>

@@ -1,0 +1,73 @@
+
+<block wx:if="{{isFirstStatus}}">
+  <view hidden='{{!token}}' class='loging'>
+    <view class='canvas_box'>
+      <view wx:for="{{titleData}}" wx:key="" wx:for-item="item" 
+      class='cover_btn color_orange' data-id='{{item.id}}' 
+      bindtap='title_tap' data-width="{{item.width}}" data-height="{{item.height}}"
+      data-title="{{item.title}}">
+          {{item.title}}
+      </view>
+    </view>
+
+    <view class='canvas'>
+      <image src="/images/canvasBj.jpeg"></image>
+    </view>
+  </view>
+
+  <view hidden='{{token}}' class='display_flex noLogin'>
+    <view class='img_box'>
+      <image class='no_login_img' src='/images/canvas_nologin.png'></image>
+      <view class='img_box_title'>
+        <view class='font_weight'>您还没有登录哦</view>
+        <view>注册登录后，查看学习频道下全部的内容</view>
+      </view>
+      <view bindtap='go_login' class='bg_orange img_box_btn'>立即注册/登录</view>
+    </view>
+  </view>
+</block>
+
+
+<block wx:else>
+  <view class='isFirst'>
+    <image class='tp1' bindtap='nextTap' src='{{tpSrc}}'></image>
+  </view>
+</block>
+
+
+<template-nav
+  type="学习"
+  id="nav"
+  state="1"
+  stateNow="0"
+  isIpx="{{isIpx}}">	
+</template-nav>
+
+<template-player
+  wx:if="{{isMicPlay}}"
+  bindmicGoDetails="micGoDetails">
+</template-player>
+
+
+
+<!-- <canvas 
+    class='secondCanvas' 
+    bindtouchstart="start2"
+    canvas-id="secondCanvas">
+</canvas>
+
+<canvas 
+    class='lastCanvas' 
+    bindtouchstart="start3"
+    canvas-id="lastCanvas">
+</canvas> -->
+
+<!-- <template-player
+name="社会">
+</template-player> -->
+ 
+<!-- <canvas 
+    class='canvass' 
+    catchtap="start"
+    canvas-id="firstCanvas">
+  </canvas> -->

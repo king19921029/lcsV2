@@ -1,0 +1,175 @@
+.box{
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  font-size: 28rpx;
+}
+.society_list{
+	overflow: hidden;
+}
+.bc_society{
+	background-color: #fafafa;
+}
+.society{
+	position: relative;
+	padding-bottom: 120rpx;
+	z-index: 2;
+}
+.loadGif{
+	width: 40rpx;
+	height: 40rpx;
+	position: fixed;
+	top: 20rpx;
+	left: 50%;
+	margin-left: -20rpx;
+	z-index: 1;
+}
+/*轮播图*/
+.society_swiper{
+	width: 100%;
+	height: 480rpx;
+}
+.society_swiper swiper,.society_swiper image{
+	width: 100%;
+	height: 100%;
+	background-color: #ccc;
+}
+/*搜索框*/
+.fixed_wrap{
+	width: 100%;
+	height: 70rpx;
+	padding: 20rpx 0;
+	position:absolute;
+	top: 0rpx;
+	left: 0rpx;
+	z-index: 30;
+}
+.fixed_wrap2{
+	width: 100%;
+	height: 70rpx;
+	padding: 20rpx 0;
+	position: fixed;
+	top: 0rpx;
+	left: 0rpx;
+	z-index: 30;
+}
+.society_search_bg{
+	background-color: white;
+}
+.society_search{
+	width: 629rpx;
+	height: 70rpx;
+	margin-left: 27rpx;
+	position: relative;
+}
+.society_search_250{
+	width: 500rpx;
+	height: 70rpx;
+	position: relative;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+.society_search .input{
+	width: 100%;
+	box-sizing: border-box;
+	height: 70rpx;
+	background-color: rgb(254,254,254);
+	font-size: 30rpx;
+	border-radius: 6px;
+	float: left;
+	padding-right: 10rpx;
+	padding-left: 9%;
+	color: rgb(149,149,149);
+	position: relative;
+	line-height: 70rpx;
+
+	border: 1px solid #ccc;
+}
+.society_search_250 .input{
+	width: 100%;
+	box-sizing: border-box;
+	height: 70rpx;
+	background-color: rgb(254,254,254);
+	font-size: 30rpx;
+	float: left;
+	color: rgb(149,149,149);
+	position: relative;
+	line-height: 70rpx;
+	text-align: center;
+}
+.searchIcon{
+	position: absolute;
+	top: 19rpx;
+	left: 14rpx;
+	z-index: 40;
+}
+.xinfeng_search1{
+	width: 47rpx;
+	height: 43rpx;
+	position: absolute;
+	right: 30rpx;
+	top: 35rpx;
+	z-index: 40;
+}
+.xinfeng_search2{
+	width: 47rpx;
+	height: 43rpx;
+	position: absolute;
+	right: 30rpx;
+	top: 35rpx;
+	z-index: 40;
+}
+.slowSearch{
+	width: 40rpx;
+	height: 40rpx;
+	position: absolute;
+	top: 35rpx;
+	left: 35rpx;
+}
+
+
+.section .quxiao{
+	font-size: 30rpx;
+	margin-right: 30rpx;
+	float: right;
+	height: 70rpx;
+	line-height: 70rpx;
+	color: rgb(80,80,80);
+}
+.navigator-hover{
+	width: 100%;
+	height: 480rpx !important;
+}
+
+
+
+/*iphonex适配*/
+.classIpx{
+	padding-bottom: 68rpx;
+}
+
+.hidden{
+	display: none;
+}
+
+
+
+.first_wrap{
+	width: 100%;
+	min-height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.7);
+	z-index: 999999999999999;
+}
+.first_wrap image{
+	width: 80%;
+	height: 300rpx;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -40%;
+	margin-top: -150rpx;
+	z-index: 999999999999999;
+}

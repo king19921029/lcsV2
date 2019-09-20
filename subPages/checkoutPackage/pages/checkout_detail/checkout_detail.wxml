@@ -1,0 +1,56 @@
+
+
+  <view class="checkout_detail" handletouchmove="handletouchmove">
+    <view class="checkout_header">
+      <view class="left_name" wx:if="{{QuestionType}}">单项选择</view>
+      <view class="left_name" wx:else>多项选择</view>
+      <view class="right_time" bindtap="to_answer_sheet">
+        <view class="number"><text class="big_number">{{current+1}}</text>/{{QuestionNum}}</view>
+        <view class="timeout">{{time}}</view>
+      </view>
+    </view>
+
+    <view class="answer" wx:for="{{QuestionList}}" wx:key="list" wx:for-index="question_index" data-double="{{item.double}}" bindtouchstart="touchStart" bindtouchend="touchEnd">
+      <view class="anwer_content">
+        <text style="float:left;">{{current + 1}}.</text>
+        <!-- <template is="wxParse" data="{{wxParseData:qName.nodes}}"></template> -->
+        <rich-text nodes="{{item.qName}}"></rich-text>
+      </view>
+      <view class="anwer_list">
+        <!-- 多选 -->
+        <view wx:if="{{item.qType === 1}}" class="anwer_item" wx:for="{{item.aList}}" wx:for-index="answer_index" wx:key="list" wx:for-item="chooseSet">
+          <view class="item_label {{chooseSet.checked?'active_color':''}}" data-answer="{{answer_index}}" data-question="{{question_index}}" data-code="{{chooseSet.code}}" bindtap="choose_answer_S">{{chooseSet.code}}</view>
+          <!-- <view class="item_content">{{chooseSet.AText}}</view> -->
+          <view style="padding-left: 83rpx;font-size: 30rpx;padding-top: 12rpx;">
+            <rich-text nodes="{{chooseSet.AText}}"></rich-text>
+          </view>
+          
+          <!-- <template wx:if="{{answer_index == 0}}" is="wxParse" data="{{wxParseData:AText0.nodes}}"></template>
+          <template wx:if="{{answer_index == 1}}" is="wxParse" data="{{wxParseData:AText1.nodes}}"></template>
+          <template wx:if="{{answer_index == 2}}" is="wxParse" data="{{wxParseData:AText2.nodes}}"></template>
+          <template wx:if="{{answer_index == 3}}" is="wxParse" data="{{wxParseData:AText3.nodes}}"></template>
+          <template wx:if="{{answer_index == 4}}" is="wxParse" data="{{wxParseData:AText4.nodes}}"></template>
+          <template wx:if="{{answer_index == 5}}" is="wxParse" data="{{wxParseData:AText5.nodes}}"></template>
+          <template wx:if="{{answer_index == 6}}" is="wxParse" data="{{wxParseData:AText6.nodes}}"></template>
+          <template wx:if="{{answer_index == 7}}" is="wxParse" data="{{wxParseData:AText7.nodes}}"></template> -->
+        </view>
+        <!-- 单选 -->
+        <view class="anwer_item" wx:if="{{item.qType === 0}}" wx:for-index="answer_index" wx:for="{{item.aList}}" wx:key="list" wx:for-item="chooseSet">
+          <view class="item_label {{chooseSet.checked?'active_color':''}}" data-answer="{{answer_index}}" data-question="{{question_index}}" data-code="{{chooseSet.code}}" bindtap="choose_answer_D">{{chooseSet.code}}</view>
+          <!-- <view class="item_content">{{chooseSet.AText}}</view> -->
+          <view style="padding-left: 83rpx;font-size: 30rpx;padding-top: 12rpx;">
+            <rich-text nodes="{{chooseSet.AText}}"></rich-text>
+          </view>
+          <!-- <template wx:if="{{answer_index == 0}}" is="wxParse" data="{{wxParseData:AText0.nodes}}"></template>
+          <template wx:if="{{answer_index == 1}}" is="wxParse" data="{{wxParseData:AText1.nodes}}"></template>
+          <template wx:if="{{answer_index == 2}}" is="wxParse" data="{{wxParseData:AText2.nodes}}"></template>
+          <template wx:if="{{answer_index == 3}}" is="wxParse" data="{{wxParseData:AText3.nodes}}"></template>
+          <template wx:if="{{answer_index == 4}}" is="wxParse" data="{{wxParseData:AText4.nodes}}"></template>
+          <template wx:if="{{answer_index == 5}}" is="wxParse" data="{{wxParseData:AText5.nodes}}"></template>
+          <template wx:if="{{answer_index == 6}}" is="wxParse" data="{{wxParseData:AText6.nodes}}"></template>
+          <template wx:if="{{answer_index == 7}}" is="wxParse" data="{{wxParseData:AText7.nodes}}"></template> -->
+        </view>
+      </view>
+    </view>
+  </view>
+

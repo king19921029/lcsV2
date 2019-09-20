@@ -1,0 +1,69 @@
+.res{
+  font-size: 32rpx;
+  width: 100%;
+  background: #fafafa;
+  height: 100vh;
+}
+.header_top{
+  padding: 30rpx 0;
+}
+.photo{
+  width: 160rpx;
+  height: 200rpx;
+  border-radius: 8rpx;
+}
+.font_weight{
+  font-size: 30rpx;
+}
+.msg{
+  width: 73%;
+  height: 200rpx;
+  justify-content: space-between;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+}
+.header_bot{
+  padding: 30rpx 0;
+}
+.card image{
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 20rpx;
+}
+.go_ye{
+  font-size: 26rpx;
+}
+.go_ye image{
+  width: 14rpx;
+  height: 20rpx;
+  margin-left: 20rpx;
+}
+.ye{
+  width: 52rpx;
+  height: 52rpx;
+  margin-right: 20rpx;
+}
+.recharge{
+  font-size: 30rpx;
+  padding: 16rpx 50rpx;
+  border-radius: 8rpx;
+}
+.footer{
+  width: 100%;
+  height:130rpx;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+}
+.com_padding{
+  padding: 30rpx 0;
+}
+.com_margin{
+  margin-top: 26rpx;
+}
+.color_orange{
+  font-size: 28rpx;
+}
+.lh{
+  line-height: 50rpx;
+}

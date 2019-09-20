@@ -1,0 +1,102 @@
+
+<view class='boxs'>
+  <view wx:if="{{video_show}}" class='video_box'>
+      <video id='myVideo' 
+        src="{{videoData.playInfoList[1].playURL}}" 
+        bindtimeupdate="videoChange" 
+        bindplay="videoPlay" 
+        bindpause="videoPause" 
+        show-play-btn="false" 
+        initial-time="{{audio_paly_time}}" 
+        autoplay controls>
+    </video>
+  </view>
+  <!-- 音频 -->
+  <view wx:else class='audio_box'>
+    <view bindtap='goVideo'hidden="{{video_show}}" class='mic_table see_video bg_orange'>看视频</view>
+    <view></view>
+    <view class='t_phone display_flex {{animationIsShow ? "phone_animation" :""}}'>
+      <image src='{{SkuCwDetailInfo.header_pic_url}}'>
+      </image>
+    </view>
+    <view class='icon_box'>
+      <image class='mic_com_icon' data-type="-1" bindtap='nextTap' src='../../../images/mic_left.png'></image>
+      <image class='mic_play' bindtap='pauseTap' hidden="{{!isPlay}}" src='../../../images/pause.png'></image>
+      <image class='mic_play' bindtap='playTap' hidden="{{isPlay}}"src='../../../images/mic_play.png' ></image>
+      <image class='mic_com_icon' data-type="1" bindtap='nextTap' src='../../../images/mic_right.png'></image>
+    </view>
+    <slider class='slider' activeColor="#ff4f30" block-size="15" 
+      bindchange="bindchange" 
+      min="0" max="{{sliderMax}}" 
+      value="{{sliderValue}}">
+    </slider>
+  </view>
+
+  <scroll-view scroll-y class='main'>
+    <view class='border_bottom'>
+      <view class='msg space_between com_width'>
+        <view class='msg_title'>
+          <text class='font_weight'>{{SkuCwDetailInfo.cw_title}}</text> 
+          <text class='color_f8'>帮助客户进行财务管理</text>
+        </view>
+        <view bindtap='goMic' hidden='{{!video_show}}' class='mic_table bg_orange'>
+          听音频
+        </view>
+        <view class='mic_time color_f8' hidden='{{video_show}}'>{{playTime}}/{{allPlayTime}}</view>
+      </view>
+    </view>
+
+    <!-- 课程选集 -->
+    <view class='course_list'>
+      <view class="com_width display_flex font_weight com_list border_bottom">
+      播放列表
+      </view>
+
+      <view wx:for="{{SkuCWList}}" wx:key=""
+        class="com_width com_list border_bottom space_between {{item.is_free == 0 ? 'color_f8':''}}"
+        bindtap='paly_video_tap'  wx:for-item="item" 
+        data-cwid="{{item.cw_id}}"
+        data-isfree="{{item.is_free}}"
+        data-cwClockStatus="{{item.is_free}}"> 
+
+        <view class='display_flex list_msg'>
+          <view wx:if="{{item.cw_id == cwId}}" 
+            class="music active">
+              <text></text>
+              <text></text>
+              <text></text>
+          </view>
+
+          <image wx:elif="{{item.is_free == 1 && item.cw_type == 0 }}" class='list_icon' src="../../../images/palyer.png"></image>
+
+          <image wx:elif="{{item.is_free == 0 && item.cw_type == 0 }}" class='list_icon' src='../../../images/no_player.png'></image>
+          <image wx:else class='exam_icon' src="../../../images/no_buy_exam.png" ></image>
+
+          <view class='flex_direction'>
+              <text class='font_weight {{item.cw_id == cwId ? "color_orange" : "" }}'>{{item.cw_title}}</text>
+              <text class='progress'>{{item.progress}}</text>
+          </view>
+        </view>
+        
+        <view hidden='{{item.is_free == 0}}' class='listen'>
+          试听
+        </view>
+      </view>
+      <view hidden='{{SkuCWList.length < 9}}' bindtap='allTap' 
+        class='more_btn color_gray'>
+        <view class='com_width display_flex'>
+          <image class='course_icon'
+          src="/images/bottom.png"></image>
+          <text class='course_name'>点击加载更多</text>
+        </view>
+      </view>
+
+    
+    </view>
+
+  </scroll-view>
+
+ 
+</view>
+
+

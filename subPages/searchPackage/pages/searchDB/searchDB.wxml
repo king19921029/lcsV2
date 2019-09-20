@@ -1,0 +1,18 @@
+<view wx:if="{{NoticeList.length != 0}}" class="searchDB">
+	<view class="DBlist">
+		<view class="DBitem" wx:for="{{NoticeList}}" wx:key="item" data-type="{{item.link_type}}" data-text="{{item.link_text}}" data-read="{{item.is_read}}" bindtap="lookDetails">
+			<image class="item_img" wx:if="{{item.pic_url}}" src="{{item.pic_url}}"></image>
+			<view class="item_title">{{item.title}}</view>
+			<view class="item_content">{{item.content}}</view>
+			<view class="item_bottom">
+				<text class="item_time">{{item.create_time}}</text>
+				<text class="item_to">查看详情 ></text>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view wx:else class='box'>
+  <image class='no_notice' src="/images/kong@3x.png"></image>
+  <view>暂无电报信息~</view>  
+</view>

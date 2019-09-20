@@ -1,0 +1,271 @@
+
+<view class='boxs'>
+  <view wx:if="{{video_show}}" class='video_box'>
+      <video id='myVideo' 
+        src="{{videoData.playInfoList[1].playURL}}" 
+        bindtimeupdate="videoChange" 
+        bindplay="videoPlay" 
+        binderror="errorVideo"
+        bindwaiting="waitingVideo"
+        custom-cache="{{false}}"
+        bindpause="videoPause" 
+        block-size='12'
+        bindended="endVideo"
+        initial-time="{{video_paly_time}}"
+        autoplay>
+        <!-- controls -->
+    </video>
+  </view>
+  <!-- 音频 -->
+  <view wx:else class='audio_box'>
+    <view bindtap='goVideo'hidden="{{video_show}}" class='mic_table see_video bg_orange'>看视频</view>
+    <view></view>
+    <view class='t_phone display_flex {{animationIsShow ? "phone_animation" :""}}'>
+      <image src='{{SkuCwDetailInfo.header_pic_url}}'>
+      <!-- <image src='{{SkuCwDetailInfo.video_pic_url}}'> -->
+      </image>
+    </view>
+    <view class='icon_box'>
+      <image class='mic_com_icon' data-type="-1" bindtap='nextTap' src='../../../images/mic_left.png'></image>
+      <image class='mic_play' bindtap='pauseTap' hidden="{{!isPlay}}" src='../../../images/pause.png'></image>
+      <image class='mic_play' bindtap='playTap' hidden="{{isPlay}}"  src='../../../images/mic_play.png' ></image>
+      <image class='mic_com_icon' data-type="1" bindtap='nextTap' src='../../../images/mic_right.png'></image>
+    </view>
+    <slider class='slider' activeColor="#ff4f30" block-size="15" 
+      bindchange="bindchange" 
+      min="0" max="{{sliderMax}}" 
+      value="{{sliderValue}}">
+    </slider>
+  </view>
+  <!-- 下半部分 -->
+  <view class='details_main'>
+    <view class='border_bottom'>
+      <view class='msg space_between com_width'>
+        <view class='msg_title'>
+          <text class='cw_title font_weight'>{{SkuCwDetailInfo.cw_title}}</text> 
+          <!-- <text class='cw_info color_f8'>{{SkuCwDetailInfo.cw_title}}</text> -->
+        </view>
+        <view bindtap='goMic' hidden='{{!video_show}}' class='mic_table bg_orange'>
+          听音频
+        </view>
+        <view class='mic_time color_f8' hidden='{{video_show}}'>
+          {{playTime}}/{{allPlayTime}}
+        </view>
+        
+      </view>
+    </view>
+    
+    <view class='com_block'></view>
+    <view class='header'>
+      <view class='com_width space_between'>
+        <view class='display_flex header_view'>
+            <view bindtap='dataTap' class='{{studyTab == 0 ? "hover_color" : ""}}'>资料</view>
+            <view bindtap='notesTap' class='margin_left {{studyTab == 1 ? "hover_color" : ""}}'>
+              笔记
+            </view>
+            <view bindtap='listTap' class='margin_left {{studyTab == 2 ? "hover_color" : ""}}'>
+              课程选集
+            </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 富文本 -->
+    <view wx:if="{{studyTab == 0}}" class='richText'>
+      
+      <view wx:if='{{SkuCwDetailInfo.text}}' class="com_width">
+        <rich-text nodes="{{SkuCwDetailInfo.text}}"></rich-text>
+      </view>
+
+      <view wx:else class="com_width">
+        暂无资料
+      </view>
+    </view>
+
+    <!-- 笔记 -->
+    <view wx:elif="{{studyTab == 1}}" class='notes'>
+      <view class='com_width good_noetes'>精选笔记</view>
+      <view hidden="{{SkuCwNoteList.length < 0}}" 
+        class='com_width notes_say' wx:for="{{SkuCwNoteList}}"
+        wx:for-item="item" data-notesid="{{item.note_id}}"
+        wx:for-index="idx" wx:key="" >
+          
+          <!-- title -->
+          <view class='details_header com_width space_between'>
+            <view class='space_between'>
+              <view class='display_flex'>
+                <image bindtap='go_mine' data-authorid="{{item.author_id}}" data-authortype="{{item.author_type}}" class='phone_icon' src="{{item.header_pic_url}}"></image>
+                <view>
+                  <text class='font_weight'>{{item.nick_name}}</text>
+                  <text class='color_f8'>{{item.create_time}}</text>
+                </view>
+                
+              </view>
+            </view>
+          </view>
+
+          <!-- 内容 -->
+          <view class='notes_content com_width'>
+           
+            <view class='notes_com_padding' hidden='{{!item.pic_url_1}}'>
+
+              <view hidden="{{!item.pic_url_2}}" class='notes_more_pic'>
+                <view class="img_boxs" style="background:url('{{item.pic_url_1}}') no-repeat;background-size:160%;background-position:40% 30%;" 
+                data-url="{{item.pic_url_1}}" 
+                data-url2="{{item.pic_url_2}}" 
+                data-url3="{{item.pic_url_3}}" 
+                data-idx="{{0}}" 
+                bindtap="previewImage"></view>
+
+              <view class="img_boxs" style="background:url('{{item.pic_url_2}}') no-repeat;background-size:160%;background-position:40% 30%;" 
+              data-url="{{item.pic_url_2}}"
+              data-url2="{{item.pic_url_1}}" 
+              data-url3="{{item.pic_url_3}}" 
+              data-idx="{{1}}"  
+              bindtap="previewImage"></view>
+              
+               <view class="img_boxs" style="background:url('{{item.pic_url_3}}') no-repeat;background-size:160%;background-position:40% 30%;" 
+                data-url="{{item.pic_url_3}}" 
+                data-url2="{{item.pic_url_2}}" 
+                data-url3="{{item.pic_url_1}}"
+                data-idx="{{2}}"  
+               bindtap="previewImage"></view>
+              </view>
+
+              <view hidden="{{item.pic_url_2}}" class='notes_one_pic'>
+               <view class="one_pic" style="background:url('{{item.pic_url_1}}') no-repeat;background-size:100%;background-position:0 50%;" data-url="{{item.pic_url_1}}" bindtap="onePreviewImage"></view>
+              </view>
+            </view>
+
+            <view hidden="{{!item.audio_time}}" class='notes_com_padding wx_box'>
+              <view class='wx bg_orange' data-idx="{{idx}}" bindtap='paly_ly'
+               data-audioid="{{item.audio_id}}">
+                <view class='wx_icon {{voiceAnimationStatus == idx ? "voicePlay" : ""}}'>
+                </view>
+                <text class='wx_font'>{{item.audio_time}}s</text>
+              </view>
+            </view>
+
+            <view class='notes_com_padding notes_say_font'>
+             {{item.content}}
+            </view>
+            
+            <view hidden='{{!item.copy_text}}' class='copy_font'>
+              <view class='com_width'>{{item.copy_text}}</view>
+            </view>
+
+            <view bindtap="onePreviewImage" hidden='{{!item.copy_pic_url}}'
+              data-url="{{item.copy_pic_url}}" class='copy_img'>
+              <image src='{{item.copy_pic_url}}'></image>
+              <view class='display_flex copy_bottom'>
+                <text class='copy_tit'>来源：{{item.cw_title}}</text>
+                <text>{{item.copyPicUrlTime}}</text>
+              </view>
+            </view>
+
+          </view>
+         
+          <view class='display_flex notes_footer com_width'>
+            <!-- <view class='display_flex'>
+                <text class='color_fff'>230</text>
+            </view> -->
+
+            <view hidden="{{ userId == item.author_id}}" bindtap='addNotes' 
+              data-linkid="{{item.note_id}}" data-authortype="{{item.author_type}}"
+              class='display_flex'>
+                <image class='zz_icon' src='../../../images/jiaohuan@3x.png'></image>
+                <text class='color_f8'>{{item.forward_count}}</text>
+            </view>
+
+            <view class='display_flex'>
+              <button open-type="share"
+                style="background-color:white;"
+                class="button-hover display_flex">
+                <image class='fx_icon'
+                  src='../../../images/zz.png'></image>
+                  <text class='color_f8'>分享</text>
+              </button>   
+            </view>
+
+          </view>
+      </view>
+      <view class='com_width no_notes_status' hidden="{{SkuCwNoteList.length > 0}}">
+        还没有他人的笔记，快去写一条吧～
+      </view>
+    </view>
+
+    <!-- 课程选集 --> 
+    <view wx:else class='course_list'>
+      <view class='com_block'></view>
+      <view class="com_width display_flex font_weight com_list border_bottom">
+      播放列表
+      </view>
+
+      <view bindtap='paly_video_tap' 
+        class="com_width com_list border_bottom space_between"
+        wx:for="{{SkuCWList}}" wx:key="" wx:for-item="item" 
+        data-cwid="{{item.cw_id}}" data-cwClockStatus="{{item.is_free}}"
+        data-cwtype="{{item.cw_type}}" data-progress="{{item.progress}}"
+        data-historyplaytime="{{item.history_play_time}}">
+        <view class='display_flex list_msg'>
+
+            <view wx:if="{{item.cw_id == cwId }}" class="music active">
+                <text></text>
+                <text></text>
+                <text></text>
+            </view>
+
+            <image wx:elif="{{ item.cw_type == '0'}}"  class='list_icon'
+             src="../../../images/palyer.png"></image>
+
+            <image hidden='{{item.cw_type == "0"}}' class='list_icon2'
+             src="../../../images/exam.png"></image>
+
+            <view class='flex_direction list_titles'>
+                <text class='overflow font_weight {{item.cw_id == cwId ? "color_orange" : "" }}'>{{item.cw_title}}</text>
+                <text class='progress'>{{item.progress}}</text>
+            </view>
+        </view>
+        <!-- <view wx:if='{{item.is_free == 1 && video_show}}' class='listen'>试看</view>
+        <view wx:if='{{item.is_free == 1 && !video_show}}' class='listen'>试听</view> -->
+      </view>
+
+      <view hidden='{{SkuCWList.length < 9}}' bindtap='allTap' class='border_bottom display_flex more_btn color_gray'>
+        
+        <image class='course_icon'
+          src="../../../images/bottom.png"></image>
+        <text class='course_name'>下拉加载更多</text>
+      </view>
+
+    
+    </view>
+
+  </view>
+  
+  <!-- 浮窗 -->
+  <view class='pen'>
+    <view class='menu' bindtap='go_notes'>
+      <image src='../../../images/pen.png'></image>
+    </view>
+  </view>
+ 
+</view>
+
+<view class='isFirst' bindtap='isFirstTap' wx:if="{{isFirstStatus}}">
+  <view class='isFirst_img'>
+    <image class='isFirst_font' src="../../../images/details_contnet.png"></image>
+    <image class='isFirst_btn' src="../../../images/details_yes.png"></image>
+    <view class='bottom_box'>
+      <image class='isFirst_key' src='../../../images/details_jiantou.png'></image>
+      <view class='isFirst_pen'>
+          <view class='pen'>
+            <view class='menu'>
+              <image src='../../../images/pen.png'></image>
+            </view>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+

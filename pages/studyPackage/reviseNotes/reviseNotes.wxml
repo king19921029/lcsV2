@@ -1,0 +1,99 @@
+
+
+<!-- 重新编辑 -->
+<view class='notes_box {{ keyboardIsShow ? "som_height" : "big_heigit" }}'>
+
+  <!-- 图片、内容 -->
+  <view class='notes_top'>
+    <view class='com_width'>
+        <textarea maxlength="500" bindinput='userSay' 
+      placeholder="记笔记可以提高学习的效果，让你记得更牢" 
+      value="{{WriteNotes.content}}"/>
+    </view>
+    
+
+    <view class='com_width notes_top_b'>
+      <!-- 语音 -->
+      <view wx:if="{{recorderManagerDuration != null}}"  class='wx_box'>
+        <view class='wx bg_orange' bindtap='paly_ly'
+           data-id="{{WriteNotes_audioid}}" >
+          <view class='wx_icon {{voiceAnimation ? "voicePlay" : ""}}'></view>
+          <text class='wx_font'>{{recorderManagerDuration}}s</text>
+        </view>
+        <image bindtap='deleteMic' wx:if="{{voiceX}}" class='delete_icon' src="/images/xx.png"></image>
+      </view>
+
+
+
+      <!-- 图片 -->
+      <view wx:if="{{photoArr.length > 0}}" class='phone_box display_flex'>
+        <view class='phone' wx:for="{{photoArr}}" wx:key="" wx:for-index="index" wx:for-item="item">
+          <image class='phone_img' src="{{item}}"></image>
+          <image bindtap='deleteImg' data-idx="{{index}}" class='delete_img' src="/images/xx.png"></image>
+        </view>
+        
+        <view wx:if="{{photoArr.length < 3}}" class='phone' bindtap='phontTap'>➕</view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class='btn_box'>
+        
+    <view class="com_width space_between">
+      <view class='display_flex'>
+          <view bindtap='phontTap' class='btn'>插入图片</view>
+          <view bindtap='voiceTap' class='btn margin_left'>插入语音</view>
+          <view bindtap='saveNotes' class='save margin_left bg_orange'>保存</view>
+      </view>
+      <view wx:if="{{is_share == '1'}}" bindtap='isShare_one' class='display_flex'>
+          <image class='see_icon' src="../../../images/orisee.png"></image>
+          <text class='color_orange'>公开</text>
+      </view>
+      <view wx:else bindtap='isShare_two' class='display_flex'>
+          <image class='see_icon' src="../../../images/no_open.png"></image>
+          <text>私密</text>
+      </view>
+    </view>
+
+  </view>
+
+</view>
+
+<!-- 底部录音 -->
+<view wx:if="{{voiceBox}}" class='notes_bottom'>
+  <view class='color_orange'>
+        <view wx:if="{{recorderManagerStatus == 0 }}" class='record_box font_weight'>
+            <view>{{time}}s</view>
+            <view class='start_box'>
+              <image bindtap='start' class='zb_icon' src='../../../images/zb.jpg'></image>
+            </view>
+            <view>点击录音</view>
+        </view> 
+
+        <view wx:elif="{{recorderManagerStatus == 1}}" class='record_box font_weight'>
+            <view>{{time}}s</view>
+            <view class='active_box' bindtap='stop'>
+              <view class="music active">
+                  <text></text>
+                  <text></text>
+                  <text></text>
+                  <text></text>
+                  <text></text>
+              </view>
+            </view>
+            <view>录音中</view>
+        </view> 
+
+        <view wx:else class='record_box font_weight'>
+            <view class='record_time'>{{time}}s</view>
+            <view class='space_between over_box'>
+              <image bindtap='deleteMic' class='record_dele' src="../../../images/dele.png"></image>
+              <image data-id="{{WriteNotes_audioid}}" bindtap='paly_ly' class='zb_icon' src='../../../images/js.jpg'></image>
+              <image class='record_ys' bindtap='saveMicTap' src="../../../images/yes.png"></image>
+            </view>
+            <view>录音完成</view>
+        </view>   
+  </view>
+</view>
+  

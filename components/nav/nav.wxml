@@ -1,0 +1,65 @@
+<view class="nav_wrap {{isIpx?'classIpx':''}}">
+	<view class="menu">
+		<view class="menu_choose" wx:if="{{openstate}}" bindtap="open"><image class="menu_icon_one" src="../../images/menuS.png"></image></view>
+		<view class="menu_choose" wx:else bindtap="open"><image class="menu_icon" src="../../images/menuS.png"></image><text>{{type}}</text></view>
+	</view>
+
+
+  <view class="menu_list" wx:if="{{!openstate && state == 0}}">
+		<view bindtap='schoolClass' wx:for="{{schoolType}}" wx:for-item="item" 
+    wx:key="" class="menu_item {{stateNow == item.status ? 'active_color':''}}"
+    data-status="{{item.status}}">
+    {{item.name}}
+    </view>
+	</view>
+
+	<view class="menu_list" wx:if="{{!openstate && state == 1}}">
+		<view bindtap='goStudy' class="menu_item width33  {{stateNow==0?'active_color':''}}">视野</view>
+		<view bindtap='studyCourseTab' class="menu_item width33 {{stateNow==1?'active_color':''}}">课桌</view>
+		<view bindtap='studyNotes' class="menu_item width33 {{stateNow==2?'active_color':''}}">笔记</view>
+	</view>
+
+	<view class="menu_list" wx:if="{{!openstate && state == 2}}">
+		<view class="menu_item width33 {{stateNow==0?'active_color':''}}" bindtap="goSociety">咖选</view>
+		<view class="menu_item width33 {{stateNow==1?'active_color':''}}" bindtap="goConnection">人脉</view>
+		<view class="menu_item width33 {{stateNow==2?'active_color':''}}" bindtap="goMy">我的</view>
+	</view>
+</view>
+
+<view class="menu_masking" wx:if="{{openstate}}">
+	<view class="mao">
+
+
+		<view class="clickWrap" bindtap="open">
+			<image wx:if="{{navStatusFirst}}" src="../../images/nav_first.png"></image>
+		</view>
+
+
+		<view class="masking {{isIpx?'classIpx':''}}">
+			<view class="masking_title">频道选择</view>
+			<view class="masking_list">
+        <!-- 学院 -->
+				<view bindtap='goSchool' class="masking_item {{state == 0?'before':''}}">
+					<image class="mask_item_icon" src="../../images/xueyuan1.png" wx:if="{{state == 0}}"></image>
+					<image class="mask_item_icon" src="../../images/xueyuan.png" wx:else></image>
+					<view bindtap='goSchool' class="item_choose {{state == 0?'active_color':''}}">学院<text>(汇聚优秀理财课程)</text></view>
+					
+				</view>
+        <!-- 学习 -->
+				<view bindtap='goStudy' class="masking_item {{state == 1?'before':''}}">
+					<image class="mask_item_icon" src="../../images/keben1.png" wx:if="{{state == 1}}"></image>
+					<image class="mask_item_icon" src="../../images/keben.png" wx:else></image>
+					<view class="item_choose {{state == 1?'active_color':''}}">学习<text>(您的学习的课程与学习数据统计)</text></view>
+					
+				</view>
+        <!-- 圈子 -->
+				<view bindtap='goSociety' class="masking_item {{state == 2?'before':''}}">
+					<image class="mask_item_icon" src="../../images/zhinanzhen1.png" wx:if="{{state == 2}}"></image>
+					<image class="mask_item_icon" src="../../images/zhinanzhen.png" wx:else></image>
+					<view bindtap='goSociety' class="item_choose {{state == 2?'active_color':''}}">圈子<text>(关注的好友与行业大咖)</text></view>
+					
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

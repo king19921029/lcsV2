@@ -1,0 +1,90 @@
+.answer_sheet{
+	width: 100%;
+	background-color: #fafafa;
+}
+.sheet_header{
+	width: 100%;
+	background-color: white;
+	padding: 30rpx;
+	box-sizing: border-box;
+	border-bottom: 1px solid #ececec;
+	border-top: 1px solid #ececec;
+}
+.sheet_message{
+	width: 100%;
+	height: 92rpx;
+	background: #f8f8f8;
+	text-align: center;
+	line-height: 92rpx;
+	color: #f15a36;
+	font-size: 25rpx;
+}
+.sheet_message image{
+	width: 35rpx;
+	height: 35rpx;
+	transform: translateY(8rpx);
+	margin-left: 11rpx;
+}
+.choose_item{
+	width: 100%;
+	margin-top: 30rpx;
+	background-color: white;
+	border-bottom: 1px solid #eeeeee;
+	overflow: hidden;
+	padding-bottom: 120rpx;
+}
+.choose_title{
+	width: 100%;
+	font-size: 32rpx;
+	font-weight: bold;
+	padding-left: 36rpx;
+	box-sizing: border-box;
+	margin-top: 45rpx;
+}
+.choose_over{
+	width: 100%;
+	padding: 40rpx 35rpx;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.choose_over view{
+	width: 60rpx;
+	height: 60rpx;
+	border-radius: 50%;
+	border: 1px solid black;
+	float: left;
+	text-align: center;
+	line-height: 60rpx;
+	margin: 25rpx;
+}
+.answer_footer{
+	width: 100%;
+	height: 120rpx;
+	font-size: 30rpx;
+	color: white;
+	text-align: center;
+	line-height: 120rpx;
+	background-color: #fe5531;
+	position: fixed;
+	bottom: 0;
+}
+.answer_footer2{
+	width: 100%;
+	height: 120rpx;
+	font-size: 30rpx;
+	color: white;
+	text-align: center;
+	line-height: 120rpx;
+	background-color: #ccc;
+	position: fixed;
+	bottom: 0;
+}
+
+
+
+
+.active_color{
+	color: white;
+	border-color: #fd5632 !important;
+	background-color: #fd5632;
+}

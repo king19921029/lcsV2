@@ -1,0 +1,124 @@
+
+<view class='box all_notes'>
+
+  <view wx:for='{{notersData}}' wx:key="" wx:for-item="item" 
+   wx:for-index="idx" class='good_details'>
+
+    <view class='details_header display_flex'>
+      <view class='com_width space_between'>
+        <view class='display_flex'>
+          <view class='phone_icon'>
+            <image src="{{item.header_pic_url}}" class='user_icon'></image>
+            <image hidden='{{item.is_vip == 0}}' class='vip_icon' src="/images/dav@3x.png"></image>
+          </view>
+          <view>
+            <text class='fonot_26'>{{item.nick_name}}</text>
+            <text class='reprint_notes_time fonot_24'>{{item.create_time}}</text>
+          </view>
+        </view>
+
+        <view data-userid="{{item.author_id}}" 
+          data-usertype="{{item.author_type}}" 
+          data-isfollow="{{item.is_follow}}"
+          class='bg_orange see_you' 
+          wx:if='{{item.is_follow == "0"}}'
+          bindtap='seeUser'>关注</view> 
+
+      </view>
+    </view>
+    
+    <view class='com_notes_width'>
+
+      <view hidden="{{!item.pic_url_1}}" class='notes_comPadding'>
+        <view wx:if="{{item.pic_url_2}}" class='notes_more_pic'>
+        <view class="img_boxs" style="background:url('{{item.pic_url_1}}') no-repeat;background-size:160%;background-position:40% 30%;" 
+        data-url="{{item.pic_url_1}}"
+        data-url2="{{item.pic_url_2}}" 
+        data-url3="{{item.pic_url_3}}"
+        data-idx="{{0}}" 
+        bindtap="previewImage"></view>
+
+          <view class="img_boxs" style="background:url('{{item.pic_url_2}}') no-repeat;background-size:160%;background-position:40% 30%;" 
+          data-url="{{item.pic_url_1}}" 
+          data-url2="{{item.pic_url_2}}" 
+          data-url3="{{item.pic_url_3}}"
+          data-idx="{{1}}"
+          bindtap="previewImage"></view>
+            <view class="img_boxs" style="background:url('{{item.pic_url_3}}') no-repeat;background-size:160%;background-position:40% 30%;" 
+          data-url="{{item.pic_url_1}}" 
+          data-url2="{{item.pic_url_2}}" 
+          data-url3="{{item.pic_url_3}}"
+          data-idx="{{2}}"
+          bindtap="previewImage"></view>
+          
+        </view>
+        <view wx:else class='notes_one_pic'>
+          <view class="one_pic" style="background:url('{{item.pic_url_1}}') no-repeat;background-size:100%;background-position:0 50%;" data-url="{{item.pic_url_1}}" bindtap="onePreviewImage"></view>
+        </view>
+      </view>
+
+      <view wx:if="{{item.audio_id}}"  class='wx_box notes_comPadding'>
+        <view class='wx bg_orange' bindtap='paly_ly' data-idx="{{idx}}" data-audioid="{{item.audio_id}}">
+          <view class='wx_icon {{voiceAnimationStatus==idx ? "voicePlay" : ""}}'></view>
+          <text class='wx_font'>{{item.audio_time}}s</text>
+        </view>
+        <image bindtap='deleteMic' wx:if="{{voiceX}}" 
+          class='delete_icon' src="/images/xx.png"></image>
+      </view>
+
+      <blcok wx:if="{{item.content.length < 100}}">
+        <view class='{{item.content?"notes_comPadding":""}} article_som'>
+          {{item.content}}
+        </view>
+      </blcok>
+
+      <blcok wx:else>
+        <view class='{{item.content?"notes_comPadding":""}} article {{article_isall? "" : "article_noall"}}'>
+          {{item.content}}
+        </view>
+
+        <view wx:if="{{article_isall}}" bindtap='article_normal'
+          class='article_icon'>
+          <image src='../../../images/top.png'></image>
+        </view>
+
+        <view wx:else bindtap='article_all' class='article_icon'>
+          <image src='../../../images/bottom.png'></image>
+        </view>
+      </blcok>
+         
+      <view class='copy_box notes_comPadding'>
+        <view wx:if="{{item.copy_text}}" class='say color_gray'>
+          {{item.copy_text}}
+        </view>
+
+        <image wx:if="{{item.copy_pic_url}}" 
+          src="{{item.copy_pic_url}}" class='say_img'
+          data-url="{{item.copy_pic_url}}" bindtap="onePreviewImage">
+        </image>
+      </view>
+         
+      <view bindtap='go_skuDetails' data-skuid="{{item.sku_id}}" 
+        data-cwid="{{item.cw_id}}" class='card display_flex'>
+        <view class='display_flex'>记录于：{{item.cw_title}}</view>
+      </view>
+
+      <view wx:if="{{item.is_reprint == '0'}}" class='space_between yc_foot'>
+      </view>
+
+      <view wx:else class='space_between reprint_card_footer card_footer'>
+        <view class='display_flex'>
+          <image class='zz_icon' src="../../../images/zhuanzai.png"></image>
+          <text class='color_f8'>{{item.forward_count}}</text>
+        </view>
+        <view class='display_flex'>
+          <image class='zz_icon' src="../../../images/zz.png"></image>
+          <text class='color_f8'>分享</text>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+  <view class='bottom_block'></view>
+</view>

@@ -1,0 +1,6 @@
+.com_box{
+  padding-bottom: 30rpx;
+}
+.list_border{
+  background: #fff;
+}

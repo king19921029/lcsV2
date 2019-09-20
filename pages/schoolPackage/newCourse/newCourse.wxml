@@ -1,0 +1,56 @@
+<view class='newCourse'>
+   <!-- 轮播 -->
+  <view class="home_swiper">
+    <swiper indicator-dots="{{swiperData.indicatorDots}}" 
+      indicator-color="rgb(112,117,118)" indicator-active-color="white"
+      autoplay="{{swiperData.autoplay}}" interval="{{swiperData.interval}}"
+      duration="{{swiperData.duration}}">
+      <block wx:for="{{bannerData}}" wx:key="item">
+        <swiper-item>
+          <image bindtap='goDetails' data-skuid="{{item.sku_id}}"
+          data-cwid="{{item.cw_id}}" lazy-load="true" src="{{item.pic_url}}"
+          class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='course_box'>
+    <view wx:for="{{allSkuList}}" wx:key="" wx:for-item="item" 
+      data-id='{{item.id}}'class='course_list border_bottom'
+      bindtap='showMenuTap'>
+        <view class='course_time bg_fff {{item.isShow ? "border_bottom" : ""}}'>
+          <view class='com_width space_between'>
+            <text>{{item.dayTime}}</text>
+            <view class='display_flex'>
+                <!-- <text class='color_f8'>上新{{item.num}}课</text> -->
+                <image wx:if="{{item.isShow}}" class='icon' src="../../../images/top_block.png"></image>
+                <image wx:else class='icon' src="../../../images/bottom_block.png"></image>
+            </view>
+          </view>
+        </view>
+
+        <view wx:for="{{item.skuList}}" wx:key="" wx:for-item="itemSon"
+          wx:if="{{item.isShow}}" class='blcok' bindtap='goDetails'
+          data-skuid="{{itemSon.sku_id}}" data-cwid="{{itemSon.cw_id}}"
+          data-isbuy="{{itemSon.is_buy}}">
+            <view class='com_width news_box bg_fff'>
+              <view class='com_width space_between'>
+                  <image class='news_img' src='{{itemSon.pic_url}}'></image>
+                  <view class='news_msg'>
+                      <view class='font_weight tsku_title overflow_tow"'>{{itemSon.sku_title}}</view>
+                      <view class="color_f8 tsku_info overflow">{{itemSon.cw_title}}</view>
+                  </view>
+                  <view>
+                    <image wx:if="{{itemSon.is_buy == '0'}}" class='news_icon'
+                    src="../../../images/icn_arrow_block.png"></image>
+                    <image wx:else class='sanjiao'
+                    src="../../../images/sanjiao.png"></image>
+                  </view>
+              </view>
+            </view>
+        </view>
+    </view>
+   
+  </view>
+
+</view>

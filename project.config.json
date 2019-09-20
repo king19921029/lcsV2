@@ -1,0 +1,154 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"uglifyFileName": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.5.2",
+	"appid": "wxe56a10a18a1a932b",
+	"projectname": "%E6%88%91%E6%98%AF%E7%90%86%E8%B4%A2%E5%B8%88APP",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 17,
+			"list": [
+				{
+					"id": 0,
+					"name": "搜索页面",
+					"pathName": "pages/school/school",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "圈子",
+					"pathName": "pages/society/society",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "用户主页",
+					"pathName": "subPages/societyPackage/pages/follow_details/follow_details",
+					"query": "viewUserId=81b1f3f624774506878c7761d00346f1"
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "subPages/personalPackage/pages/my/my",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "优惠券",
+					"pathName": "subPages/personalPackage/pages/coupon/coupon",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "考题",
+					"pathName": "subPages/checkoutPackage/pages/checkout_detail/checkout_detail",
+					"query": "skuId=84d449e1dcf7471783d54ed00f80b44f&cwId=cb7b937df7964891ab653f06208d2263"
+				},
+				{
+					"id": 6,
+					"name": "考题结果",
+					"pathName": "subPages/checkoutPackage/pages/checkout_result/checkout_result",
+					"query": "cwId=bd55fa65f8124a87944efac18d64d806"
+				},
+				{
+					"id": -1,
+					"name": "电报",
+					"pathName": "subPages/searchPackage/pages/searchDB/searchDB",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "意见反馈",
+					"pathName": "subPages/personalPackage/pages/feedback/feedback",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "考题结果",
+					"pathName": "subPages/checkoutPackage/pages/checkout_result/checkout_result",
+					"query": "cwId=78b6e9544ec54ef38fb975d9b5b0aa7d"
+				},
+				{
+					"id": -1,
+					"name": "使用优惠券",
+					"pathName": "subPages/personalPackage/pages/usecoupon/usecoupon",
+					"query": "skuId=84d449e1dcf7471783d54ed00f80b44f&cwId=cb7b937df7964891ab653f06208d2263"
+				},
+				{
+					"id": -1,
+					"name": "课程",
+					"pathName": "subPages/searchPackage/pages/searchKC/searchKC",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "考老师主页",
+					"pathName": "subPages/societyPackage/pages/recommend_details/recommend_details",
+					"query": "teacherId=2"
+				},
+				{
+					"id": -1,
+					"name": "用户主页",
+					"pathName": "subPages/societyPackage/pages/follow_details/follow_details",
+					"query": "viewUserId=3783af1150104995ba3ed9f498e1052a"
+				},
+				{
+					"id": -1,
+					"name": "购买成功",
+					"pathName": "pages/commonPage/purchaseSuccess/purchaseSuccess",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "subPages/searchPackage/pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "人脉推荐",
+					"pathName": "subPages/societyPackage/pages/connection/connection",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "同课的人",
+					"pathName": "subPages/societyPackage/pages/connection/connection",
+					"scene": null
+				}
+			]
+		}
+	}
+}

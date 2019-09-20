@@ -1,0 +1,241 @@
+.boxs{
+  font-size: 30rpx;
+  padding-bottom: 110rpx;
+  position: relative;
+}
+.color_gray{
+  color:#8f8f8f;
+}
+.color_block{
+  color: #000;
+}
+.margin_top{
+  margin-top:20rpx;
+}
+.banner_img{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.banner{
+  width: 100%;
+  height: 559rpx;
+  position: relative;
+
+}
+
+.banner_size{
+  position: absolute;
+  bottom:5%;
+  color: #fefefe;
+}
+.banner_size .font_weight,.banner_size_info{
+  width: 70%;
+}
+
+.banner_size .font_weight{
+  font-size: 36rpx;
+  width: 100%;
+  margin-bottom: 10rpx;
+}
+.som_size{
+  font-size: 28rpx;
+}
+.label{
+  border: 1px solid #fff;
+  font-size: 20rpx;
+  border-radius: 18rpx;
+  padding: 4rpx 10rpx;
+  margin-left: 8rpx;
+}
+.hedaer .font_30{
+  margin-bottom: 10rpx;
+}
+.border_right image{ 
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  border:1px solid #e6e6e6;
+  border-radius: 50%;
+  margin-right: -10rpx;
+}
+.border_right text{
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  border:1px solid;
+  border-radius: 50%;
+  margin-right: -6rpx;
+}
+.hedaer > view{
+  width: 50%;
+  height: 140rpx;
+  align-items: center;
+  justify-content: center;
+}
+.teacher :last-child{
+  border-bottom: none;
+}
+.t_list{
+  height: 160rpx;
+}
+.t_list>view{
+  width: 90%;
+  line-height: 44rpx;
+  font-size: 30rpx;
+  color: #3d3d3d;
+  height: 94rpx;
+}
+/* 新header */
+.hedaer{
+  background: #fafafa;
+}
+.border_right{
+  /* border-right: 1px solid #e6e6e6; */
+  position: relative;
+} 
+.boders{
+  position: absolute;
+  right: -1rpx;
+  height: 50%;
+  background:#e6e6e6;
+  width: 2rpx;
+}
+.list_header{
+  padding: 28rpx 0;
+  font-weight: 500;
+  font-size: 34rpx;
+}
+.list_header_bottom{
+  padding: 40rpx 0;
+  font-weight: 500;
+  font-size: 34rpx;
+}
+.right_icon{
+  width: 18rpx;
+  height: 30rpx;
+}
+/* 课程亮点 */
+.bright{
+  padding-bottom: 40rpx;
+  line-height: 48rpx;
+}
+
+/* 课程大纲 */
+.color_gray{
+  color: #9e9e9e;
+}
+.course_num{
+  font-weight: normal;
+  font-size: 28rpx;
+}
+.course_box{
+  font-size: 30rpx;
+}
+.course_box_noall{
+  /* height: 715rpx;
+  overflow: hidden; */
+}
+.course_list{
+  padding: 28rpx 0;
+}
+.all_btn{
+  /* border-top: none; */
+}
+.course_icon{
+  width: 20rpx;
+  height: 24rpx;
+  margin-right: 20rpx;
+}
+.no_buy_exam{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+.course_size{
+  margin:0 10rpx 0 10rpx;
+}
+.course_name{
+  width: 82%;
+  font-size: 28rpx;
+}
+.test{
+  display: block;
+  width: 90rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  border-radius: 23rpx;
+  text-align: center;
+  line-height: 40rpx;
+  /* padding:0 10rpx; */
+}
+.display_cul{
+  display: flex;
+  flex-direction: column;
+}
+
+/* 精选笔记 */
+.good_notes{
+  width: 96%;
+  margin-left: 4%;
+  height:420rpx;
+  white-space:nowrap;
+  overflow-x:auto;
+  overflow-y:hidden;
+}
+.notes_list{
+  height: 396rpx;
+  width: 308rpx;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 0 6rpx rgba(178, 178, 178, 0.6);
+  border-radius: 8rpx;
+  display: inline-block;
+  font-size: 28rpx;
+  overflow:hidden;
+  white-space:normal;
+  margin-right: 30rpx;
+}
+.first_notes_list{
+  margin-left: 0;
+}
+
+.notes_top{
+  height: 117rpx;
+}
+.top_icon{
+  display: block;
+  width: 62rpx;
+  height: 62rpx;
+  border-radius: 50%;
+  margin-right:15rpx;
+}
+.notes_bottom{
+  height: 244rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  line-height: 48rpx;
+}
+
+.view_block{
+  display: inline-block;
+  white-space:normal;
+  height: 400rpx;
+  width: 34rpx;
+  background:#fff;
+}
+
+/* footer */
+.footer{
+  width: 100%;
+  height: 110rpx;
+  position: fixed;
+  bottom:0;
+  display: flex;
+  z-index: 100;
+}
+.footer>view{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

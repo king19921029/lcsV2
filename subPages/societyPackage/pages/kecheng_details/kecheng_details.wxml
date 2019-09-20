@@ -1,0 +1,65 @@
+<view class="kecheng">
+	<view class="kecheng_banner">
+		<image src="../../images/DSC_0055_mix02.jpg"></image>
+		<view class="kecheng_tip">
+			<view class="kecheng_title">有深度有内涵的金融</view>
+			<view class="kecheng_label">
+				<view class="label">
+				    <view class="label_item_middle">宏观</view>
+				    <view class="label_item_middle">宏观</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="kecheng_teacher">
+		<view class="teacher_title">老师介绍</view>
+		<view class="teacher_text">国家高级李擦规划师、国家理国家高级李擦规划师、国家理财师理财委员会委员国家高级李擦规划师、国家理财师理财委员会委员国家高级李擦规划师、国家理财师理财委员会委员财师理财委员会委员</view>
+	</view>
+
+	<view>
+		<view class="searchOver">
+			<view class="over_title">
+				<text class="title_l">栏目内容</text>
+				<text class="title_r">已更新20期</text>
+			</view>
+		</view>
+
+		<view class="kecheng_list">
+			<view class="kecheng_item" bindtap="to_kecheng_detail">
+				<image src="../../images/bofang@3x.png"></image>
+				<view class="kecheng_name">本课程的学习重点</view>
+				<view class="kecheng_time">00:53:00</view>
+			</view>
+			<view class="kecheng_item" bindtap="to_kecheng_detail">
+				<image src="../../images/bofang@3x.png"></image>
+				<view class="kecheng_name">本课程的学习重点</view>
+				<view class="kecheng_time">00:53:00</view>
+			</view>
+			<view class="kecheng_item" bindtap="to_kecheng_detail">
+				<image src="../../images/bofang@3x.png"></image>
+				<view class="kecheng_name">本课程的学习重点</view>
+				<view class="kecheng_time">00:53:00</view>
+			</view>
+			<view class="kecheng_item" bindtap="to_kecheng_detail">
+				<image src="../../images/bofang@3x.png"></image>
+				<view class="kecheng_name">本课程的学习重点</view>
+				<view class="kecheng_time">00:53:00</view>
+			</view>
+			<view class="kecheng_item" bindtap="to_kecheng_detail">
+				<image src="../../images/bofang@3x.png"></image>
+				<view class="kecheng_name">本课程的学习重点</view>
+				<view class="kecheng_time">00:53:00</view>
+			</view>
+			<view class="kecheng_item" bindtap="to_kecheng_detail">
+				<image src="../../images/bofang@3x.png"></image>
+				<view class="kecheng_name">本课程的学习重点</view>
+				<view class="kecheng_time">00:53:00</view>
+			</view>
+			<view class="kecheng_item" bindtap="to_kecheng_detail">
+				<image src="../../images/bofang@3x.png"></image>
+				<view class="kecheng_name">本课程的学习重点</view>
+				<view class="kecheng_time">00:53:00</view>
+			</view>
+		</view>
+	</view>
+</view>

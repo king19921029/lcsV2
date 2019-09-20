@@ -1,0 +1,65 @@
+.player_box{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  position: fixed;
+  right: 30rpx;
+  bottom:200rpx; 
+  font-size: 32rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.5)
+}
+.active_box{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #ff512f; */
+  background: rgba(253,83,47,.9)
+}
+
+/* 音乐动画 */
+.com_music{
+  width: 42rpx;
+  height: 42rpx;
+  position: relative;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.com_music text{
+  width: 6rpx;
+  height: 5rpx;
+  position: absolute;
+  bottom:0;
+  background-color: #fff;
+  }
+.com_music text:nth-of-type(1){
+  left:0;
+}
+.com_music text:nth-of-type(2){
+  left:8px;
+}
+.com_music text:nth-of-type(3){
+  left:16px;
+}
+
+.com_music.active text:nth-of-type(1){
+  animation:jump 0.66s linear infinite;
+}
+.com_music.active text:nth-of-type(2){
+  animation:jump 0.8s linear infinite;
+}
+.com_music.active text:nth-of-type(3){
+  animation:jump 0.7s linear infinite;
+}
+
+@keyframes jump{
+	0%{height:8rpx}
+	50%{height: 32rpx}
+}

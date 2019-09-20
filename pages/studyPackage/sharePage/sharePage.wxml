@@ -1,0 +1,42 @@
+<view class='box'>
+  <view class='bg_box'>
+    <image src='{{userData.background_pic_url.pic_url}}'></image>
+  </view>
+  <view class='po_box'>
+    <view class='po_box_content'>
+      <view class='photo'>
+        <image src='{{userData.header_url}}'></image>
+      </view>
+      <view class='name'>{{userData.nick_name}}</view>
+      <view class='say'>我刚在I'M理财师完成今日理财师成长计划</view>
+      <view class='day_box'>
+          <view>
+              <view class='font_26'><text>{{userData.total_time}}</text>分钟</view>
+              <view class='font_28'>今日已学</view>
+          </view> 
+
+          <view>
+              <view class='font_26'><text>{{userData.all_sign_count}}</text>天</view>
+              <view class='font_28'>已坚持</view>
+          </view> 
+      </view>
+
+      <view class='font_30 fri_26'>{{userData.info_1}}</view>
+      <view class='font_30 sen_26'>{{userData.info_2}}</view>
+
+      <view class='display_flex logo_box'>
+        <image class='logo' src='/images/logo.png'></image>
+      </view>
+    </view>
+  </view>
+  
+  <view class='footer'>
+    <button open-type="share"
+      style="background-color:white;"
+      class="button-hover display_flex">
+      <image src='/images/sharewx.png'></image>
+      <text>微信好友</text>
+    </button>
+   
+  </view>
+</view>

@@ -1,0 +1,82 @@
+.about{
+	width: 100%;
+	background-color: #fafafa;
+	overflow: hidden;
+}
+.about_logo{
+	width: 122rpx;
+	height: 122rpx;
+	margin: 51rpx auto;
+	background-color: white;
+}
+.about_logo image{
+	width: 100%;
+	height: 100%;
+	border-radius: 10rpx;
+}
+.about_content{
+	width: 100%;
+	padding: 48rpx;
+	font-size: 30rpx;
+	line-height: 50rpx;
+	box-sizing: border-box;
+	background-color: white;
+}
+.public_item{
+	width: 100%;
+	padding: 0 32rpx;
+	border-bottom: 1px solid #ececec;
+	background-color: white;
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+}
+.item_text{
+	width: 30%;
+	height: 108rpx;
+	line-height: 108rpx;
+	font-size: 30rpx;
+	float: left;
+}
+.item_message{
+	width: 70%;
+	height: 108rpx;
+	font-size: 28rpx;
+	color: #fe5430;
+	float: right;
+	line-height: 108rpx;
+	text-align: right;
+}
+.footer_protocol{
+	width: 100%;
+	margin-bottom: 65rpx;
+}
+.footer_text{
+	width: 100%;
+	font-size: 28rpx;
+	color: #929796;
+	text-align: center;
+	margin-top: 30rpx;
+}
+.textColor{
+	color: #fe5430;
+	margin: 0 14rpx 0;
+}
+
+
+#box{
+  font-size: 30rpx;
+}
+#box text{
+  display:block;
+  padding:30rpx 0;
+  font-weight: bold;
+}
+#title{
+  width: 100%;
+  text-align: center;
+  font-weight: normal;
+}
+#box view{
+  padding: 10rpx 0;
+}

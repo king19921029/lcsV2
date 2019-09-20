@@ -1,0 +1,126 @@
+<!-- search.wxml -->
+<wxs module="filter" src="util.wxs"></wxs>
+<view class="search">
+	<!-- 搜索前 -->
+	
+	<view class="section">
+	  <block>
+	    <icon class="searchIcon" type="search" size="17"/>
+	  </block>
+	  <view class="clearBox">
+	    <icon wx:if="{{searchContent.length > 0}}" class="clear" type="clear" size="17" bindtap="clear"/>
+	  </view>
+	  <view class="searchInput">
+	  	<input bindconfirm="beginSearch" confirm-type="搜索" placeholder="{{initPlaceholder}}" bindinput="search" value="{{searchContent}}" auto-focus/>
+	  </view>
+	  
+	  <text class="quxiao" bindtap="beginSearch" wx:if="{{isFocus == true}}">搜索</text>
+	  <text class="quxiao" bindtap="to_back" wx:else>取消</text>
+	</view>
+
+
+	<view class="no_searchData" wx:if="{{noSearchData}}">
+		<image src="../../images/nosearch.png"></image>
+		<view>抱歉，没有找到相关内容</view>
+	</view>
+
+
+
+	<view wx:if="{{isSearch}}" style="margin-top:110rpx;">
+		<view class="history">
+			<view class="history_item" wx:for="{{searchData}}" wx:key="item">
+				<image class="shijian" src="../../images/shijian@2x.png"></image>
+				<text bindtap="initSearch" data-initsearch="{{item}}" style="width:80%;height:109rpx;display:inline-block;">{{item}}</text>
+				<image class="cha" src="../../images/cha@2x.png" data-index="{{index}}" bindtap="removeThis"></image>
+			</view>
+
+			<view class="allSearch" bindtap="lookMore" wx:if="{{lookMore}}">
+				全部搜索记录
+			</view>
+
+			<view class="allSearch" bindtap="removeAll" wx:if="{{removeAll}}">
+				清空所有搜索记录
+			</view>
+		</view>
+
+		<view class="hot_search">
+			<view class="hot_item_title">
+				热门搜索
+			</view>
+
+			<view class="label">
+				<view class="label_item_middle" bindtap="initSearch" data-initsearch="{{item.keyword}}" wx:for="{{hotList}}" wx:key="item">{{item.keyword}}</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 搜索后 -->
+	<view wx:else  style="margin-top:110rpx;">
+		<!-- 课程 -->
+		<view wx:if="{{skuList.length != 0}}">
+			<view class="searchOver">
+				<view class="over_title">
+					<image class="kclabel" src="../../images/shu@2x.png"></image>
+					<text class="title_l">课程</text>
+					<text class="title_r" wx:if="{{skuList.length > 3}}" data-type="0" bindtap="to_more">查看全部</text>
+				</view>
+			</view>
+			<view class="list">
+			    <view class="list_box" data-id="{{item.sku_id}}" bindtap="to_kecheng_detail" wx:for="{{skuList}}" wx:for-index="index" wx:key="item">
+			      <view class="list_content" wx:if="{{index < 3}}">
+			         <view class="list_item">
+			            <image class="list_item_userhead" src="{{item.sku_pic_url}}"></image>
+			            <view class="list_item_middle">
+			              <view class="list_item_middle_title">{{item.sku_title}}</view>
+			              <view class="list_item_middle_tip">{{item.sku_info}}</view>
+			            </view>
+			            <image class="list_item_arrow" src="../../images/icn_arrow.png"></image>
+			          </view>
+			      </view>
+			    </view>
+			</view>
+		</view>
+
+
+		<!-- 活动 -->
+		<view wx:if="{{activityList.length != 0}}">
+			<view class="searchOver">
+				<view class="over_title top_margin">
+					<image class="hdlabel" src="../../images/huodong@2x.png"></image>
+					<text class="title_l">活动</text>
+					<text class="title_r" wx:if="{{activityList.length > 3}}" data-type="1" bindtap="to_more">查看全部</text>
+				</view>
+			</view>
+
+			<view class="panal" wx:for="{{activityList}}" wx:key="item" data-id="{{item.activity_id}}" bindtap="to_active" wx:for-index="i" wx:if="{{i < 3}}">
+				<view>{{item.title}}</view>
+				<image src="{{item.pic_url}}"></image>
+			</view>
+		</view>
+
+		<!-- 文章 -->
+		<view wx:if="{{newsList.length != 0}}">
+			<view class="searchOver">
+				<view class="over_title top_margin">
+					<image class="wzlabel" src="../../images/xinwen@2x.png"></image>
+					<text class="title_l">文章</text>
+					<text class="title_r" wx:if="{{newsList.length > 3}}" data-type="2" bindtap="to_more">查看全部</text>
+				</view>
+			</view>
+
+			<view class="writings_list">
+				<view class="writings_item" data-id="{{item.news_id}}" bindtap="to_writing" wx:for="{{newsList}}" wx:key="item" wx:for-index="in" wx:if="{{in < 3}}">
+					<view class="writings_text_l {{item.news_pic_url_small?'min_width':'no_image'}}">
+						<text class="no_title_shut">{{item.news_title}}</text>
+						<view class="writings_user">
+							来自:<image class="writings_user_head" src="{{item.header_pic_url}}"></image>{{item.teacher_name}}
+							{{item.create_time}}</view>
+					</view>
+					<view class="writings_text_r" wx:if="{{item.news_pic_url_small}}">
+						<image src="{{item.news_pic_url_small}}"></image>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

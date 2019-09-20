@@ -1,0 +1,29 @@
+//数据转化
+function formatNumber(n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+ 
+/**
+ * 时间戳转化为年 月 日 时 分 秒
+ * number: 传入时间戳
+ * format：返回格式，支持自定义，但参数必须与formateArr里保持一致
+*/
+function formatTime(number) {
+ 
+   var n=number;
+    var date = getDate(n);
+    var Y = date.getFullYear() + '-';
+    var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+    var D = date.getDate()<10 ? '0'+date.getDate() : date.getDate() + ' ';
+
+    var H = date.getHours() + ":";
+    var Mi = date.getMinutes() + ":";
+    var S = date.getSeconds();
+    return (Y+M+D+H+Mi+S)
+}
+
+
+module.exports = {
+  formatTime: formatTime
+}

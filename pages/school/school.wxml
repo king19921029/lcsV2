@@ -1,0 +1,284 @@
+
+<view class="box {{isFirstStatus?'no_scroll':''}}">
+  <!-- <view bindtap='testTap' class='test'>内部测试用</view> -->
+  <!-- 轮播 -->
+  <view hidden='{{!homeBanner[0].pic_url}}' class="home_swiper">
+    <swiper indicator-dots="{{swiperData.indicatorDots}}" 
+      indicator-color="rgb(112,117,118)" indicator-active-color="white"
+      autoplay="{{swiperData.autoplay}}" interval="{{swiperData.interval}}"
+      duration="{{swiperData.duration}}">
+      <block wx:for="{{homeBanner}}" wx:key="item">
+        <swiper-item class="image_bg">
+          <image bindtap='bannerTap' data-linktext="{{item.link_text}}" data-linktype="{{item.link_type}}" lazy-load="true" src="{{item.pic_url}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view hidden='{{homeBanner[0].pic_url}}' class='no_swiper'></view>
+  <!-- 搜索 -->
+  <block wx:if="{{homeBanner.length > 0}}">
+    <view hidden='{{searchColor}}' class='header'>
+      <view class='BgColor com_width space_between'>
+          <view bindtap="search" class="display_flex home_search">
+            <view class='display_flex icon_box'>
+              <icon class="searchIcon" type="search" size="17"/>
+              <!-- <image style='width:32rpx;height:32rpx' src='../../images/search.png'></image> -->
+            </view>
+            <text>{{hotKeyword}}</text> 
+          </view>
+
+          <view bindtap='newsTap' class='red_box display_flex'>
+            <image hidden='{{is_have == 0 }}' class='red' src="../../images/whitexinfeng2.png"></image>
+            <image hidden='{{is_have > 0 }}' class='no_red' src="../../images/whitexinfeng.png"></image>
+          </view>
+      </view>
+    </view>
+
+    <view hidden='{{!searchColor}}' class='header headerBgColor'>
+      <view class='BgColor com_width space_between'>
+          <view bindtap="search" class="display_flex home_search">
+            <view class='display_flex icon_box'>
+              <image style='width:32rpx;height:32rpx' src='../../images/search.png'></image>
+            </view>
+            <text>{{hotKeyword}}</text> 
+          </view>
+
+          <view bindtap='newsTap' class='red_box display_flex'>
+            <image hidden='{{is_have == 0 }}' class='red'
+              src="../../images/xinfeng1@3x.png"></image>
+            <image hidden='{{is_have > 0 }}' class='red' 
+              src="../../images/xinfeng@3x.png"></image>
+          </view>
+      </view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class='header headerBgColor'>
+      <view class='BgColor com_width space_between'>
+          <view bindtap="search" class="display_flex home_search">
+            <view class='display_flex icon_box'>
+              <icon class="searchIcon" type="search" size="17"/>
+              <!-- <image style='width:32rpx;height:32rpx' src='../../images/search.png'></image> -->
+            </view>
+            <text>{{hotKeyword}}</text> 
+          </view>
+
+          <view bindtap='newsTap' class='red_box display_flex'>
+            <image hidden='{{is_have == 0 }}' class='red'
+              src="../../images/xinfeng1@3x.png"></image>
+            <image hidden='{{is_have > 0 }}' class='red' 
+              src="../../images/xinfeng@3x.png"></image>
+          </view>
+      </view>
+    </view>
+  </block>
+   
+  <!-- 可配sku -->
+  <block wx:for="{{lsSubjectList}}" wx:key=""
+  wx:for-item="item" wx:for-index="idx">
+
+    <view hidden='{{item.skuList == ""}}' class='com_width space_between'>
+        <view class='list_header'><text class='border_left'></text>{{item.subject_title}}</view>
+        <view hidden='{{item.is_show_all == 0}}' data-id="{{item.subject_id}}" 
+          bindtap='allSubList' class='see_all'>
+          查看全部
+        </view>
+    </view>
+
+    <!-- sku课程 -->
+    <view class='main home_sku_border'>
+     
+      <view bindtap='goDetails' class='ListOne list_border' 
+        data-skuid="{{itemSon.sku_id}}" data-skutype="{{itemSon.sku_type}}"
+        wx:for='{{item.skuList}}' wx:key="" wx:for-item="itemSon"
+        wx:if="{{itemSon.sku_type == 0}}">
+
+        <image lazy-load='true' class='column_img image_bg' src='{{itemSon.sku_pic_url}}'>
+        </image>
+        
+
+        <image hidden='{{itemSon.sku_tip == 0 }}' class='tip' src='/images/tip.png'></image>
+
+        <view class='column_msg'>
+            <view class='overflow font_28 column_title'>{{itemSon.sku_title}}</view>
+            <view class='color_f8 column_info font_24 overflow'>{{itemSon.sku_info}}</view>
+            <view class='label_box'>
+              <text hidden='{{!itemSon.label}}' class='label bg_orange'>{{itemSon.label}}</text>
+            </view>
+            <view class='space_between font_24 column_pic'>
+              <text wx:if='{{model == "android" || model == "devtools" || itemSon.sku_price == "免费订阅" }}' class='color_orange'>{{itemSon.sku_price}}</text>
+              <text wx:else class='color_orange'>查看详情</text>
+              <text hidden="{{ itemSon.sku_status == '' }}" class='color_f8'>{{itemSon.sku_status}}</text>
+      
+            </view>
+        </view>
+      </view>
+
+      <view wx:for='{{item.skuList}}' wx:key="" wx:for-item="itemSon" 
+        bindtap='goSpecial'
+        wx:if="{{itemSon.sku_type == 1}}" class='special' data-skuid="{{itemSon.sku_id}}">
+          <image lazy-load='true' class="special_img image_bg" src='{{itemSon.sku_pic_url}}'></image>
+      </view>
+
+    </view>
+  </block>
+
+  
+  <!-- 学院教授 -->
+  <view class='teach' hidden='{{teacherList.length == 0}}'>
+    <view class='space_between com_width' bindtap='goAllTeacher'>
+        <view class='list_header'><text class='border_left'></text>学院教授</view>
+        <view class='see_all'>查看更多</view>
+    </view>
+
+    <view class='teach_box' >
+      <view class='t_list' wx:for="{{teacherList}}" 
+        wx:key="" wx:for-item="item" data-teacherid="{{item.teacher_id}}"
+        bindtap='goTeacher'>
+        <view class='t_list_son'>
+            <image lazy-load='true' class='t_img' 
+            src='{{item.header_pic_url}}'></image>
+            <view class='t_msg com_width'>
+                <view class='t_name font_weight'>{{item.nick_name}}</view>
+                <view class='overflow_tow t_msg_title color_f8'>{{item.title}}</view>
+            </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='com_width home_sku_border'></view>
+
+  <!-- 课程上新 -->
+  <view hidden='{{newSkuList == ""}}' class='com_width home_sku_border'>
+    <view class='space_between ' >
+      <view class='list_header'><text class='border_left'></text>课程上新</view>
+      <view bindtap='goNewCourse' class='see_all'>查看全部</view>
+    </view>
+    <view class='news'>
+      <view wx:for="{{newSkuList}}" wx:key="" wx:for-item="item"
+        class='com_width news_box bg_fff' data-skuid="{{item.sku_id}}"
+        data-cwid="{{item.cw_id}}" bindtap='newCourseDetails'
+        data-isbuy="{{item.is_buy}}">
+        <view class='com_width space_between'>
+            
+            <image lazy-load='true' class='news_img' src='{{item.pic_url}}'></image>
+            <view class='news_msg'>
+                <view class='font_weight tsku_title overflow_tow'>{{item.sku_title}}</view>
+                <view class="color_f8 tsku_info overflow">{{item.cw_title}}</view>
+            </view>
+            <view>
+              <image class='news_icon'
+              src="../../images/icn_arrow.png"></image>
+              </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 圈子里的新鲜事儿 -->
+  <view hidden='{{societyList == ""}}' class='com_width home_sku_border'>
+    <view class='live'>
+        <view class='list_header'><text class='border_left'></text>圈子里的新鲜事</view>
+    </view>
+    <view class='circle'>
+      <view wx:for="{{societyList}}" wx:key="" wx:for-item="item"
+        class='circle_list' data-id="{{item.news_id}}" bindtap='goSocietye'>
+        <view class='space_between'>
+          <view class="circle_msg {{item.header_pic_url ? 'circle_msg_somwidth' : 'circle_msg_bigwidth' }}">
+              <view class='circle_title overflow_tow font_28'>
+              {{item.news_title}}
+              </view>
+              <view class='display_flex circle_foo color_f8'>
+                <text>来自:</text>
+                <image class='circle_icon' src="{{item.header_pic_url}}">
+                </image>
+                <text>{{item.teacher_name}}</text>
+                <text class='circle_time'>{{item.create_time}}</text>
+              </view>
+          </view>
+          <image lazy-load='true' wx:if="{{item.news_pic_url_small}}" class="circle_img" src='{{item.news_pic_url_small}}'></image>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+
+  <!-- 为你推荐 -->
+
+  <view class='com_width space_between'>
+    <view class='list_header display_flex'>
+      <view class='list_header_ss'><text class='border_left'></text><text>为你推荐</text></view>
+      <view bindtap='seeUser' hidden='{{complete == 1}}' class='img_boxs opacitysAnimation'>
+        完善信息，获得专属推荐
+      </view>
+      
+    </view>
+    <view class='see_all display_flex' bindtap='changeList'>
+      <image src="../../images/hyp.png"></image>
+      <text>换一批</text>
+    </view>
+  </view>
+
+  <view wx:if="{{toUserSkuList}}" class='news_you'>
+    <view wx:for="{{toUserSkuList}}" wx:key="" wx:for-item="item"
+      data-skuid="{{item.sku_id}}" class='com_width news_box bg_fff'
+      bindtap='goDetails'>
+      
+      <view class='com_width space_between'>
+          <image lazy-load='true' class='news_img' src="{{item.pic_url}}"></image>
+          <view class='news_msg'>
+              <view class='font_weight tsku_title overflow_tow'>{{item.sku_title}}</view>
+              <view class="color_f8 tsku_info overflow">{{item.sku_info}}</view>
+          </view>
+          <view>
+            <image class='news_icon'
+            src="../../images/icn_arrow.png"></image>
+            </view>
+      </view>
+    </view>
+
+    
+  </view>
+
+
+
+</view>
+
+<view wx:if='{{isFirstStatus}}' bindtap='isFirstTap' class='isFirst'>
+  <view class='bottom_isFirst {{isIpx ? "classIpx" : ""}}'>
+    <!-- 点击这里 -->
+    <view class='school_frist'><image src='../../images/school_frist.png'></image></view>
+    <!-- 学院 -->
+    <view class='isFirst_bottom_box'>
+      <view class='isFirst_bottom_menu'>
+        <image class='isFirst_bottom_icon' src="../../images/menuS.png"></image>
+        <view>学院</view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+
+
+
+<template-nav
+  bind:schools="footerTap"
+  class="footers"
+  type="学院"
+  id="nav"
+  state="{{navStatus}}"
+  stateNow="{{schoolStateNow}}"
+  isIpx="{{isIpx}}"
+  navStatusFirst="{{navStatusFirst}}">	
+</template-nav>
+
+<template-player
+  wx:if="{{isMicPlay}}"
+  bindmicGoDetails="micGoDetails"
+  name="社会">
+</template-player>

@@ -1,0 +1,102 @@
+<view class='buyEndPage'>
+  <view class='banner display_flex'>
+      <view bindtap='go_noBuy' class='com_width display_flex'>
+          <image src="{{queryColumnInfo.pic_url_vertical}}" class='banner_img'></image>
+          
+          <view class='banner_msg flex_direction'>
+              <view>
+                <view class='msg_title font_weight'>{{queryColumnInfo.sku_title}}</view>
+                <view class='msg_info_top overflow_tow'>{{queryColumnInfo.sku_info}}</view>
+              </view>
+              <view class='msg_info'>{{queryColumnInfo.study_end_count}}</view>
+          </view>
+
+          <image style="width:15rpx;height:24rpx;" src="../../../images/right_fff.png"></image>
+      </view>
+  </view>
+
+  <!-- 在学人数 -->
+  <view class='bg_fff hedaer display_flex'>
+    <view class='flex_direction border_right'>
+      <view class='font_30'>{{queryColumnInfo.study_count}}</view>
+      <view class='display_flex'>
+        <image wx:for="{{queryColumnInfo.user_list}}"
+        wx:key="" wx:for-item="item" src="{{item.header_url}}"></image>  
+      </view>
+      <view class="boders"></view>
+    </view>
+    <view class='flex_direction'>
+      <view class='font_30'>{{queryColumnInfo.note_count}}</view>
+      <view class='color_f8'>课程笔记</view>
+    </view>
+  </view>
+
+  <!-- 正序倒序 -->
+  <view class='curse_num bg_fff'>
+    <view class='com_width space_between'>
+      <view class='font_weight'>
+        已更新{{queryColumnInfo.u_count}}/{{queryColumnInfo.cw_count}}课
+      </view>
+
+      <view hidden='{{sortStatus == 1}}' bindtap='sortTap' class='display_flex'>
+          <image style="width:27rpx;height:27rpx;margin-right:10rpx" src="../../../images/sx.png"></image>
+          <text>正序</text>
+      </view>
+
+      <view hidden='{{sortStatus == 0}}' bindtap='sortTap' class='display_flex'>
+          <image style="width:32rpx;height:32rpx;margin-right:10rpx" src="../../../images/dx.png"></image>
+          <text>倒序</text>
+      </view>
+
+
+    </view>
+  </view>
+
+  <!-- 课程 -->
+  <view wx:for="{{skuCWList}}" wx:key="" wx:item="item"
+      class='course_list' data-cwid="{{item.cw_id}}" 
+      bindtap='go_details' data-cwtype="{{item.cw_type}}"
+      data-historyplaytime="{{item.history_play_time}}"
+      data-progress="{{item.progress}}">
+
+    <view class="com_width com_list border_bottom space_between">
+      <view class='display_flex list_msg {{item.user_study_status == 2 ? "user_study_status2" : "" }}'>
+
+          <block wx:if="{{item.cw_type == 0 }}">
+             <image wx:if='{{item.cw_type == 0}}' 
+            class='list_icon' src="../../../images/palyer.png"></image>
+
+            <!-- <view wx:if="{{isMicPlay && item.cw_id == cwId }}" class="music active">
+              <text></text>
+              <text></text>
+              <text></text>
+            </view> -->
+
+          </block>
+         
+          <image wx:elif="{{item.cw_type == 1}}" class='list_icon2'
+           src="../../../images/exam.png"></image>
+
+          <view class='flex_direction mic_title'>
+              <text class='font_weight overflow {{isMicPlay && item.cw_id == cwId ? "color_orange" : "" }}'>{{item.cw_title}}<text wx:if="{{ isMicPlay && item.cw_id == cwId}}">（ 正在播放 ）</text></text>
+              <text class='progress'>{{item.progress}}</text>
+          </view>
+      </view>
+     
+    </view>
+
+    
+  </view>
+
+  <view hidden='{{skuCWList.length < 9}}' bindtap='allTap' 
+    class='more_btn color_gray'>
+    <view class='com_width display_flex'>
+      <image class='course_icon'
+      src="../../../images/bottom.png"></image>
+      <text class='course_name'>点击加载更多</text>
+    </view>
+    
+  </view>
+
+
+</view>

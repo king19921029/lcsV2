@@ -1,0 +1,68 @@
+<view class='box'>
+  <view class='setTime_box'>
+    <view class='com_width titles'>
+      <text>每天学习时长</text>
+      <text class='times'>{{sliderValue}}分钟</text>
+    </view>
+
+    <view class='com_width'>
+      <slider class='slider'  activeColor="#ff4f30" block-size="15" 
+        bindchange="bindchange" max="60" block-size='12'
+        strokeHeight="10" step="10"
+        value="{{sliderValue}}">
+      </slider>
+      <view class='slider_time'>
+      
+        <view class='time_f'>
+          <text class='frist_text'></text>
+          10分钟
+        </view>
+        <view class='time_f'><text class='sen_text'></text>20分钟</view>
+        <view class='time_f'><text class='thr_text'></text>30分钟</view>
+        <view class='time_f'><text class='fr_text'></text>40分钟</view>
+        <view class='time_f'><text></text>50分钟</view>
+        <view class='time_f'><text></text>60分钟</view>
+      </view>
+    </view>
+
+    <view class='com_width yes_btn'>
+      <view bindtap='save_time'>确定</view>
+    </view>
+  </view>
+
+  <view class='echars_box'>
+    <view class='com_width echars_title'>看看其他人是怎么制定的吧：</view>
+  
+    <view class='fb_block'></view>
+    
+    <view class='com_width echars_box_content'>
+
+        <view class='content_time'>
+          <block wx:for="{{otherUserPlan}}" wx:key=""
+            wx:for-item="item">
+            <view class=''>{{item.plan_time_str}}</view> 
+          </block>
+          
+        </view>
+
+        <view class='content_ber'>
+          <block wx:for="{{otherUserPlan}}" wx:key=""
+            wx:for-item="item">
+            <view style='width:{{item.percentage}}%'></view>
+          </block>
+        </view>
+
+        <view class='content_peo'>
+          <block wx:for="{{otherUserPlan}}" wx:key=""
+            wx:for-item="item">
+            <view class=''>{{item.uc}}</view>
+          </block>
+        </view>
+      
+    </view>
+
+    <view class='fb_block_bottom'></view>
+
+  </view>
+  
+</view>

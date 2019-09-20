@@ -1,0 +1,31 @@
+<view class='com_box'>
+  <!-- <view class='com_width'> -->
+    <image bindtap='go_webview' class='com_box_img' src="/images/listpic.jpeg"></image>
+  <!-- </view> -->
+  
+  <block wx:for='{{allList.package_list}}' wx:key="" wx:for-item="item">
+    <view class='com_width titles'>{{item.package_title}}</view>
+    <view class='com_width main'>
+      <view wx:for='{{item.sku_list}}' wx:key="" wx:for-item="itemSon" class='ListOne list_border' data-skuid="{{itemSon.sku_id}}" bindtap='goDetails'>
+        <image class='column_img' src="{{itemSon.sku_pic_url}}">
+        </image>
+        
+        <view class='column_msg'>
+            <view class='overflow font_28 column_title'>{{itemSon.sku_title}}</view>
+            <view class='color_f8 column_info font_24 overflow'>{{itemSon.sku_info}}</view>
+            <view class='label_box'>
+              <text hidden='{{!itemSon.label}}' class='label bg_orange'>{{itemSon.label}}</text>
+            </view>
+            <view class='space_between font_24 column_pic'>
+              <text wx:if='{{model == "android" || model == "devtools" || itemSon.sku_price == "免费订阅" }}' class='color_orange'>{{itemSon.sku_price}}</text>
+              <text wx:else class='color_orange'>查看详情</text>
+              <text hidden="{{ itemSon.sku_status == '' }}" class='color_f8'>{{itemSon.sku_status}}</text>
+      
+            </view>
+        </view>
+      </view>
+    </view>
+  </block> 
+
+  <view wx:if='{{allList.is_buy == "0"}}' bindtap='goBug' class='footers bg_orange'>{{allList.price_str}}</view>
+</view> 

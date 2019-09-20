@@ -1,0 +1,130 @@
+.kecheng{
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: white;
+}
+
+
+
+/*搜索*/
+.section{
+	overflow: hidden;
+	padding-bottom: 30rpx;
+	border-bottom: 1px solid rgb(234,234,234);
+}
+.section input{
+	width: 80%;
+	box-sizing: border-box;
+	height: 70rpx;
+	background-color: rgb(238,238,238);
+	font-size: 30rpx;
+	border-radius: 3px;
+	float: left;
+	margin-left: 30rpx;
+	padding-left: 55rpx;
+	color: rgb(149,149,149);
+	position: relative;
+}
+.searchIcon{
+	position: absolute;
+	top: 18rpx;
+	left: 40rpx;
+	z-index: 20;
+}
+.section .quxiao{
+	font-size: 30rpx;
+	margin-right: 30rpx;
+	float: right;
+	height: 70rpx;
+	line-height: 70rpx;
+	color: rgb(80,80,80);
+}
+
+/*课程*/
+.searchOver{
+	width: 100%;
+	height: 120rpx;
+	line-height: 120rpx;
+	background-color: white;
+	border-bottom: 1px solid #eeeeee;
+}
+.over_title{
+	width: 100%;
+	padding: 0 30rpx 0;
+	box-sizing: border-box;
+}
+.title_l{
+	font-size: 30rpx;
+	font-weight: bold;
+}
+.title_r{
+	font-size: 26rpx;
+	float: right;
+}
+/*列表*/
+.list{
+	width: 100%;
+	padding: 0 30rpx;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.list_content{
+	width: 100%;
+	overflow: hidden;
+	margin-top: 20rpx;
+}
+.list_item{
+	width: 48%;
+	float: left;
+	background-color: white;
+	border-radius: 15rpx;
+	border: 1px solid #f0f0f0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.flo_right{
+	margin-left: 4%;
+}
+.list_item image{
+	width: 100%;
+	height: 200rpx;
+	display: block;
+}
+.banTitle{
+	display: block;
+	width: 90%;
+	margin: 20rpx auto 10rpx;
+	font-size: 30rpx;
+}
+.banText{
+	width: 90%;
+	height: 30rpx;
+	line-height: 30rpx;
+	font-size: 28rpx;
+	color: #999999;
+	margin: 0rpx auto;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.label{
+	font-size: 22rpx;
+	color: white;
+	padding: 3rpx 10rpx;
+	background-color: #fa5735;
+	border-radius: 10px;
+	margin-left: 5%;
+}
+.price{
+	display: block;
+	font-size: 28rpx;
+	color: #fa5735;
+	margin-left: 5%;
+	margin-top: 35rpx;
+	margin-bottom: 20rpx;
+}

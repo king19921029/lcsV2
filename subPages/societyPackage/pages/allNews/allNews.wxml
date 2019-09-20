@@ -1,0 +1,26 @@
+<wxs module="filter" src="util.wxs"></wxs>
+<view class="study_public" wx:if="{{TeacherNewsList.length != 0}}">
+	<!-- <view class="public_title">他的文章<text class="look_more" wx:if="{{TeacherNewsList.length > 3}}">查看更多</text></view> -->
+	<view class="public_box">
+	 	<!-- 他的文章 -->
+		<view class="writings">
+			<view class="writings_list">
+				<view class="writings_item" data-id="{{item.id}}" bindtap="to_writing" wx:for="{{TeacherNewsList}}" wx:key="item" wx:for-index="i">
+					<view class="writings_text_l {{item.news_pic_url_small?'min_width':'no_image'}}">
+						<view>{{filter.formStr(item.news_title,23)}}</view>
+						<view class="writings_user">{{item.create_time}}</view>
+					</view>
+					<view class="writings_text_r image_bg" wx:if="{{item.news_pic_url_small}}">
+						<image src="{{item.news_pic_url_small}}"></image>
+					</view>
+				</view>
+				<!-- <view class="writings_item no_border" bindtap="to_writing">
+					<view class="writings_text_l">
+						<view>精选|10天暴涨50%、乐视网搭上91顺风车深交所重点监控</view>
+						<view class="writings_user">9小时前</view>
+					</view>
+				</view> -->
+			</view>
+		</view>
+	</view>
+</view>

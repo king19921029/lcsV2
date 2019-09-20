@@ -1,0 +1,11 @@
+
+<view bindtap='_goDetails' class='player_box'>
+  <view class='active_box'>
+    <view class="com_music active">
+      <text></text>
+      <text></text>
+      <text></text>
+    </view>
+  </view>
+  
+</view>

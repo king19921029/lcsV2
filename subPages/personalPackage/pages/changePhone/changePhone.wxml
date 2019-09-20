@@ -1,0 +1,25 @@
+<view class="login">
+	<view class="login_title">更换手机号</view>
+
+	<view class="login_tel">
+		<input  maxlength="11" type="number" placeholder="请输入手机号" placeholder-style="color:#ff906e;" bindinput="bindTel" value="" />
+	</view>
+	
+	<view class="login_vcode">
+		<input  maxlength="6" type="number" placeholder="请输入验证码" placeholder-style="color:#ff906e;" bindinput="bindVcode" />
+		
+		<view class="send_vcode" wx:if="{{getVcode}}">{{ time }}s后重发</view>
+		<view class="send_vcode" wx:else bindtap="getVcode">发送验证码</view>
+	</view>
+
+	<view class="login_tip">
+		<view class="forget">
+			<text class="forget_tip" bindtap="call_code">使用语音验证码?</text>
+		</view>
+	</view>
+
+	<view class="login_btn">
+		<button bindtap="submit_login" disabled="{{!isRight}}">确定</button>
+		<!-- <button class="errorBtn" bindtap="" wx:else>登陆</button> -->
+	</view>
+</view>

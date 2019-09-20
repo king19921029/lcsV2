@@ -1,0 +1,18 @@
+<view class="answer_sheet">
+	<view class="sheet_header" wx:if="{{have_noChoose}}">
+		<view class="sheet_message">您还有{{noAnswerLength || 0}}道题未作答，未标颜色的题目表示未作答<image src="../../images/off.png" bindtap="off"></image></view>
+	</view>
+
+	<view class="choose_item">
+		<view class="choose_title">选择题</view>
+		<view class="choose_over">
+			<view class="{{item.checked?'active_color':''}}" wx:for="{{QuestionList}}" wx:key="item" wx:for-index="questionIndex" data-num="{{questionIndex}}" bindtap="to_checkNum">{{questionIndex + 1}}</view>
+		</view>
+	</view>
+	<view wx:if="{{canSend}}" class="answer_footer" bindtap="sendQuestion">
+		交卷
+	</view>
+	<view wx:else class="answer_footer2">
+		交卷
+	</view>
+</view>

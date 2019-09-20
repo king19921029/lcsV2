@@ -1,0 +1,19 @@
+<view class="toast">
+	<view class="toast_confirm" wx:if="{{type == 'confirm'}}">
+		<view class="confirm_wrap">
+			<!-- <image class="tip_off" bindtap="tip_off" src="../../images/tanchuangchazi@3x.png"></image> -->
+			<image class="tip_img" src="{{icon}}"></image>
+			<view class="title">{{title}}</view>
+			<view class="tip">{{tip}}</view>
+			<view class="btn">
+				<view bindtap="to_btn1">{{btn1}}</view>
+				<view class="signColor" bindtap="to_btn2">{{btn2}}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="toast_dialog" wx:if="{{type == 'toast'}}">
+		<image class="right" src="{{dialogIcon}}"></image>
+		<view class="dialogtext">{{text}}</view>
+	</view>
+</view>

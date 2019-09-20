@@ -1,0 +1,55 @@
+<view class="account" wx:if="{{model == 'android'}}">
+	<view class="section">
+		<text class="account_label">账户余额</text>
+		<text class="account_balance">{{user.androidAccountBalance}}</text>
+	</view>
+	<view class="account_choose">
+		<view class="account_title">充值金额</view>
+		<view class="choose_box">
+			<view class="choose_item {{chooseNum == item.id ?'active_color_bg':''}}"       
+        		bindtap="choose_money" data-num="0" wx:for="{{rmbData}}" wx:key=""
+        		wx:for-item="item" data-id="{{item.id}}">
+				<view class="choose_money {{chooseNum == item.id ?'active_color_text':''}}">
+		         {{item.name}}学习贝
+		        </view>
+				<view class="choose_rmb {{chooseNum == item.id ?'active_color_text':''}}">
+		          {{item.name}}元
+		        </view>
+			</view>
+
+		</view>
+	</view>
+
+	<view class="section" bindtap="to_history">
+		<text class="account_label">购买明细</text>
+		<image class="section_arrow" src="../../images/icn_arrow.png"></image>
+	</view>
+	<view class="section" bindtap="to_coupon">
+		<text class="account_label">优惠券</text>
+		<image class="section_arrow" src="../../images/icn_arrow.png"></image>
+		<text class="section_page">{{user.couponCount}}张</text>
+	</view>
+
+	<view class="waring">
+		<view>充值须知</view>
+		<view>1、因Apple政策原因，充值仅限Apple指定价格</view>
+		<view>2、充值金额仅限在ios系统消费，无法在其他系统使用</view>
+		<view>3、充值金额为虚拟币，充值后不会过期、但无法退款，不可提现或转让他人</view>
+		<view>4、充值如遇问题，请拨打客服热线400-008-9508</view>
+	</view>
+	<view class="footer" bindtap='wxBuy'>
+		确认支付
+	</view>
+</view>
+
+<view class="account" wx:else>
+	<view class="section" bindtap="to_history">
+		<text class="account_label font_28">购买明细</text>
+		<image class="section_arrow" src="../../images/icn_arrow.png"></image>
+	</view>
+	<view class="section" bindtap="to_coupon">
+		<text class="account_label font_28">优惠券</text>
+		<image class="section_arrow" src="../../images/icn_arrow.png"></image>
+		<text class="section_page">{{user.couponCount}}张</text>
+	</view>
+</view>

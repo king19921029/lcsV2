@@ -1,0 +1,134 @@
+.buyEndPage{
+  width: 100%;
+  font-size: 30rpx;
+  background: #fafafa;
+}
+/* 顶部 */
+.banner{
+  height: 420rpx;
+  background: #445162;
+  color: #fff;
+}
+.banner_img{
+  height: 258rpx;
+  width: 196rpx;
+  margin:0 40rpx 0 32rpx;
+  border-radius: 8rpx;
+}
+.banner_msg{
+  height: 235rpx;
+  width: 63%;
+  margin-right: 20rpx;
+  justify-content: space-between;
+}
+.msg_title{
+  font-size: 30rpx;
+}
+.msg_info{
+  font-size: 26rpx;
+  height: 44rpx;
+  margin-top: 10rpx;
+}
+.msg_info_top{
+  font-size: 26rpx;
+  height: 69rpx;
+  margin-top: 10rpx;
+}
+/* 新header */
+.hedaer{
+  background: #fafafa;
+}
+.border_right{
+  /* border-right: 1px solid #e6e6e6; */
+  position: relative;
+} 
+.boders{
+  position: absolute;
+  right: -1rpx;
+  height: 50%;
+  background:#e6e6e6;
+  width: 2rpx;
+}
+
+.hedaer > view{
+  width: 50%;
+  height: 140rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.hedaer .font_30{
+  margin-bottom: 10rpx;
+}
+.border_right image{ 
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  border:1px solid #e6e6e6;
+  border-radius: 50%;
+  margin-right: -10rpx;
+}
+.curse_num{
+  padding: 30rpx 0;
+  margin-bottom: 26rpx;
+}
+.curse_num .font_weight{
+  font-size: 32rpx;
+}
+
+/* 课程选集 */
+.course_list{
+  background: #fff;
+}
+.com_list{
+  height: 120rpx;
+}
+.list_msg{
+  width:100%;
+}
+.mic_title{
+  width: 90%;
+}
+.user_study_status2{
+  color: #8c8c8c;
+}
+.list_icon{
+  width: 20rpx;
+  height: 24rpx;
+  margin-right: 30rpx;
+}
+.list_icon2{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+.progress{
+  color: #414141;
+  font-size: 26rpx;
+}
+.listen{
+  font-size: 26rpx;
+  color: #fff;
+  background:#ff4f34;
+  padding: 5rpx 18rpx;
+  border-radius: 25rpx;
+}
+.fraction{
+  color: #ff4f34;
+}
+
+.more_btn{
+  padding: 30rpx 0;
+  background: #fff;
+  margin-bottom: 30rpx;
+  border-bottom: 1px solid #ececec;
+}
+.course_name{
+  width: 82%;
+  font-size: 28rpx;
+}
+.course_icon{
+  width: 20rpx;
+  height: 24rpx;
+  margin-right: 20rpx;
+}

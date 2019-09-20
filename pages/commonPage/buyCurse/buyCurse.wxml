@@ -1,0 +1,81 @@
+<view class='res'>
+    <view class='header bg_fff border_tb'>
+        <view class='com_width header_top'>
+
+          <view wx:if='{{queryColumnInfo.sku_title}}' class='display_flex'>
+            <image class='photo image_bg' src="{{queryColumnInfo.pic_url_vertical}}"></image>
+            <view class='msg flex_direction'>
+                <view class='flex_direction'>
+                    <text class='font_weight'>{{queryColumnInfo.sku_title}}</text>
+                    <text class='color_f8 overflow_tow'>{{queryColumnInfo.sku_info}}</text>
+                </view>
+                <view class='color_orange'>
+                    {{queryColumnInfo.price_str}}
+                </view>
+            </view>
+          </view>
+
+          <view wx:else class='display_flex'>
+            <image class='photo' src="{{queryColumnInfo.pic_url_vertical}}"></image>
+            <view class='msg flex_direction'>
+                <view class='flex_direction'>
+                    <text class='font_weight'>{{queryColumnInfo.title}}</text>
+                    <text class='color_f8'>{{queryColumnInfo.info}}</text>
+                </view>
+                <view class='color_orange'>
+                    {{queryColumnInfo.price_str}}
+                </view>
+            </view>
+          </view>
+
+        </view>
+
+        <!-- <view class='border_top header_bot' bindtap='goCuopon'>
+          <view class='com_width space_between'>
+            <view class='display_flex card'>
+              <image src='../../../images/yhq.png'></image>
+              <text class='font_weight'>优惠券</text>
+            </view>
+            <view class='display_flex go_ye'>
+                <text hidden='{{queryColumnInfo.couponCount > 0}}' class='color_gray'>无可用优惠券</text>
+                <text hidden='{{queryColumnInfo.couponCount == 0}}' class='color_orange'>{{queryColumnInfo.couponCount}}</text>
+                <image class='' src='../../../images/icn_arrow.png'></image>
+            </view>
+          </view>
+            
+        </view> -->
+    </view>
+
+    <view class='com_margin'>
+        <view class='border_bottom bg_fff'>
+          <view class='com_width com_padding font_weight'>支付方式</view>
+        </view>
+
+        <view class='border_bottom bg_fff'>
+          <view class='com_width com_padding space_between'>
+              <view class='display_flex'>
+                <image class='ye' src="../../../images/ye.png"></image>
+                <text>余额：</text>
+                <view class='color_orange'>
+                  <text>{{userMsg.androidAccountBalance}}</text>
+                  <text wx:if="{{userMsg.androidBalance < queryColumnInfo.price}}">（不足支付）</text>
+                </view> 
+              </view>
+              <view class='bg_orange recharge' bindtap='goRecharge'>充值</view>
+          </view>
+        </view>
+    </view>
+
+    <view class='color_f8 lh com_width'>
+      <view class='com_margin'>购买须知</view>
+      <view>您将购买的上面为虚拟服务，购买后不支持退订、转让、退换，请您理解。</view>
+      <view class='color_orange'>恭喜您即将解锁[理财师体系]新分支</view>
+    </view>
+
+    <view bindtap='bugCurseTap' wx:if="{{userMsg.androidBalance > queryColumnInfo.price || userMsg.androidBalance == queryColumnInfo.price}}" class='footer bg_orange display_flex'>
+      {{buy_price_str}}
+    </view>
+    <view wx:else class='footer bg_gray display_flex'>
+      {{buy_price_str}}
+    </view>
+</view>

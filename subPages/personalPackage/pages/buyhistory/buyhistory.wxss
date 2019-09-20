@@ -1,0 +1,40 @@
+.buyhistory{
+	width: 100%;
+	background-color: #fafafa;
+}
+.history_list{
+	width: 100%;
+	border-top: 1px solid #e7e7e7;
+}
+.history_item{
+	width: 100%;
+	padding: 30rpx 40rpx 26rpx;
+	border-bottom: 1px solid #e7e7e7;
+	box-sizing: border-box;
+	position: relative;
+	background-color: white;
+}
+.history_title{
+	width: 70%;
+	/*font-size: 30rpx;*/
+	font-weight: bold;
+	height: 50rpx;
+	line-height: 50rpx;
+
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.history_time{
+	/*font-size: 28rpx;*/
+	color: #767676;
+}
+.history_num{
+	/*font-size: 30rpx;*/
+	color: #fe5430;
+	position: absolute;
+	right: 40rpx;
+	top: 50rpx;
+}

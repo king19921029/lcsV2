@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "圈子",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "template-nav": "/components/nav/nav",
+    "template-dialog":"/components/toast/toast",
+    "template-player": "/components/player/player"
+  }
+}

@@ -1,0 +1,46 @@
+.tp1{
+  width: 100%;
+  height: 100vh;
+}
+
+.loging{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.canvas{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+.canvas image{
+  width: 100%;
+  height: 100%;
+}
+.canvas_box{
+  height:50vh;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20%;
+}
+.canvas_box :last-child{
+  border: none;
+}
+.cover_btn{
+  text-indent: 0;
+  line-height: 1;
+  font-size: 46rpx;
+  font-weight: bold;
+  padding: 70rpx 0 70rpx 0;
+  color: #fc5b3e;
+  border-bottom: 1px solid #ccc;
+}
+
+

@@ -1,0 +1,110 @@
+.feedback{
+	width: 100%;
+	min-height: 100%;
+	background-color: rgba(255,255,255,.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.wrap{
+	width: 92%;
+	height: 365rpx;
+	margin: 4% auto 56rpx;
+}
+.wrap textarea{
+	width: 100%;
+	height: 100%;
+	border: 1px solid #e1e1e1;
+	padding: 25rpx;
+	box-sizing: border-box;
+	font-size: 24rpx;
+}
+
+.feedImg{
+	width: 100%;
+	padding: 23rpx;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.addImg{
+	width: 154rpx;
+	height: 154rpx;
+	border-radius: 10rpx;
+	background-color: #ededed;
+	margin: 11rpx;
+	text-align: center;
+	line-height: 154rpx;
+	color: #cacaca;
+	font-size: 40rpx;
+	font-weight: bolder;
+	float: left;
+	position: relative;
+}
+.removeImg{
+	width: 30rpx;
+	height: 30rpx;
+	position: absolute;
+	top: -15rpx;
+	right: -15rpx;
+	z-index: 20;
+}
+.imgBox{
+	width: 100%;
+	height: 100%;
+	border-radius: 10rpx;
+	overflow: hidden;
+	position: relative;
+}
+.imgBox image{
+	width: 200%;
+	height: 200%;
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	z-index: 10;
+}
+.phone{
+	width: 100%;
+	height: 102rpx;
+	border-top: 1px solid #ededed;
+	line-height: 102rpx;
+	padding: 0 34rpx;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.phone_label{
+	width: 30%;
+	height: 102rpx;
+	line-height: 102rpx;
+	font-size: 32rpx;
+	float: left;
+
+}
+.phone input{
+	width: 70%;
+	height: 102rpx;
+	line-height: 102rpx;
+	font-size: 32rpx;
+}
+.btn_submit{
+	width: 290rpx;
+	height: 90rpx;
+	border-radius: 90rpx;
+	background-color: #fe5531;
+	color: white;
+	line-height: 90rpx;
+	text-align: center;
+	margin: 120rpx auto;
+	font-size: 30rpx;
+}
+.btn_submit2{
+	width: 290rpx;
+	height: 90rpx;
+	border-radius: 90rpx;
+	background-color: #ccc;
+	color: white;
+	line-height: 90rpx;
+	text-align: center;
+	margin: 120rpx auto;
+	font-size: 30rpx;
+}

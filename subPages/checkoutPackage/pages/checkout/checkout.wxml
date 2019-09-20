@@ -1,0 +1,44 @@
+<view class="checkout">
+	<view class="checkout_banner">
+		<image src="../../images/DSC_0055_mix02.jpg"></image>
+		<view class="checkout_tip">
+			<view class="checkout_title">有深度有内涵的金融</view>
+			<view class="checkout_label">
+				<view class="label">
+				    <view class="label_left">玩转及进必修课玩扎晚装基金他还纳斯德韩国i</view>
+				    <view class="label_right">983475人学习</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="checkout_list_box">
+		<view class="list_title">课程列表</view>
+		<view class="checkout_list">
+			<view class="list_item" bindtap="to_answer">
+				<view class="kecheng_name">本课程的学习重点</view>
+			</view>
+			<view class="list_item" bindtap="">
+				<view class="kecheng_name">本课程的学习重点</view>
+			</view>
+			<view class="list_item" bindtap="">
+				<view class="kecheng_name">本课程的学习重点</view>
+			</view>
+		</view>
+	</view>
+
+
+	<view class="kecheng_teacher">
+		<view class="teacher_title">课程介绍</view>
+		<view class="teacher_text">国家高级李擦规划师、国家理国家高级李擦规划师、国家理财师理财委员会委员国家高级李擦规划师、国家理财师理财委员会委员国家高级李擦规划师、国家理财师理财委员会委员财师理财委员会委员</view>
+	</view>
+
+	<view class="kecheng_teacher">
+		<view class="teacher_title">课程特殊说明</view>
+		<view class="teacher_text">国家高级李擦规划师、国家理国家高级李擦规划师、国家理财师理财委员会委员国家高级李擦规划师、国家理财师理财委员会委员国家高级李擦规划师、国家理财师理财委员会委员财师理财委员会委员</view>
+	</view>
+
+	<view class="checkout_footer">
+		购买:99学习贝
+	</view>
+</view>

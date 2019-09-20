@@ -1,0 +1,271 @@
+.kecheng{
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: white;
+}
+
+
+
+/*搜索*/
+.section{
+	overflow: hidden;
+	padding-bottom: 35rpx;
+	border-bottom: 1px solid rgb(234,234,234);
+}
+.section input{
+	width: 80%;
+	box-sizing: border-box;
+	height: 70rpx;
+	background-color: rgb(238,238,238);
+	font-size: 30rpx;
+	border-radius: 3px;
+	float: left;
+	margin-left: 30rpx;
+	padding-left: 55rpx;
+	color: rgb(149,149,149);
+	position: relative;
+}
+.searchIcon{
+	position: absolute;
+	top: 18rpx;
+	left: 40rpx;
+	z-index: 20;
+}
+.section .quxiao{
+	font-size: 30rpx;
+	margin-right: 30rpx;
+	float: right;
+	height: 70rpx;
+	line-height: 70rpx;
+	color: rgb(80,80,80);
+}
+
+/*课程*/
+.searchOver{
+	width: 100%;
+	height: 109rpx;
+	line-height: 109rpx;
+	background-color: white;
+	border-bottom: 1px solid #eeeeee;
+}
+.over_title{
+	width: 100%;
+	padding: 0 30rpx 0;
+	box-sizing: border-box;
+}
+.title_l{
+	font-size: 26rpx;
+	font-weight: bold;
+}
+.title_r{
+	font-size: 26rpx;
+	float: right;
+}
+/*列表*/
+.list{
+	width: 100%;
+	padding: 0 30rpx;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.list_content{
+	width: 100%;
+	overflow: hidden;
+	margin-top: 20rpx;
+}
+.list_item{
+	width: 48%;
+	float: left;
+	background-color: white;
+	border-radius: 15rpx;
+	border: 1px solid #f0f0f0;
+	box-sizing: border-box;
+	overflow: hidden;
+	margin-bottom: 4%;
+	position: relative;
+}
+.tip{
+	width: 59rpx;
+	height: 55rpx;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.list_item:nth-of-type(2n-1){
+	margin-right: 4%;
+}
+.flo_right{
+	margin-left: 4%;
+}
+.item_image{
+	width: 100%;
+	height: 200rpx;
+	display: block;
+	background-color: #b5b5b5;
+}
+.banTitle{
+	display: block;
+	width: 90%;
+	margin: 20rpx auto 10rpx;
+	font-size: 28rpx;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.banText{
+	width: 90%;
+	/*height: 30rpx;*/
+	/*line-height: 30rpx;*/
+	font-size: 24rpx;
+	color: #999999;
+	margin: 0rpx auto;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.label{
+	font-size: 22rpx;
+	color: white;
+	padding: 3rpx 10rpx;
+	background-color: #fa5735;
+	border-radius: 10px;
+	margin-left: 5%;
+}
+.label_no{
+	font-size: 22rpx;
+	height: 28rpx;
+	color: white;
+	padding: 3rpx 10rpx;
+	margin-left: 5%;
+	box-sizing: border-box;
+}
+.price{
+	display: block;
+	font-size: 24rpx;
+	color: #fa5735;
+	margin-left: 5%;
+	margin-top: 13rpx;
+	margin-bottom: 20rpx;
+}
+.overBuy{
+	font-size: 24rpx;
+	position: absolute;
+	bottom: 20rpx;
+	right: 5%;
+	color: #b5b5b5;
+}
+
+/*课程图标*/
+.kclabel{
+	width: 30rpx;
+	height: 26rpx;
+	transform: translateY(5rpx);
+	margin-right: 15rpx;
+}
+/*活动*/
+.top_margin{
+	margin-top: 30rpx;
+}
+.panal{
+	width: 100%;
+	color: #434343;
+	padding: 40rpx 30rpx;
+	box-sizing: border-box;
+	font-size: 30rpx;
+	border-top: 1px solid #eeeeee;
+	border-bottom: 1px solid #eeeeee;
+	background-color: white;
+}
+.panal image{
+	width: 100%;
+	height: 400rpx;
+	margin-top: 40rpx;
+	border-radius: 5px;
+}
+
+/*搜索后*/
+/*文章*/
+.writings_list{
+	width: 100%;
+	padding: 0 30rpx;
+	border-top: 1px solid #eeeeee;
+	border-bottom: 1px solid #eeeeee;
+	box-sizing: border-box;
+	background-color: white;
+	margin-bottom: 40rpx;
+}
+.writings_item{
+	width: 100%;
+	box-sizing: border;
+	border-bottom: 1px solid #eeeeee;
+	overflow: hidden;
+	padding: 30rpx 0;
+	position: relative;
+}
+.writings_text_l{
+	/*width: 68%;*/
+	font-size: 32rpx;
+	color: #373737;
+	float: left;
+}
+.min_width{
+	width: 68%;
+}
+.writings_user{
+	display: block;
+	font-size: 28rpx;
+	margin-top: 30rpx;
+	color: #8e8e8e;
+	position: absolute;
+	left: 0;
+	bottom: 30rpx;
+}
+.writings_user_head{
+	width: 30rpx;
+	height: 30rpx;
+	border-radius: 50%;
+	display: inline-block;
+	margin: 0 10rpx;
+	transform: translateY(5rpx);
+}
+.writings_text_r{
+	float: right;
+}
+.writings_text_r image{
+	width: 200rpx;
+	height: 150rpx;
+}
+/*活动图标*/
+.hdlabel{
+	width: 34rpx;
+	height: 26rpx;
+	transform: translateY(5rpx);
+	margin-right: 15rpx;
+}
+/*文章图标*/
+.wzlabel{
+	width: 27rpx;
+	height: 27rpx;
+	transform: translateY(5rpx);
+	margin-right: 15rpx;
+}
+
+
+.no_label{
+	height: 80rpx;
+	line-height: 80rpx;
+}
+.no_title_shut{
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

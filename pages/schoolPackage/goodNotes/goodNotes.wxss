@@ -1,0 +1,25 @@
+@import "/pages/studyPackage/notesDetails/notesDetails";
+
+.box{
+  border-top: 1px solid #ececec;
+}
+.good_details{
+  background:#fff;
+  border-bottom:1px solid #e9e9e9;
+  margin-top: 20rpx;
+}
+.goodbox{
+  font-size: 32rpx;
+}
+.see_you{
+  padding: 6rpx 30rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  border-radius: 8rpx;
+}
+.paddings{
+  height: 60rpx;
+}
+.box :first-child{
+  margin-top: 0;
+}

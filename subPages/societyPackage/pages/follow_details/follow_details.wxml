@@ -1,0 +1,259 @@
+<wxs module="filter" src="util.wxs"></wxs>
+<view class="follow_details">
+	<view class="follow_heder" style="background:url(https://img-prod-publish.licaishi365.com/studyplan/28659492860426031.png) no-repeat;background-size: 100% 100%;">
+		<view>
+			<!-- 头像 -->
+			<image class="follow_usericon" src="{{UserIndexInfo.header_url?UserIndexInfo.header_url:'../../images/initheader.png'}}"></image>
+			<!-- 用户名 -->
+			<view class="follow_username">{{UserIndexInfo.nick_name}}</view>
+
+			<!-- 关注按钮 -->
+			<block wx:if="{{UserIndexInfo.user_id != userId}}">
+		      <button class="btn_item_middle"  bindtap="follow" wx:if="{{isFollow}}">+关注</button>
+			  <button class="btn_item_middle_allright" bindtap="cancelFollow" wx:else>已关注</button>
+		    </block>
+
+			<!-- 粉丝 -->
+			<view class="follow_num">
+				<text class="mar_right">{{UserIndexInfo.note_count}}</text><text class="mar_right">|</text>
+				<text>{{UserIndexInfo.follow_count}}</text>
+			</view>
+
+		    <!-- 签名 -->
+			<view class="follow_text">{{UserIndexInfo.signature}}</view>
+			<!-- 介绍 -->
+			<view class="follow_text" wx:if="{{UserIndexInfo.info}}">{{UserIndexInfo.info}}</view>
+		</view>
+
+		
+	</view>
+	<!-- <view class="follow_num">
+		<view class="border_right">{{UserIndexInfo.note_count}}</view>
+		<view>{{UserIndexInfo.follow_count}}</view>
+	</view> -->
+
+
+	<block>
+		<!-- 学习时常 -->
+		<view class="study_public">
+			<view class="public_title">学习时长</view>
+			<view class="public_box text-align-font">
+				<view class="box_item">
+					<view>{{UserIndexInfo.today_time}}</view>
+					<view class="item_font26">今日学习</view>
+				</view>
+				<view class="box_item">
+					<view>{{UserIndexInfo.incessancy_days}}</view>
+					<view class="item_font26">连续学习</view>
+				</view>
+				<view class="box_item">
+					<view>{{UserIndexInfo.total_time}}</view>
+					<view class="item_font26">总学习时长</view>
+				</view>
+			</view>
+		</view>
+
+		<!-- 关注导师 -->
+		<view class="study_public" wx:if="{{UserFollowTeacherList.length != 0}}">
+			<view class="public_title">关注导师</view>
+			<!-- <view class="public_box">
+				<scroll-view scroll-x="true" style="height: 340rpx;width: auto;display:flex;white-space: nowrap;">
+				    <view class="scroll-item" data-id="{{item.teacher_id}}" bindtap="to_follow_detail" wx:for="{{UserFollowTeacherList}}" wx:key="item">
+				    	<image class="scroll-item-img" src="{{item.header_pic_url}}"></image>
+				    	<view class="scroll-item-name">{{item.nick_name}}</view>
+				    	<view class="scroll-item-tip">{{item.title}}</view>
+				    </view>
+				</scroll-view>
+			</view> -->
+
+			<view class='teach_box' >
+		        <view class='t_list' wx:for="{{UserFollowTeacherList}}" 
+		          wx:key="" wx:for-item="item" data-id="{{item.teacher_id}}"
+		          bindtap='to_follow_detail'>
+		          <view class='t_list_son'>
+		              <!-- <image lazy-load='true' class='t_img' style="height:220rpx;" src='{{item.header_pic_url}}'></image> -->
+		              <view class="t__img" style="background:url('{{item.header_pic_url}}');background-size: 100% 100%;"></view>
+		              <view class='t_msg com_width'>
+		                  <view class='t_name font_weight'>{{item.nick_name}}</view>
+		                  <view class='overflow_tow t_msg_title color_f8'>{{item.title}}</view>
+		              </view>
+		          </view>
+		        </view>
+		        
+		    </view>
+		</view>
+
+		
+		<!-- 最近在学 -->
+		<view class="study_public" wx:if="{{UserNearlyStudySkuList.length != 0}}">
+			<view class="public_title">最近在学</view>
+			<view class="public_box">
+			  <!-- 列表一 -->
+			  <view class="list">
+			    <view class="list_item" data-skuid="{{item.sku_id}}" bindtap="to_kecheng_detail" wx:for="{{UserNearlyStudySkuList}}" wx:key="item" wx:for-index="i" wx:if="{{i < 3}}">
+			      <image class="list_item_userhead" src="{{item.sku_pic_url}}"></image>
+			      <view class="list_item_middle">
+			        <view class="list_item_middle_title">{{item.sku_title}}</view>
+			        <view class="list_item_middle_tip">{{item.sku_info}}</view>
+			      </view>
+			      <image class="list_item_arrow" src="../../images/icn_arrow.png"></image>
+			    </view>
+			  </view>
+			</view>
+		</view>
+
+
+		<!-- 他的笔记 -->
+		<view class="study_public" wx:if="{{UserIndexNoteList.length != 0}}">
+			<view class="public_title">他的笔记</view>
+			<view class="public_box">
+			  <!-- 动态列表 -->
+				<view class="society_list">
+					<view class="list_cli" wx:for="{{UserIndexNoteList}}" wx:key="item" wx:for-index="recordIndex">
+						<view class="avatar">
+						    <view class="avatar_header" data-teacherid="{{item.teacher_id}}">
+						      <image class="ava_icon" src="{{item.header_pic_url?item.header_pic_url:'../../images/initheader.png'}}"></image>
+						      <!-- <image class="rz_v" src="../../images/dav@3x.png"></image> -->
+						    </view>
+						    <view class="avatar_name">{{item.nick_name}}</view>
+						    <view class="avatar_time font_26">{{item.create_time}}</view>
+						    <image hidden='{{UserIndexInfo.user_id == userId}}' data-id="{{item.note_id}}" bindtap="report" class="thirepoint" src="../../images/thirepoint.png"></image>
+						</view>
+
+						<!-- record_type == 2 -->
+						<!-- 当动态为笔记时 -->
+						<view>
+							<view>
+								<!-- 是否转载 -->
+								<view class="isZhuanzai" wx:if="{{item.is_reprint == 1}}">{{item.reprint_str}}</view>
+
+								<!-- 笔记是否含有图片 -->
+								<view class="haveImages" wx:if="{{item.pic_url_2}}">
+									<view wx:if="{{item.pic_url_1}}" class="img_box" style="background:#b5b5b5 url('{{item.pic_url_1}}') no-repeat;background-size:180%;background-position:40% 30%;" 
+										data-url="{{item.pic_url_1}}" 
+										data-url2="{{item.pic_url_2}}" 
+            							data-url3="{{item.pic_url_3}}"
+            							data-idx="{{0}}" 
+										bindtap="previewImage2">
+										<!-- <image src="{{item.pic_url_1}}"></image> -->
+									</view>
+									<view wx:if="{{item.pic_url_2}}" class="img_box" style="background:#b5b5b5 url('{{item.pic_url_2}}') no-repeat;background-size:180%;background-position:40% 30%;" 
+										data-url="{{item.pic_url_1}}" 
+										data-url2="{{item.pic_url_2}}" 
+            							data-url3="{{item.pic_url_3}}"
+            							data-idx="{{1}}" 
+										bindtap="previewImage2">
+										<!-- <image src="{{item.pic_url_2}}"></image> -->
+									</view>
+									<view wx:if="{{item.pic_url_3}}" class="img_box" style="background:#b5b5b5 url('{{item.pic_url_3}}') no-repeat;background-size:180%;background-position:40% 30%;" 
+										data-url="{{item.pic_url_1}}" 
+										data-url2="{{item.pic_url_2}}" 
+            							data-url3="{{item.pic_url_3}}"
+            							data-idx="{{2}}" 
+										bindtap="previewImage2">
+										<!-- <image src="{{item.pic_url_3}}"></image> -->
+									</view>
+								</view>
+
+
+								<view class="haveImages_one" wx:if="{{!item.pic_url_2 && item.pic_url_1}}">
+									<view wx:if="{{item.pic_url_1}}" class="img_box" style="background:#b5b5b5 url('{{item.pic_url_1}}') no-repeat;background-size:100%;background-position:0 50%;" data-url="{{item.pic_url_1}}" bindtap="previewImage">
+										<!-- <image src="{{item.pic_url_1}}"></image> -->
+									</view>
+								</view>
+								
+
+								<!-- 笔记是否含有语音 -->
+								<view class="audio" wx:if="{{item.audio_id}}">
+									<!-- <view class="_audio _marginTop" data-audioid="{{item.audio_id}}"></view>
+									<image class="audio_icon" src="../../images/shengyin@3x.png"></image>
+									<text class="audio_text">{{item.audio_time}}s</text> -->
+									<view class='wx_box'>
+					                    <view class='wx bg_orange' data-idx="{{recordIndex}}" bindtap='paly_ly' data-audioid="{{item.audio_id}}">
+						                    <view class='wx_icon {{voiceAnimationStatus == recordIndex ? "voicePlay" : ""}}'>
+						                    </view>
+						                    <text class='wx_font' style="transform: translateX(-20rpx);">{{item.audio_time}}s</text>
+					                    </view>
+					                </view>
+								</view>
+
+								<view class="item_message" wx:if="{{item.content.length > 0}}">
+									<!-- 内容 -->
+									<view class="{{item.isShow?'':'item_message_clamp'}}">{{item.content}}</view>
+									<view class="xia_box" data-index="{{recordIndex}}" bindtap="downText" wx:if="{{item.content.length > 120}}">
+										<image class="xia" src="../../images/bottom.png" wx:if="{{!item.isShow}}"></image>
+										<image class="xia" src="../../images/top.png" wx:else></image>
+									</view>
+								</view>
+								
+								<view wx:if="{{item.content}}" style="width: 82%;border-top: 1px solid #f5f5f5;margin-left: 112rpx;"></view>
+
+
+								<view class="item_other_message">
+									<!-- 复制的文字 -->
+									<view class="other_text" wx:if="{{item.copy_text}}">
+										{{filter.formStr(item.copy_text,64)}}
+									</view>
+
+
+									<!-- 复制的图片 -->
+									<view class="copy_img" wx:if="{{item.copy_pic_url}}" style="background:#b5b5b5 url('{{item.copy_pic_url}}') no-repeat;background-size:100% 100%;background-position:0 0;" data-url="{{item.copy_pic_url}}" bindtap="previewImage">
+										<!-- <image src="{{item.copy_pic_url}}"></image> -->
+									</view>
+									<view class="other_content" data-skuid="{{item.sku_id}}" bindtap="to_kecheng_detail">
+										<!-- 课程 -->
+										<view class="content_img">
+											<image src="{{item.sku_pic_url}}"></image>
+										</view>
+										<view class="content">
+											<view class="content_title">{{item.sku_title}}</view>
+											<view class="content_tip">{{item.cw_title}}</view>
+											<!-- <view class="content_author">讲师:<image class="small_icon" src="../../images/icon.jpg"></image>刘妍斌 00:30:00</view> -->
+										</view>
+									</view>
+								</view>	
+							</view>
+						</view>
+
+						
+						<view class="handle">
+							<view class="handle_item">
+								<!-- <view wx:if="{{item.record_type != 2}}">
+									<image class="liuyan_icon" src="../../images/liuyan1100@3x.png"></image>评论
+								</view> -->
+							</view>
+							<view class="handle_item">
+								<view hidden='{{UserIndexInfo.user_id == userId}}' data-linkid="{{item.note_id}}" data-type="{{item.note_type}}" bindtap="addNotes">
+									<image class="zhuanzai_icon" src="../../images/jiaohuan@3x.png"></image>{{item.forward_count}}
+								</view>
+								<!-- <view wx:else data-index="{{recordIndex}}" bindtap="text_detail">
+									<image class="liuyan_icon" src="../../images/liuyan1100@3x.png"></image>评论
+								</view> -->
+							</view>
+							<view class="handle_item">
+								<view>
+									<!-- <image class="fenxiang_icon" src="../../images/fenxiang@3x.png"></image>分享 -->
+									<button open-type='share' data-kc="{{item.sku_title}}" style="background-color:white;"><image class="fenxiang_icon" src="../../images/fenxiang@3x.png"></image>分享</button>
+								</view>
+								
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+
+
+		<view class="reportBox" wx:if="{{reportBox}}">
+			<view class="report_list">
+				<view class="report_item borderBottom" bindtap="sendReport">
+					<image src="../../images/jubao.png"></image>举报
+				</view>
+				<view class="report_item backBottom">
+					<view class="back" bindtap="backReport">取消</view>
+				</view>
+			</view>
+		</view>
+	</block>
+</view>

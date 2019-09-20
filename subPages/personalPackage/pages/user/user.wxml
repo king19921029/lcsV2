@@ -1,0 +1,80 @@
+<view class="user">
+	<view class="section">
+		<text class="user_label">头像</text>
+		<view class="image" style="background:url({{user_icon?user_icon:'../../images/initheader.png'}});background-size:100%" bindtap="upload"></view>
+		<!-- <image src="{{user_icon?user_icon:'../../images/initheader.png'}}"></image> -->
+	</view>
+	<view class="section">
+		<text class="user_label">昵称</text>
+	  <input placeholder="请填写昵称" value="{{nick_name}}" bindinput="bindinputNickname"/>
+	</view>
+	<view class="section">
+		<text class="user_label">性别</text>
+		<picker class="user_sex" bindchange="bindPickerSexChange" value="{{sex}}" range="{{sexarray}}">
+	    	<view class="picker">
+	      		<!-- {{sexarray[sexindex]}} -->
+	      		{{sex?sex:"请选择性别"}}
+	    	</view>
+	  </picker>
+	</view>
+	<view class="section">
+		<text class="user_label">出生日期</text>
+		<picker class="user_data" mode="date" value="{{birthdate}}" start="1880-01-01" end="{{endTimeInit}}" bindchange="bindDateChange">
+	    	<view class="picker">
+	      		{{birthdate?birthdate:"请选择日期"}}
+	    	</view>
+	  </picker>
+	</view>
+	<view class="section">
+		<text class="user_label">城市</text>
+		<picker class="user_city" mode="multiSelector" bindchange="bindRegionChange" bindcolumnchange="bindMultiPickerColumnChange" range="{{multiArray}}" value="multiIndex">
+		    <view class="picker">
+		      <!-- {{region[0]}}，{{region[1]}} -->
+		      <!-- {{region.length == 0?"请选择地区":region}} -->
+		      <!-- <text wx:if="{{mulInit}}">{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}</text> -->
+		      <text wx:if="{{mulInit}}">{{initCityData}}</text>
+		      
+		      <text wx:else>请选择地区</text>
+		    </view>
+		</picker>
+		
+	  	<!-- <input placeholder=""/> -->
+	</view>
+
+	<view class="space"></view>
+
+	<view class="section">
+		<text class="user_label">职业类型</text>
+	  	<picker class="user_job" bindchange="bindPickerJobChange" value="{{jobindex}}" range="{{Profession}}">
+	    	<view class="picker">
+	      		<!-- {{sexarray[sexindex]}} -->
+	      		{{job_type?job_type:"请选择"}}
+	    	</view>
+	  	</picker>
+	</view>
+	<view class="section">
+		<text class="user_label">工作年限</text>
+	  	<picker class="user_timelong" bindchange="bindPickerTimelongChange" value="{{work_year}}" range="{{work_yearArray}}">
+	    	<view class="picker">
+	      		<!-- {{timelongarray[timelongindex]}} -->
+	      		{{work_year?work_year:"请选择"}}
+	    	</view>
+	  	</picker>
+	</view>
+	<view class="section">
+		<text class="user_label">个人签名</text>
+		<view class="signative_box">
+			<input placeholder="请填写个性签名" value="{{signature}}" cursor-spacing="30px" bindinput="bindinputSignature"/>
+		</view>
+	</view>
+
+
+	<view class="submit_btn">
+		<button bindtap="_submit">提交</button>
+		<!-- <button class="errorBtn" bindtap="" wx:else>登陆</button> -->
+	</view>
+	<view class="submit_btn" wx:if="{{pass}}">
+		<button bindtap="_pass">跳过</button>
+		<!-- <button class="errorBtn" bindtap="" wx:else>登陆</button> -->
+	</view>
+</view>

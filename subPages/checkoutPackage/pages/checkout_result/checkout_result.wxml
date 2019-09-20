@@ -1,0 +1,42 @@
+<wxs module="filter" src="util.wxs"></wxs>
+<view class="checkout_result">
+	<view class="result_header">
+		<view class="progress_box">
+			<canvas class="bgCanvas" canvas-id="bgCanvas"></canvas>
+			<canvas class="progressCanvas" canvas-id="progressCanvas"></canvas>
+			<view class="{{isIos?'grade_ios':'grade_Android'}}">{{QPResult.point_str}}</view>
+		</view>
+
+		<view class="progressMessage">
+			<view class="fontW">{{QPResult.user_time}}</view>
+			<view class="fontC">{{QPResult.ranking}}</view>
+			<view class="fontC">{{QPResult.info}}</view>
+		</view>
+	</view>
+
+
+	<view class="result_list">
+		<view class="result_item" wx:for="{{QPResult.questionList}}" wx:key="item" wx:for-index="index">
+			<image class="yesorno" src="../../images/dui.png" wx:if="{{item.tAnswer == filter.formStr(item.user_change)}}"></image>
+			<image class="yesorno" src="../../images/cuo.png" wx:else></image>
+			<view class="question"><view style="float:left;">{{index + 1}}.</view><rich-text nodes="{{item.qName}}"></rich-text></view>
+			<view class="answer">
+				<view class="answer_item" wx:for="{{item.aList}}" wx:for-item="aList" wx:key="list">
+					<view class="charat">{{aList.code}}</view>
+					<view class="answer_message"><rich-text nodes="{{aList.AText}}"></rich-text></view>
+				</view>
+			</view>
+			<view class="user_result">
+				<text style="margin-right: 76rpx;">正确答案：{{item.tAnswer}}</text>
+				<text>你的答案：{{filter.formStr(item.user_change)}}</text>
+			</view>
+			<view class="resolve">{{item.parse}}</view>
+		</view>
+	</view>
+
+
+	<view class="checkout_footer">
+		<view bindtap="backHome" class="backHome">返回课程页</view>
+		<view bindtap="reload_answer" class="reload">再考一次</view>
+	</view>
+</view>

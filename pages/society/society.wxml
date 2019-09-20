@@ -1,0 +1,240 @@
+<wxs module="filter" src="util.wxs"></wxs>
+<image src="../../images/loading.gif" class="loadGif"></image>
+
+
+<block wx:if="{{isFirstSocietyStatus}}">
+	<view class="first_wrap" bindtap="off_isFirst">
+		<image src="../../images/society_text.png"></image>
+	</view>
+</block>
+
+
+<view class="bc_society {{isIpx?'classIpx':''}}">
+	<view class="society">
+		<view class="society_swiper">
+			<swiper class="image_bg" indicator-dots="{{indicatorDots}}" indicator-color="rgb(112,117,118)" indicator-active-color="white"
+			  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+			  <block wx:for="{{imgUrls}}" wx:key="item">
+			    <swiper-item>
+			      <image src="{{item.pic_url}}" data-text="{{item.link_text}}" data-type="{{item.link_type}}" bindtap="to_details" class="slide-image"/>
+			    </swiper-item>
+			  </block>
+			</swiper>
+		</view>
+
+		<view wx:if="{{scrollTops < 250}}" class="{{scrollTops > 0 ? 'fixed_wrap2' :'fixed_wrap'}}">
+			<view class="society_search" bindtap="to_search">
+			  <block>
+			    <icon class="searchIcon" type="search" size="17"/>
+			  </block>
+			  <view class="input">{{hotKeyword}}</view>
+			</view>
+			<image class="xinfeng_search1" src="../../images/whitexinfeng2.png" wx:if="{{is_have}}" bindtap="to_Notice"></image>
+			<image class="xinfeng_search2" style="width: 40rpx;height: 35rpx;top: 43rpx;right: 38rpx;" src="../../images/whitexinfeng.png" wx:else bindtap="to_Notice"></image>
+		</view>
+
+		<view class="fixed_wrap2 society_search_bg" wx:else>
+			<view class="society_search" bindtap="to_search">
+			  <block>
+			    <icon class="searchIcon" type="search" size="17"/>
+			  </block>
+			  <view class="input">{{hotKeyword}}</view>
+			</view>
+			<image class="xinfeng_search1" src="../../images/xinfeng1@3x.png" wx:if="{{is_have}}" bindtap="to_Notice"></image>
+			<image class="xinfeng_search2" src="../../images/xinfeng@3x.png" wx:else bindtap="to_Notice"></image>
+		</view>
+		<!-- 动态列表 -->
+		<view class="society_list">
+			<view class="list_cli" wx:for="{{recordList}}" wx:key="item" wx:for-index="recordIndex">
+				<view class="avatar">
+				    <view class="avatar_header" data-teacherid="{{item.teacher_id}}" bindtap="to_recommend">
+				      <image class="ava_icon" src="{{item.teacher_header_pic_url?item.teacher_header_pic_url:'../../images/initheader.png'}}"></image>
+				      <image wx:if="{{item.is_vip == 1}}" class="rz_v" src="../../images/dav@3x.png"></image>
+				    </view>
+				    <view class="avatar_name font_28">{{item.nick_name}}</view>
+				    <view class="avatar_time font_24">{{item.create_time}}</view>
+				    <button class="btn_item_middle" data-teacherid="{{item.teacher_id}}" data-index="{{recordIndex}}" bindtap="follow" wx:if="{{!item.is_follow}}">+关注</button>
+				    <button wx:else class="btn_item_middle_no overFollow">已关注</button>
+				    <!-- <view wx:else class="overFollow">已关注</view> -->
+				</view>
+
+				<!-- record_type == 2 -->
+				<!-- 当动态为笔记时 -->
+				<view wx:if="{{item.record_type==2}}">
+					<view>
+						<!-- 是否转载 -->
+						<view class="isZhuanzai" wx:if="{{item.is_reprint == 1}}">{{item.reprint_user_name}}</view>
+
+						<!-- 笔记是否含有图片 -->
+						<view class="haveImages" wx:if="{{item.pic_url_2}}">
+							<view wx:if="{{item.pic_url_1}}" class="img_box" style="background:#b5b5b5 url('{{item.pic_url_1}}') no-repeat;background-size:180%;background-position:40% 30%;" 
+								data-url="{{item.pic_url_1}}" 
+								data-url2="{{item.pic_url_2}}" 
+            					data-url3="{{item.pic_url_3}}"
+            					data-idx="{{0}}" 
+								bindtap="previewImage2">
+								<!-- <image src="{{item.pic_url_1}}"></image> -->
+							</view>
+							<view wx:if="{{item.pic_url_2}}" class="img_box" style="background:#b5b5b5 url('{{item.pic_url_2}}') no-repeat;background-size:180%;background-position:40% 30%;" 
+								data-url="{{item.pic_url_1}}" 
+								data-url2="{{item.pic_url_2}}" 
+            					data-url3="{{item.pic_url_3}}"
+            					data-idx="{{1}}" 
+								bindtap="previewImage2">
+								<!-- <image src="{{item.pic_url_2}}"></image> -->
+							</view>
+							<view wx:if="{{item.pic_url_3}}" class="img_box" style="background:#b5b5b5 url('{{item.pic_url_3}}') no-repeat;background-size:180%;background-position:40% 30%;" 
+								data-url="{{item.pic_url_1}}" 
+								data-url2="{{item.pic_url_2}}" 
+            					data-url3="{{item.pic_url_3}}"
+            					data-idx="{{2}}" 
+								bindtap="previewImage2">
+								<!-- <image src="{{item.pic_url_3}}"></image> -->
+							</view>
+						</view>
+
+
+						<view class="haveImages_one" wx:if="{{!item.pic_url_2 && item.pic_url_1}}">
+							<view wx:if="{{item.pic_url_1}}" class="img_box" style="background:#b5b5b5 url('{{item.pic_url_1}}') no-repeat;background-size:100% 100%;background-position:0 50%;" data-url="{{item.pic_url_1}}" bindtap="previewImage">
+								<!-- <image src="{{item.pic_url_1}}"></image> -->
+							</view>
+						</view>
+						
+
+						<!-- 笔记是否含有语音 -->
+						<view class="audio" wx:if="{{item.audio_id}}">
+							<!-- <view class="_audio _marginTop" data-audioid="{{item.audio_id}}" bindtap="playAudio"></view>
+							<audio src="{{src}}" id="myAudio" data-audioid="{{item.audio_id}}"></audio>
+							<image class="audio_icon" src="../../images/shengyin@3x.png"></image>
+							<text class="audio_text">{{item.audio_time}}s</text> -->
+
+
+				            <view class='wx_box'>
+		                    	<view class='wx bg_orange' data-idx="{{recordIndex}}" bindtap='paly_ly' data-audioid="{{item.audio_id}}">
+			                      	<view class='wx_icon {{voiceAnimationStatus == recordIndex ? "voicePlay" : ""}}'>
+			                      	</view>
+			                     	<text class='wx_font' style="transform: translateX(-20rpx);">{{item.audio_time}}s</text>
+		                    	</view>
+		                  </view>
+				        </view>
+
+						<view class="item_message" wx:if="{{item.content.length > 0}}">
+							<!-- 是否转载 -->
+							<!-- <text class="isZhuanzai" wx:if="{{item.is_reprint == 1}}">转载|原文来自：{{item.reprint_user_name}}</text> -->
+							<!-- 内容 -->
+							<view class="{{item.isShow?'':'item_message_clamp'}}">{{item.content}}</view>
+							<view class="xia_box" data-index="{{recordIndex}}" bindtap="downText" wx:if="{{item.content.length > 120}}">
+								<image class="xia" src="../../images/bottom.png" wx:if="{{!item.isShow}}"></image>
+								<image class="xia" src="../../images/top.png" wx:else></image>
+							</view>
+						</view>
+
+						<view wx:if="{{item.content}}" style="width: 82%;border-top: 1px solid #f5f5f5;margin-left: 112rpx;"></view>
+
+						<view class="item_other_message">
+
+							<!-- 复制的文字 -->
+							<view class="other_text" wx:if="{{item.copy_text}}">
+								{{filter.formStr(item.copy_text)}}
+							</view>
+
+							<!-- 复制的图片 -->
+							<view class="copy_img" wx:if="{{item.copy_pic_url}}" style="background:#b5b5b5 url('{{item.copy_pic_url}}') no-repeat;background-size:100% 100%;background-position:0 0;" data-url="{{item.copy_pic_url}}" bindtap="previewImage">
+								<!-- <image src="{{item.copy_pic_url}}"></image> -->
+							</view>
+							<view class="other_content" data-skuid="{{item.sku_id}}" bindtap="to_kecheng">
+								<!-- 课程 -->
+								<view class="content_img image_bg">
+									<image src="{{item.sku_pic_url}}"></image>
+								</view>
+								<view class="content">
+									<view class="content_title">{{item.sku_title}}</view>
+									<view class="content_tip">{{item.cw_title}}</view>
+									<!-- <view class="content_author">讲师:<image class="small_icon" src="../../images/icon.jpg"></image>刘妍斌 00:30:00</view> -->
+								</view>
+							</view>
+						</view>	
+					</view>
+				</view>
+
+				<!-- record_type == 0 -->
+				<!-- 当动态为动态时（语音） -->
+				<view wx:if="{{item.record_type==0}}">
+					<!-- <view class="{{item.record_type==0?'display_none':''}}"></view> -->
+					<!-- 标题 -->
+					<view class="item_message {{item.isShow?'':'item_message_clamp'}}">
+						{{item.content}}
+					</view>
+					<view class="xia_box" data-index="{{recordIndex}}" bindtap="downText" wx:if="{{item.content.length > 120}}">
+						<image class="xia" src="../../images/bottom.png" wx:if="{{!item.isShow}}"></image>
+						<image class="xia" src="../../images/top.png" wx:else></image>
+					</view>
+					<!-- 课程简介 -->
+					<view class="audio">
+						<view class='wx_box'>
+			              <view class='wx bg_orange' data-idx="{{recordIndex}}" bindtap='paly_ly'
+			               data-audioid="{{item.audio_id}}">
+			                <view class='wx_icon {{voiceAnimationStatus == recordIndex ? "voicePlay" : ""}}'>
+			                </view>
+			                <text class='wx_font' style="transform: translateX(-20rpx);">{{item.audio_time}}s</text>
+			              </view>
+			            </view>
+					</view>
+				</view>
+
+				<!-- record_type == 1 -->
+				<!-- 当动态为新闻时 -->
+				<view wx:if="{{item.record_type==1}}">
+					<!-- 标题 -->
+					<view class="item_message">
+						{{item.news_title}}
+					</view>
+					<!-- 图片 -->
+					<view class="avdert_img" data-id="{{item.teacher_record_id}}" style="background:#b5b5b5 url('{{item.news_pic_url}}') no-repeat;background-size:120%;background-position:0 50%;" bindtap="to_writing">
+						<!-- <image src="{{item.news_pic_url}}"></image> -->
+					</view>
+				</view>
+				
+				<view style="width: 100%;height: 30rpx;background-color: #fafafa;" wx:if="{{item.record_type == 0}}"></view>
+				<view class="handle {{item.record_type == 0?'hidden':''}}">
+					<view class="handle_item" data-index="{{recordIndex}}" bindtap="text_detail">
+						<!-- <view wx:if="{{item.record_type != 2}}">
+							<image class="liuyan_icon" src="../../images/liuyan1100@3x.png"></image>评论
+						</view> -->
+					</view>
+					<view class="handle_item">
+						<view wx:if="{{item.record_type == 2}}" data-linkid="{{item.teacher_record_id}}" data-type="{{item.teacher_record_type}}" bindtap="addNotes">
+							<image class="zhuanzai_icon" src="../../images/jiaohuan@3x.png"></image>{{item.forward_count}}
+						</view>
+						<view wx:if="{{item.record_type == 1}}" data-index="{{recordIndex}}" bindtap="text_detail">
+							<image class="liuyan_icon" src="../../images/liuyan1100@3x.png"></image>{{item.comment_count?item.comment_count:'评论'}}
+						</view>
+					</view>
+					<view class="handle_item">
+						<view>
+							<!-- <image class="fenxiang_icon" src="../../images/fenxiang@3x.png"></image>分享 -->
+							<button open-type='share' data-kc="{{item.sku_title}}" style="background-color:white;"><image class="fenxiang_icon" src="../../images/fenxiang@3x.png"></image>分享</button>
+						</view>
+						
+					</view>
+				</view>
+			</view>
+		</view>
+		
+
+
+		<template-nav
+			type="圈子"
+			id="nav"
+			state="2"
+			stateNow="0"
+			isIpx="{{isIpx}}">
+		</template-nav>
+
+		<template-player
+		wx:if="{{isMicPlay}}"
+		bindmicGoDetails="micGoDetails"
+		name="社会">
+		</template-player>
+	</view>
+</view>

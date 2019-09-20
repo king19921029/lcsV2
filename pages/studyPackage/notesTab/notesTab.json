@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "笔记",
+  "usingComponents": {
+    "template-nav": "/components/nav/nav"
+  }
+}

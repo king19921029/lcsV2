@@ -1,0 +1,80 @@
+.sign{
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #fd552e;
+	padding: 76rpx 34rpx 72rpx;
+	box-sizing: border-box;
+}
+.sign_title{
+	font-size: 48rpx;
+	color: white;
+}
+
+.sign_tel,.sign_password,.sign_vcode{
+	width: 100%;
+	height: 135rpx;
+	font-size: 40rpx;
+	border-bottom: 1px solid #ff906e;
+	margin-bottom: 20rpx;
+	position: relative;
+	z-index: 10;
+}
+.sign_tel input,.sign_password input,.sign_vcode input{
+	width: 100%;
+	height: 100%;
+	line-height: 135rpx;
+	/*border-bottom: 1px solid #ff906e;*/
+	color: white;
+}
+.sign_vcode input{
+	width: 70%;
+}
+.sign_btn{
+	margin: 80rpx auto 30rpx;
+}
+.sign_btn button{
+	width: 100%;
+	height: 110rpx;
+	line-height: 110rpx;
+	color: #fd552e;
+	font-size: 40rpx;
+	border-radius: 110rpx;
+}
+
+/*发送验证码*/
+.send_box{
+  width: 214rpx;
+  height: 135rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 30;
+}
+.send_vcode{
+  width: 214rpx;
+  height: 60rpx;
+  background-color: white;
+  color: #fd552e;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 37rpx;
+  border-radius: 60rpx;
+  font-size: 24rpx;
+  z-index: 40;
+}
+
+.sign_text{
+	width: 80%;
+	font-size: 26rpx;
+	color: white;
+	text-align: center;
+	position: absolute;
+	bottom: 72rpx;
+	left: 50%;
+	margin-left: -40%;
+}

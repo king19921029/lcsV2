@@ -1,0 +1,76 @@
+<view class="kecheng">
+	<view class="section">
+	  <block>
+	    <icon class="searchIcon" type="search" size="17"/>
+	  </block>
+	  <input placeholder="为什么要做理财师" value="{{value}}" disabled="true" bindinput="search" bindtap="to_search"/>
+	  <text class="quxiao" bindtap="backSearch">取消</text>
+	</view>
+
+	<view wx:if="{{type == 0}}">
+		<view class="searchOver">
+			<view class="over_title">
+				<image class="kclabel" src="../../images/shu@2x.png"></image>
+				<text class="title_l">课程</text>
+			</view>
+		</view>
+
+		<view class="list">
+		    <view class="list_content">
+		      <view class="list_item flo_left" wx:for="{{skuList}}" wx:key="item" data-id="{{item.sku_id}}" bindtap="to_details">
+		      	<image hidden='{{item.sku_tip == 0 }}' class='tip' src='/images/tip.png'></image>
+		        <image class="item_image" src="{{item.sku_pic_url_horizontal}}"></image>
+		        <text class="banTitle">{{item.sku_title}}</text>
+		        <text class="banText">{{item.sku_info}}</text>
+		        <text class="label" wx:if="{{item.label}}">{{item.label}}</text>
+		        <text class="label_no" wx:else></text>
+		        <text class="price" wx:if='{{model == "android" || queryColumnInfo.price_str == "免费订阅" }}'>{{item.sku_price}}</text>
+		        <text class="price" wx:else>查看详情</text>
+
+		        <text wx:if="{{item.sku_status}}" class="overBuy">已订阅</text>
+		      </view>
+		    </view>
+		</view>
+	</view>
+
+
+
+	<view wx:if="{{type == 1}}">
+		<view class="searchOver">
+			<view class="over_title top_margin">
+				<image class="hdlabel" src="../../images/huodong@2x.png"></image>
+				<text class="title_l">活动</text>
+				<!-- <text class="title_r" wx:if="{{skuList.length > 3}}" data-type="1" bindtap="to_more">查看全部</text> -->
+			</view>
+		</view>
+
+		<view class="panal" wx:for="{{activityList}}" wx:key="item" data-id="{{item.activity_id}}" bindtap="to_active">
+			<view>{{item.title}}</view>
+			<image src="{{item.pic_url}}"></image>
+		</view>
+	</view>
+
+	<view wx:if="{{type == 2}}">
+			<view class="searchOver">
+				<view class="over_title top_margin">
+					<image class="wzlabel" src="../../images/xinwen@2x.png"></image>
+					<text class="title_l">文章</text>
+					<!-- <text class="title_r" wx:if="{{skuList.length > 3}}" data-type="2" bindtap="to_more">查看全部</text> -->
+				</view>
+			</view>
+
+			<view class="writings_list">
+				<view class="writings_item" data-id="{{item.news_id}}" bindtap="to_writing" wx:for="{{newsList}}" wx:key="item">
+					<view class="writings_text_l {{item.news_pic_url?'min_width':'no_image'}}">
+						<text class="no_title_shut">{{item.news_title}}</text>
+						<view class="writings_user">
+							来自:<image class="writings_user_head" src="{{item.header_pic_url}}"></image>{{item.teacher_name}}
+							{{filter.formatTime(item.create_time)}}</view>
+					</view>
+					<view class="writings_text_r" wx:if="{{item.news_pic_url}}">
+						<image src="{{item.news_pic_url}}"></image>
+					</view>
+				</view>
+			</view>
+		</view>
+</view>

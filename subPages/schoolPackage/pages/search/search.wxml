@@ -1,0 +1,128 @@
+<!-- search.wxml -->
+<view class="search">
+	<!-- 搜索前 -->
+	
+	<view class="section">
+	  <block>
+	    <icon class="searchIcon" type="search" size="17"/>
+	  </block>
+	  <input placeholder="为什么要做理财师" bindinput="search" auto-focus/>
+	  <text class="quxiao">取消</text>
+	</view>
+	<view wx:if="{{isSearch}}">
+		<view class="history">
+			<view class="history_item">
+				<text>银行</text>
+			</view>
+			<view class="history_item">
+				<text>银行</text>
+			</view>
+			<view class="history_item">
+				<text>银行</text>
+			</view>
+
+			<view class="allSearch">
+				全部搜索记录
+			</view>
+		</view>
+
+		<view class="hot_search">
+			<view class="hot_item_title">
+				热门搜索
+			</view>
+
+			<view class="label">
+				<view class="label_item_middle">识识</view>
+				<view class="label_item_middle">理财知</view>
+				<view class="label_item_middle">理财知识理财知识</view>
+				<view class="label_item_middle">理财知识</view>
+				<view class="label_item_middle">理财知理财知识识</view>
+				<view class="label_item_middle">理财知识</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 搜索后 -->
+	<view wx:else>
+		<!-- 课程 -->
+		<view>
+			<view class="searchOver">
+				<view class="over_title">
+					<text class="title_l">课程</text>
+					<text class="title_r" bindtap="to_more">查看全部</text>
+				</view>
+			</view>
+			<view class="list">
+			    <view class="list_box">
+			      <view class="list_content">
+			         <view class="list_item">
+			            <image class="list_item_userhead" src="../../images/icon.jpg"></image>
+			            <view class="list_item_middle">
+			              <view class="list_item_middle_title">刘润</view>
+			              <view class="list_item_middle_tip">今晚8点告诉你成功秘诀今晚8点告诉你成功秘诀</view>
+			            </view>
+			            <image class="list_item_arrow" src="../../images/icn_arrow.png"></image>
+			          </view>
+			      </view>
+			    </view>
+			    <view class="list_box">
+			      <view class="list_content no_border">
+			         <view class="list_item">
+			            <image class="list_item_userhead" src="../../images/icon.jpg"></image>
+			            <view class="list_item_middle">
+			              <view class="list_item_middle_title">刘润</view>
+			              <view class="list_item_middle_tip">今晚8点告诉你成功秘诀今晚8点告诉你成功秘诀</view>
+			            </view>
+			            <image class="list_item_arrow" src="../../images/icn_arrow.png"></image>
+			          </view>
+			      </view>
+			    </view>
+			</view>
+		</view>
+
+
+		<!-- 活动 -->
+		<view>
+			<view class="searchOver">
+				<view class="over_title top_margin">
+					<text class="title_l">活动</text>
+				</view>
+			</view>
+
+			<view class="panal">
+				<view>如何评价apple投放的大量，敬mac背后你的广告</view>
+				<image src="../../images/DSC_0055_mix02.jpg"></image>
+			</view>
+		</view>
+
+		<!-- 文章 -->
+		<view>
+			<view class="searchOver">
+				<view class="over_title top_margin">
+					<text class="title_l">文章</text>
+				</view>
+			</view>
+
+			<view class="writings_list">
+				<view class="writings_item">
+					<view class="writings_text_l">
+						<text>精选|10天暴涨50%、乐视网搭上91顺风车深交所重点监控</text>
+						<view class="writings_user">来自:<image class="writings_user_head" src="../../images/icon.jpg"></image>李雷 9小时前</view>
+					</view>
+					<view class="writings_text_r">
+						<image src="../../images/DSC_0055_mix02.jpg"></image>
+					</view>
+				</view>
+				<view class="writings_item no_border">
+					<view class="writings_text_l">
+						<text>精选|10天暴涨50%、乐视网搭上91顺风车深交所重点监控</text>
+						<view class="writings_user">来自:<image class="writings_user_head" src="../../images/icon.jpg"></image>李雷 9小时前</view>
+					</view>
+					<view class="writings_text_r">
+						<image src="../../images/DSC_0055_mix02.jpg"></image>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

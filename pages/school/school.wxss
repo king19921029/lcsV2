@@ -1,0 +1,390 @@
+/* 查看记录 */
+.test{
+  position: fixed;
+  top: 20%;
+  right:4%;
+  z-index: 1000;
+  background: #fff;
+  padding: 30rpx;
+  color: red;
+}
+
+
+.school_frist{
+  height: 313rpx;
+  width: 100;
+}
+.bottom_isFirst{
+  width: 100%;
+  position: fixed;
+  bottom:10rpx;
+  left:0rpx;
+}
+.school_frist image{
+  width: 373rpx;
+  height: 313rpx;
+  margin-left:12%;
+}
+.isFirst_bottom_box{
+  height: 93rpx;
+  width:177rpx;
+  background:#fff;
+  border-radius: 50rpx;
+  margin-left: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.isFirst_bottom_menu{
+	width: 136rpx;
+	height: 72rpx;
+	background-color: #fe562f;
+	border-radius: 211rpx;
+	font-size: 27rpx;
+	color: white;
+	font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.isFirst_bottom_icon{
+	width: 40rpx;
+	height: 40rpx;
+}
+.classIpx{
+	padding-bottom: 16rpx;
+}
+
+view{
+  line-height: 1;
+}
+.box{
+  width: 100%;
+	background-color: #f7fafa;
+  font-size: 30rpx;
+  padding-bottom: 155rpx;
+}
+
+/*禁止滚动*/
+.no_scroll{
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.society{
+	position: relative;
+}
+.hotKeyword{
+  width: 70%;
+  text-align: center
+}
+/*轮播图*/
+.no_swiper{
+  height: 100rpx;
+  width: 100%;
+}
+.home_swiper{
+	width: 100%;
+	height: 480rpx;
+}
+.home_swiper swiper,.home_swiper image{
+	width: 100%;
+	height: 100%;
+  
+}
+/*搜索框*/
+.header,.headerBgColor{
+  width: 100%;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #737373;
+  
+}
+.headerBgColor{
+  background: #fff;
+  z-index: 999;
+}
+.BgColor{
+  height: 100rpx;
+  z-index: 999;
+}
+.search_icon{
+  width: 32rpx;
+  height: 32rpx;
+}
+.red_box .no_red{
+  width: 40rpx;
+  height: 35rpx;
+}
+.red_box .red{
+  width: 47rpx;
+  height: 43rpx;
+}
+.headerBgColor .home_search{
+  border: 1px solid #ccc;
+}
+.home_search{
+  width: 620rpx;
+	height: 66rpx;
+  background: #fff;
+  border-radius: 8rpx;
+}
+.icon_box{
+  padding: 0 15rpx;
+}
+/* 最新直播 */
+.live{
+  padding-bottom: 20rpx;
+}
+.list_header{
+  line-height: 1;
+  padding:48rpx 0 28rpx 0;
+  font-weight: 500;
+  font-size: 38rpx;
+  display: flex;
+  align-items: center;
+}
+.list_header_ss{
+  display: flex;
+  align-items: center;
+}
+.border_left{
+  display: inline-block;
+  width: 6rpx;
+  height: 38rpx;
+  background:#fe4e36;
+  margin-right: 20rpx;
+}
+
+/* 学院教授 */
+.teach_box{
+  width:96%;
+  margin-left:4%;
+  height: 380rpx;
+  white-space: nowrap;
+  overflow: auto;
+  -webkit-overflow-scrolling:touch;
+  margin-top: 20rpx;
+}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar{
+  width: 6rpx;
+  height: 10rpx;
+  background-color: #ffffff;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background-color: #fe4e36;
+  width: 10rpx;
+}
+
+
+/*定义滚动条轨道 内阴影+圆角*/
+/* ::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color:#fff;
+} */
+
+
+.teach_box :first-child{
+  margin-left: 0;
+}
+.t_list{
+  width: 208rpx;
+  height: 335rpx;
+  border: 1px solid #ececec;
+  border-radius: 8rpx;
+  overflow:hidden;
+  padding-bottom: 10rpx;
+  margin-right:19rpx;
+  display: inline-block;
+  white-space:normal;
+   background: #fff;
+}
+.t_list_son{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+ 
+}
+.t_img{
+  display: flex;
+  height: 220rpx;
+  width:100%;
+  background: #b5b5b5;
+}
+.t_name{
+  line-height: 1;
+  padding: 18rpx 0 14rpx 0;
+  font-size: 28rpx;
+}
+.t_msg_title{
+  height:70rpx;
+  font-size: 24rpx;
+}
+
+/* 最新上线 */
+.news :first-child{
+  margin-top: 0;
+}
+.news{
+  margin-top: 20rpx;
+  width: 98%;
+  margin-left: 1%;
+}
+.news_you{
+  margin-top: 20rpx;
+  width: 92%;
+  margin-left: 4%;
+}
+.news_box{
+  padding: 30rpx 0;
+  border: 1px solid #ececec;
+  border-radius: 8rpx;
+  width: 98%;
+  margin: 26rpx 0 0 1%;
+}
+.news_img{
+  width: 102rpx;
+  height: 102rpx;
+  border-radius: 50%;
+  background: #b5b5b5;
+}
+.news_msg{
+  width:452rpx;
+  height: 102rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tsku_title{
+  height: 69rpx;
+  line-height:35rpx;
+  color:#414141;
+}
+.news_icon{
+  width: 16rpx;
+  height: 26rpx;
+}
+/* 圈子里的新鲜事 */
+.circle{
+  border: 1px solid #ececec;
+  border-radius: 8rpx;
+  width: 98%;
+  margin-left: 1%;
+}
+.circle:last-child{
+  border-bottom:none;
+}
+.circle_list{
+  background: #fff;
+  border-bottom: 1px solid #ececec;
+  padding: 34rpx 0;
+}
+.circle_list>view{
+  width: 94%;
+  margin-left: 3%;
+}
+.circle_msg{
+  height: 154rpx;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.circle_msg_somwidth{
+  width: 410rpx;
+}
+.circle_msg_bigwidth{
+  width: 810rpx;
+}
+.circle_msg_two{
+  height: 170rpx;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.circle_img{
+  height: 154rpx;
+  width: 208rpx;
+  background: #b5b5b5;
+}
+.circle_title{
+  height: 84rpx;
+  overflow: hidden;
+  word-wrap:break-word;
+  text-overflow:ellipsis;
+  line-height: 40rpx;
+}
+.circle_foo{
+  width: 100%;
+  overflow:no-warp;
+}
+.circle_icon{
+  display: block;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  margin: 0 10rpx;
+}
+.circle_time{
+  margin-left: 10rpx;
+  display: block;
+  width: 150rpx;
+  overflow: hidden;
+}
+/* 为你推荐 */
+.see_all image{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+.img_boxs{
+  height: 50rpx;
+  margin-left: 10rpx;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background: url("https://img-prod-publish.licaishi365.com/studyplan/18488125293752728.png"
+) no-repeat 5rpx 0;
+  background-size: 100% 100%;
+  border-radius: 5rpx;
+  font-size: 26rpx;
+  text-indent: 15rpx;
+  color: #fff;
+  padding: 0 10rpx;
+}
+.header_icon{
+  display: block;
+  height: 100%;
+  width: 100%
+}
+/* 录音动画 */
+.opacitysAnimation {
+  /* animation: opacitys .5s normal infinite steps(3); */
+}
+/* 语音动画 */
+@keyframes opacitys {
+  0% {
+    opacity: 0.7
+  }
+  100% {
+    opacity: 1
+  }
+}
+.box>.com_width{
+  width: 94%;
+  margin-left: 3%;
+}
+
+
+

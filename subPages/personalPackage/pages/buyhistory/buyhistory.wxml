@@ -1,0 +1,9 @@
+<view class="buyhistory">
+	<view class="history_list">
+		<view class="history_item" wx:for="{{BuyOrderList}}" wx:key="item">
+			<view class="history_title font_28">{{item.sku_title}}</view>
+			<view class="history_time font_26">{{item.create_time}}</view>
+			<view class="history_num font_28">-{{item.balance_price}}</view>
+		</view>
+	</view>
+</view>

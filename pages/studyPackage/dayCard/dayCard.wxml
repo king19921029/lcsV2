@@ -1,0 +1,100 @@
+<view class='box'>
+
+  <view class='top_block'>
+    <block wx:if="{{detailInfo.is_sign == '1'}}">
+      <view class='bigfont_box'>
+        <view class='color_orange'>
+          <view class='bigfont'>{{detailInfo.total_time}}</view>
+          <view class='somfont'>今日已学/分钟</view>
+        </view>
+        
+        <view class='color_43'>
+          <view class='bigfont'>{{detailInfo.plan_time}}</view>
+          <view class='somfont'>今日目标/分钟</view>
+        </view>
+      </view>
+      <view class='top_block_footer'>
+        <view class='continuity'>{{detailInfo.incessancy_days}}</view>
+        <view class='current'>{{detailInfo.current_days}}</view>
+        <view bindtap='go_share' class='share_day'>分享打卡</view>
+      </view>
+    </block>
+
+    <block wx:else>
+      <view class='bigfont_box'>
+        <view class='color_orange'>
+          <view class='bigfont'>{{detailInfo.total_time}}</view>
+          <view class='somfont'>今日已学/分钟</view>
+        </view>
+        
+        <view class='color_43'>
+          <view class='bigfont'>{{detailInfo.plan_time}}</view>
+          <view class='somfont'>今日目标/分钟</view>
+        </view>
+      </view>
+      <view class='top_block_footer'>
+       <view class='comeon'>您今天打卡目标还有<text>{{detailInfo.miss_time}}</text>分钟未完成，加油！</view>
+      </view>
+      
+    </block>
+    <view bindtap='go_time' class='setTime'>调整目标</view>
+  </view>
+
+  <view class='bottom_blcok'>
+    <!-- 年月 -->
+    <view class=''>
+      <view class='day_width day_titles'>
+        <view class='day_titles_icon' bindtap='_next'>
+          <image src="/images/icn_left_blocks.png"></image>
+        </view>
+        <view class='dateBox'>{{ year }}年{{ month}}月</view>
+        <view class='day_titles_icon' bindtap='_last'>
+          <image src="/images/icn_arrow_block.png"></image>
+        </view>
+      </view>
+    </view>
+    
+    
+    <!-- 周 -->
+    <view class='bottom_blcok_bg'>
+      <view class='day_width day_header'>
+        <view class='header_view' wx:for='{{ weekArr }}' wx:key=""
+          wx:for-item="item">
+          {{item}}
+        </view>
+      </view>
+    </view>
+    
+
+    <!-- 日 -->
+    <view class='day_width day_content'>
+      <view class='content_view {{item.num == "idx"? "bg_f" : "" }} {{item.status == "2"? "bg_b" : "" }} {{item.status == "0"? "bg_g" : "" }} {{item.status == "1"? "bg_o" : "" }} ' wx:for='{{ arr }}' wx:key="">{{ item.num }}</view>
+    </view>
+    
+   
+  </view>
+
+  <view class='footer'>
+    <view class='footer_yes com_footer_flex'>
+      <text></text>
+      已打卡
+    </view>
+    <view class='footer_no com_footer_flex'>
+      <text></text>
+      未打卡
+    </view>
+    <view class='footer_today com_footer_flex'>
+      <text></text>
+      当前日期
+    </view>
+  </view>
+  
+  
+</view>
+
+
+
+<!-- 
+<view style='width:100%;height:100vh'>
+  <image style='width:100%;height:100%' src='/images/WechatIMG163.jpeg'></image>
+</view> -->

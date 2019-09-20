@@ -1,0 +1,24 @@
+function formStr(text){
+  var text = text;
+  if (text.length == 1) {
+    return text
+  }else{
+    var arr = text.split('');
+    var arrA = []
+    console.log(arr)
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] == "0") {
+        // return
+      }else{
+        arrA.push(arr[i])
+        console.log('---1---'+arrA.join(''))
+      }
+    }
+    console.log('---2---'+arrA.join(''))
+    return arrA.join('')
+  }
+}
+
+module.exports = {
+  formStr:formStr
+}

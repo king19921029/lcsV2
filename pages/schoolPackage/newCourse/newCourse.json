@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "课程上新",
+  "usingComponents": {
+    "template-nav": "/components/nav/nav"
+  }
+}

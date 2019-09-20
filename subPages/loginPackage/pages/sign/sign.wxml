@@ -1,0 +1,30 @@
+<view class="sign">
+	<view class="sign_title">新用户注册</view>
+
+	<view class="sign_tel">
+		<input  maxlength="11" type="number" placeholder="请输入手机号" placeholder-style="color:#ff906e;" bindinput="bindTel" value="{{tel}}" />
+	</view>
+	
+	<view class="sign_vcode">
+		<input  maxlength="6" type="number" placeholder="验证码" placeholder-style="color:#ff906e;" bindinput="bindVcode" />
+
+		<view class="send_box" wx:if="{{getVcode}}">
+			<view class="send_vcode">{{ time }}s后重发</view>
+		</view>
+		<view class="send_box" wx:else>
+			<view class="send_vcode" bindtap="getVcode">发送验证码</view>
+		</view>
+		
+		
+	</view>
+
+	<view class="sign_password">
+		<input minlength="6" maxlength="24" type="password" placeholder="设置密码(6-24位)" placeholder-style="color:#ff906e;" bindinput="bindPassword" value="{{password}}" />
+	</view>
+
+	<view class="sign_btn">
+		<button bindtap="sign_btn">注册</button>
+	</view>
+
+	<!-- <view class="sign_text">我已阅读并同意</view> -->
+</view>

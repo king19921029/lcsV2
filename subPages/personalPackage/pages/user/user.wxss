@@ -1,0 +1,83 @@
+.user{
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #fafafa;
+}
+.section{
+	width: 100%;
+	height: 109rpx;
+	border-bottom: 1px solid #ececec;
+	position: relative;
+	background-color: white;
+}
+.signative_box{
+	width: 70%;
+	height: 109rpx;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.section input{
+	width: 100%;
+	height: 109rpx;
+	font-size: 26rpx;
+	line-height: 109rpx;
+	color: #8f8f8f;
+	text-align: right;
+	padding-right: 36rpx;
+	box-sizing: border-box;
+}
+.user_label{
+	font-size: 30rpx;
+	color: black;
+	font-weight: bold;
+	position: absolute;
+	left: 38rpx;
+	top: 39.5rpx;
+	z-index: 20;
+}
+.section .image{
+	width: 70rpx;
+	height: 70rpx;
+	position: absolute;
+	right: 36rpx;
+	top: 18.5rpx;
+	border-radius: 50%;
+}
+.user_sex,.user_data,.user_city,.user_job,.user_timelong{
+	width: 80%;
+	height: 109rpx;
+	line-height: 109rpx;
+	position: absolute;
+	right: 0;
+	font-size: 26rpx;
+	color: #8f8f8f;
+	padding-right: 36rpx;
+	text-align: right;
+	z-index: 10;
+}
+.picker{
+	height: 109rpx;
+}
+.space{
+	width: 100%;
+	height: 20rpx;
+	background-color: #fafafa;
+	border-bottom: 1px solid #ececec;
+}
+
+.submit_btn{
+	margin: 30rpx auto 30rpx;
+}
+.submit_btn button{
+	width: 70%;
+	height: 90rpx;
+	line-height: 90rpx;
+	color: white;
+	font-size: 30rpx;
+	border-radius: 110rpx;
+	background-color: #fe5430 !important;
+}

@@ -1,0 +1,30 @@
+<view class="forget">
+	<view class="forget_title">{{title}}</view>
+
+	<view class="forget_tel">
+		<input  maxlength="11" type="number" placeholder="请输入手机号" placeholder-style="color:#ff906e;" bindinput="bindTel" />
+	</view>
+	
+	<view class="forget_vcode">
+		<input  maxlength="6" type="number" placeholder="验证码" placeholder-style="color:#ff906e;" bindinput="bindVcode" />
+		
+		<view class="send_box" wx:if="{{getVcode}}">
+			<view class="send_vcode">{{ time }}s后重发</view>
+		</view>
+		<view class="send_box" wx:else>
+			<view class="send_vcode" bindtap="getVcode">发送验证码</view>
+		</view>
+	</view>
+
+	<view class="forget_password">
+		<input  maxlength="24" type="password" placeholder="输入新密码(6-24位)" placeholder-style="color:#ff906e;" bindinput="bindPassword" value="{{password}}" />
+	</view>
+
+	<view class="forget_password2">
+		<input  maxlength="24" type="password" placeholder="确认密码" placeholder-style="color:#ff906e;" bindinput="bindPassword2" value="{{password2}}" />
+	</view>
+
+	<view class="forget_btn">
+		<button bindtap="onRight">确认</button>
+	</view>
+</view>

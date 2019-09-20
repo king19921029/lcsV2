@@ -1,0 +1,138 @@
+.box{
+  background: #fbfbfb;
+  font-size: 28rpx;
+  height: 100vh;
+}
+.titles{
+  display:flex;
+  justify-content: space-between;
+  padding: 40rpx 0;
+  line-height: 1;
+}
+.times{
+  font-size: 24rpx;
+  color: #4a5460;
+}
+.slider{
+  width: 86%;
+  height: 8rpx;
+  margin-left: 8%;
+}
+.slider_time{
+  display: flex;
+  width: 85%;
+  font-size: 20rpx;
+  color: #9ea0a7;
+  justify-content:space-around;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 16%;
+}
+.time_f{
+  position: relative;
+  /* margin-left: 100rpx; */
+}
+.time_f text{
+  position: absolute;
+  display: block;
+  width: 5rpx;
+  height: 5rpx;
+  border-radius: 50%;
+  border:1rpx solid #ff6e36;
+  background: #fff;
+  left: 45.5%;
+  top: -12.5rpx;
+}
+.time_f .frist_text{
+  left: 39%;
+}
+.time_f .sen_text{
+  left: 42%;
+}
+.time_f .thr_text,.time_f .fr_text{
+  left: 43%;
+}
+.yes_btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+ 
+}
+.yes_btn view{
+  color: #ff6e36;
+  background: #f7f2ef;
+  width: 426rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 30rpx;
+  border-radius: 43rpx;
+  text-align: center;
+  margin-top: 50rpx;
+}
+
+/* 站位 */
+.fb_block{
+  height: 60rpx;
+  background: #fbfbfb;
+  width: 100%;
+  z-index:999;
+  position: absolute;
+}
+.fb_block_bottom{
+  height: 60rpx;
+  background: #fbfbfb;
+  /* background: red; */
+  width: 100%;
+  z-index:999;
+  position: absolute;
+  bottom: -42rpx;
+  left: 0;
+}
+
+/* 下半部分 */
+.echars_box{
+  margin-top: 110rpx;
+  position: relative;
+}
+.echars_title{
+  font-size: 30rpx;
+}
+.echars_box_content{
+  display: flex;
+  z-index: 100;
+  margin-top: 40rpx;
+  border-top: 1px solid #fbfbfb;
+}
+.content_time{
+  color: #9ea0a7; 
+  background: #fbfbfb;
+  z-index: 98;
+}
+.content_time view{
+  padding: 20rpx 18rpx;
+
+}
+/* 柱子 */
+.content_ber{
+  width: 71%;
+  border-left: 1px solid #7a7f80;
+  margin-right:20rpx;
+}
+.content_ber view{
+  height: 10rpx;
+  width: 200rpx;
+  background: #425360;
+  margin-top: 70rpx;
+  border-radius: 43rpx;
+  margin-left: -4rpx;
+}
+.content_ber :first-child{
+  margin-top:35rpx;
+}
+
+/* 人数 */
+.content_peo view{
+  color: #9ea0a7; 
+  padding: 20rpx 0;
+}

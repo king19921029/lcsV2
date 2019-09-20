@@ -1,0 +1,167 @@
+.boxs{
+	background-color: #fafafa;
+  font-size: 32rpx;
+  padding-bottom: 50rpx;
+  position: relative;
+}
+.margin_top{
+  margin-top:20rpx;
+}
+.banner{
+  width: 100;
+  height: 500rpx;
+  background: #161a1d;
+}
+.banner_size{
+  position: absolute;
+  top: 400rpx;
+  color: #fefefe;
+}
+.som_size{
+  font-size: 28rpx;
+}
+.label{
+  border: 1px solid #fff;
+  font-size: 26rpx;
+  border-radius: 18rpx;
+  padding: 0rpx 10rpx;
+  margin-left: 8rpx;
+}
+.border_right{
+  border-right: 1px solid #e6e6e6;
+}
+.border_right text{
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  border:1px solid;
+  border-radius: 50%;
+  margin-right: -6rpx;
+}
+.hedaer > view{
+  width: 50%;
+  height: 150rpx;
+  align-items: center;
+  justify-content: center;
+}
+.teacher :last-child{
+  border-bottom: none;
+}
+.t_list{
+  height: 160rpx;
+}
+.t_list>view{
+  width: 90%;
+  line-height: 44rpx;
+  font-size: 30rpx;
+  color: #3d3d3d;
+}
+.list_header{
+  padding: 30rpx 0;
+  font-weight: 500;
+  font-size: 36rpx;
+}
+.right_icon{
+  width: 18rpx;
+  height: 30rpx;
+}
+/* 课程亮点 */
+.bright{
+  padding-bottom: 40rpx;
+  line-height: 48rpx;
+}
+
+/* 课程大纲 */
+.color_gray{
+  color: #9e9e9e;
+}
+.course_num{
+  font-weight: normal;
+  font-size: 28rpx;
+}
+.course_box{
+  font-size: 30rpx;
+}
+.course_box_noall{
+  height: 498rpx;
+  overflow: hidden;
+}
+.course_list{
+  padding: 30rpx 0;
+}
+.course_icon{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+.course_size{
+  margin:0 10rpx 0 10rpx;
+}
+.course_name{
+  width: 82%;
+}
+.test{
+  font-size: 28rpx;
+  border-radius: 23rpx;
+  padding:0 10rpx;
+}
+
+/* 精选笔记 */
+.good_notes{
+  height: 440rpx;
+  white-space: nowrap;
+  margin-bottom: 130rpx;
+}
+.notes_list{
+  height: 400rpx;
+  width: 310rpx;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 0 6rpx rgba(178, 178, 178, 0.6);
+  border-radius: 8rpx;
+  margin-left: 34rpx;
+  display: inline-block;
+  white-space:normal;
+  font-size: 28rpx;
+  margin-top: 6rpx;
+}
+.notes_top{
+  height: 120rpx;
+}
+.top_icon{
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+  border: 1px solid;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.notes_bottom{
+  height: 280rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  line-height: 48rpx;
+}
+
+.view_block{
+  display: inline-block;
+  white-space:normal;
+  height: 400rpx;
+  width: 34rpx;
+  background:#fff;
+}
+
+/* footer */
+.footer{
+  width: 100%;
+  height: 130rpx;
+  position: fixed;
+  bottom:0;
+  display: flex;
+  z-index: 100;
+}
+.footer>view{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

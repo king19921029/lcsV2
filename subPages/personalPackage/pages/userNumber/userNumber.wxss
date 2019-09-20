@@ -1,0 +1,44 @@
+.userNumber{
+	width: 100%;
+	background-color: #fafafa;
+	border-top: 1px solid #ececec;
+}
+.tellNumber{
+	width: 100%;
+	height: 108rpx;
+	text-align: center;
+}
+.tellNumber image{
+	width: 52rpx;
+	height: 52rpx;
+	display: inline-block;
+	transform: translateY(8rpx);
+}
+.tell{
+	width: 100%;
+	height: 108rpx;
+	line-height: 108rpx;
+	color: #f9451b;
+	font-size: 44rpx;
+}
+.public_item{
+	width: 100%;
+	padding: 0 32rpx;
+	border-bottom: 1px solid #ececec;
+	background-color: white;
+	box-sizing: border-box;
+	position: relative;
+}
+.item_text{
+	width: 100%;
+	height: 108rpx;
+	line-height: 108rpx;
+	font-size: 30rpx;
+}
+.arrow{
+	width: 14rpx;
+	height: 24rpx;
+	position: absolute;
+	top: 42rpx;
+	right: 32rpx;
+}

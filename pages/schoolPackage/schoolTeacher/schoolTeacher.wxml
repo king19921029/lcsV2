@@ -1,0 +1,67 @@
+<view class='teacher_box'>
+   <!-- 轮播 -->
+		<view class="home_swiper">
+			<swiper indicator-dots="{{swiperData.indicatorDots}}" 
+        indicator-color="rgb(112,117,118)" indicator-active-color="white"
+        autoplay="{{swiperData.autoplay}}" interval="{{swiperData.interval}}"
+        duration="{{swiperData.duration}}">
+			  <block wx:for="{{topList}}" wx:key="item">
+			    <swiper-item>
+			      <image  bindtap='goTeacher' data-id="{{item.teacher_id}}" lazy-load="true" src="{{item.pic_url}}" class="slide-image image_bg"/>
+			    </swiper-item>
+			  </block>
+			</swiper>
+		</view>
+  <!-- 行业大咖 -->
+  <view class='big_work bg_fff'>
+    <view class='border_bottom com_header'>
+        <view class='com_width space_between'>
+          <view class='font_weight'>行业大咖</view>
+          <view>共{{horizontalListCount}}位</view>
+        </view>
+    </view>
+    <view class='border_bottom'>
+      <view class='com_width list_box space_between'>
+        <view wx:for="{{horizontalList}}" wx:key="" wx:for-item="item"
+          data-id="{{item.teacher_id}}" class='teacher_list'
+          bindtap='goTeacher'>
+          <image class='t_list_img image_bg' src='{{item.pic_url}}'></image>
+          <view class='com_width flex_direction t_list_msg'>
+              <view class='space_between'>
+                  <view class='font_weight'>{{item.nick_name}}</view>
+                  <text class='overflow t_list_msg_title'>{{item.title}}</text>
+              </view>
+              <view class='color_f8'>{{item.count_info}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 老师 -->
+  <view class='bg_fff margin_top'>
+    <view class='border_bottom com_header'>
+      <view class='com_width space_between'>
+        <view class='font_weight'>学院老师</view>
+        <view>共{{teacherListCount}}位</view>
+      </view>
+    </view>
+
+    <view wx:for="{{teacherList}}" wx:key="" wx:for-item="item" 
+      data-id="{{item.teacher_id}}" class='news_box border_bottom bg_fff'
+      bindtap='goTeacher'>
+      <view class='display_flex'>
+          <image class='news_img image_bg' src='{{item.pic_url}}'></image>
+          <view class='news_msg'>
+              <view>{{item.nick_name}}</view>
+              <view class="color_f8">{{item.count_info}}</view>
+          </view>
+          <view>
+            <image class='news_icon'
+            src="../../../images/icn_arrow.png"></image>
+            </view>
+      </view>
+    </view>
+    
+  </view>
+</view>

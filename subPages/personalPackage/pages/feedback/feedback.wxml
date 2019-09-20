@@ -1,0 +1,26 @@
+<view class="feedback">
+	<view class="wrap">
+		<textarea placeholder="意见反馈" auto-focus maxlength="-1" bindinput="feedback" />
+	</view>
+	<view class="feedImg">
+		<view class="addImg" wx:for="{{imgList}}" wx:key="item">
+			<image class="removeImg" src="../../images/remove.png" bindtap="remove_this" data-num="{{index}}"></image>
+			<view class="imgBox">
+				<image src="{{item}}"></image>
+			</view>
+		</view>
+		<view class="addImg" wx:if="{{imgList.length < 4}}" bindtap="addImgUpload">+</view>
+	</view>
+
+	<!-- <view class="phone">
+		<view class="phone_label">联系方式</view>
+		<input type="text" placeholder="请输入手机号码" type="number" />
+	</view> -->
+
+	<view wx:if="{{have_text == true || have_img == true}}" class="btn_submit" bindtap="subMessage">
+		提交
+	</view>
+	<view wx:if="{{have_text == false && have_img == false}}" class="btn_submit2">
+		提交
+	</view>
+</view>

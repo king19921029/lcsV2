@@ -1,0 +1,125 @@
+<view hidden='{{token}}' class='display_flex noLogin'>
+    <view class='img_box'>
+      <image class='no_login_img' src='/images/canvas_nologin.png'></image>
+      <view class='img_box_title'>
+        <view class='font_weight'>您还没有登录哦</view>
+        <view>注册登录后，查看学习频道下全部的内容</view>
+      </view>
+      <view bindtap='go_login' class='bg_orange img_box_btn'>立即注册/登录</view>
+    </view>
+</view>
+
+<view wx:if='{{token}}' class='box'>
+  
+  <view class='header'>
+    <view class='com_width header_tab'>
+      <view hidden='{{isAll}}' class='study_tab'>
+        <black wx:if="{{initFont == '今日学习'}}">
+          <view bindtap='todayTap' class='day_font no_padding'>今日学习</view>
+          <view bindtap='sevendayTap' class='sev_font'>七日学习</view>
+        </black>
+
+        <black wx:else>
+          <view bindtap='sevendayTap' class='bottom_sev_font'>七日学习</view>
+          <view bindtap='todayTap' class='bottom_day_font'>今日学习</view>
+        </black>
+
+      </view>
+
+      <view class='init_box'>
+        <text bindtap='initfontTap' class='day_font'>{{initFont}}</text>
+        <image bindtap='initfontTap' class='san_icon' src="/images/san.png"></image>  
+      </view>
+      <view bindtap='go_time' class='bg_orange go_card'>打卡</view>
+    </view>
+
+    <view wx:if="{{initFont == '今日学习' }}" class='com_width data_box'>
+      <view class='data_box_header'>
+        <text>同学平均</text>
+        <text>个人统计</text>
+      </view>
+
+      <view class='data_content'>
+        <view wx:for="{{studyContrast.todayStudyContrastList}}" wx:key=""
+         wx:for-item="item" class='for_data'
+         hidden='{{redLine}}'>
+          <view class='data_content_font'>
+            <view class='color_f8'>{{item.blackStr}}</view>
+            <view class='course_name overflow'>{{item.sku_title}}</view>
+            <view class='color_f8'>{{item.redStr}}</view>
+          </view>
+          <view class='data_content_ge'>
+            <progress border-radius="50" active style='width:{{item.blackLine}}%' percent="100" activeColor="#344454"/>
+            <progress class='right_progress' border-radius="50" active style='width:{{item.redLine}}%' percent="100" activeColor="#fe562f"/>
+          </view>
+        </view>
+
+        <view hidden='{{studyContrast.userHaveStudyList == "1"}}'
+         class='footer_font'>你今天还没有学习，偷看其他同学的情况吧</view>
+      </view>
+
+    </view>
+
+    <view wx:else class='com_width echars_img'>
+      <canvas style='width:100%;height:100%' canvas-id="columnCanvas"></canvas>
+    </view>
+
+    
+  </view>
+  
+  <view class="oneline">
+    <view class='compare_header'>
+        <view class='com_width'>
+          <view class='day display_flex'>在学课程</view>
+        </view>
+    </view>
+    
+    <block wx:if="{{skuList.length > 0}}">
+      <view bindtap='curseDetails' 
+        class="oneline_list" wx:for="{{skuList}}" 
+        wx:key="" wx:for-item="item" data-skuid="{{item.sku_id}}"
+        data-skutype="{{item.sku_type}}">
+        <image src="{{item.pic_url}}" class='list_img image_bg'></image>
+        <view class='oneline_msg'>
+            <view class='oneline_name'>
+              <text class='list_msg_name'>{{item.sku_title}}</text>  
+              <text class='list_msg_size'>{{item.info1}}</text>
+            </view>
+            <view class='list_msg_size'>{{item.info2}}</view>
+        </view>
+        <view class='oneline_icon'>
+            <image class='rigth_icon' src='../../../images/icn_arrow_block.png'></image>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='no_skuList_box'>
+          <view class='no_skuList_title'>
+            添加课程 坚持学习，成为更强的理财师
+          </view>
+          <view class='no_skuList_btn' bindtap='go_home'>制定学习计划</view>
+      </view>
+    </block>
+  </view>
+
+</view>
+
+<!-- 未登录状态 -->
+<!-- <view wx:if='{{ token && skuList == ""}}' class='display_flex noLogin'>
+    <view class='img_box'>   
+      <image class='no_login_img' src='/images/course_nologin.png'></image>
+      <view class='img_box_title'>
+        <view class='font_weight'>您还没有制定学习计划</view>
+        <view>添加课程,努力学习,成为最强的理财师</view>
+      </view>
+      <view bindtap='go_home' class='bg_orange img_box_btn'>开始制定学习规划</view>
+    </view>
+</view> -->
+
+<template-nav
+  type="学习"
+  id="nav"
+  state="1"
+  stateNow="1"
+  isIpx="{{isIpx}}">	
+</template-nav>

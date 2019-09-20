@@ -1,0 +1,101 @@
+.forget{
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #fd552e;
+	padding: 76rpx 34rpx 72rpx;
+	box-sizing: border-box;
+}
+.forget_title{
+	font-size: 48rpx;
+	color: white;
+}
+
+.forget_tel,.forget_password,.forget_vcode,.forget_password2{
+	width: 100%;
+	height: 135rpx;
+	font-size: 40rpx;
+	border-bottom: 1px solid #ff906e;
+	margin-bottom: 20rpx;
+	position: relative;
+	z-index: 10;
+}
+.forget_tel input,.forget_password input,.forget_vcode input,.forget_password2 input{
+	width: 100%;
+	height: 100%;
+	line-height: 135rpx;
+	/*border-bottom: 1px solid #ff906e;*/
+	color: white;
+}
+.forget_vcode input{
+	width: 70%;
+}
+.forget_btn{
+	margin: 80rpx auto 30rpx;
+}
+.forget_btn button{
+	width: 100%;
+	height: 110rpx;
+	line-height: 110rpx;
+	color: #fd552e;
+	font-size: 40rpx;
+	border-radius: 110rpx;
+}
+
+/*发送验证码*/
+.send_box{
+  width: 214rpx;
+  height: 135rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 30;
+}
+.send_vcode{
+  width: 214rpx;
+  height: 60rpx;
+  background-color: white;
+  color: #fd552e;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 37rpx;
+  border-radius: 60rpx;
+  font-size: 24rpx;
+  z-index: 40;
+}
+
+.forget_text{
+	width: 80%;
+	font-size: 26rpx;
+	color: white;
+	text-align: center;
+	position: absolute;
+	bottom: 72rpx;
+	left: 50%;
+	margin-left: -40%;
+}
+
+
+
+
+/*错误提示*/
+.toast{
+	width: 380rpx;
+	height: 120rpx;
+	background-color: rgba(0,0,0,.8);
+	line-height: 120rpx;
+	text-align: center;
+	color: white;
+	font-size: 30rpx;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -190rpx;
+	margin-top: -60rpx;
+	border-radius: 15rpx;
+	z-index: 50;
+}

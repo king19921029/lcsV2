@@ -1,0 +1,74 @@
+.study_public{
+	margin-bottom: 20rpx;
+}
+.study_public:nth-of-type(2){
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	overflow: hidden;
+	margin-top: -32rpx;
+}
+.study_public,.public_title,.public_box{
+	width: 100%;
+	background-color: white;
+}
+.public_title{
+	line-height: 106rpx;
+	font-size: 28rpx;
+	text-indent: 35rpx;
+	font-weight: bold;
+	position: relative;
+}
+/*她的文章*/
+.writings_list{
+	width: 94%;
+	margin: 0 auto;
+	border: 1px solid #eeeeee;
+	box-sizing: border-box;
+	background-color: white;
+	/*margin-bottom: 40rpx;*/
+	border-radius: 6px;
+}
+.writings_item{
+	width: 92%;
+	border-bottom: 1px solid #eeeeee;
+	padding: 30rpx 4%;
+	box-sizing: border;
+	overflow: hidden;
+	position: relative;
+}
+.writings_text_l{
+	font-size: 28rpx;
+	color: #373737;
+	float: left;
+}
+.min_width{
+	width: 68%;
+}
+.writings_user{
+	display: block;
+	font-size: 28rpx;
+	margin-top: 30rpx;
+	color: #8e8e8e;
+	position: absolute;
+	bottom: 30rpx;
+	left: 4%;
+}
+.writings_user_head{
+	width: 30rpx;
+	height: 30rpx;
+	border-radius: 50%;
+	display: inline-block;
+	margin: 0 10rpx;
+	transform: translateY(5rpx);
+}
+.writings_text_r{
+	float: right;
+}
+.writings_text_r image{
+	display: block;
+	width: 200rpx;
+	height: 150rpx;
+}
+.no_border{
+	border-bottom: none;
+}

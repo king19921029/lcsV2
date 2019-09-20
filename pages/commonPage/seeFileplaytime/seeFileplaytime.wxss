@@ -1,0 +1,12 @@
+.box{
+  font-size: 28rpx;
+  width: 92%;
+  margin-left: 4%;
+}
+.list{
+  font-weight:400;
+}
+.center{
+  text-align: center;
+  padding: 20rpx 0;
+}

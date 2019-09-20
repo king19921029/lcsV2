@@ -1,0 +1,103 @@
+.purchaseSuccess{
+  
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #fafafa;
+}
+.yjr_img{
+  position: absolute;
+  width: 170rpx;
+  height: 170rpx;
+  right:0;
+  top: -43rpx;
+}
+.purchaseTitle{
+	width: 100%;
+	padding: 57rpx 6% 0;
+	box-sizing: border-box;
+	font-size: 28rpx;
+	line-height: 32rpx;
+}
+.purchaseCard{
+	width: 602rpx;
+	border-radius: 10rpx;
+	padding: 16rpx;
+	background-color: white;
+	margin: 50rpx auto;
+	position: relative;
+}
+.headerImg{
+	width: 100%;
+	height: 364rpx;
+}
+.bigTitle{
+	width: 100%;
+	font-size: 34rpx;
+	font-weight: 900;
+	padding: 0 24rpx;
+	margin-top: 36rpx;
+}
+.bigTip{
+	width: 100%;
+	font-size: 22rpx;
+	padding: 0 24rpx;
+	margin-top: 18rpx;
+}
+.pointText{
+	font-size: 34rpx;
+	color: #ff5233;
+}
+.havePeople{
+	width: 100%;
+	font-size: 20rpx;
+	padding: 0 24rpx;
+	margin-top: 72rpx;
+}
+.marginTop{
+	margin-top: 44rpx;
+}
+.bottomTip{
+	width: 100%;
+	font-size: 20rpx;
+	padding: 0 24rpx;
+	line-height: 30rpx;
+	box-sizing: border-box;
+}
+.purchaseBtn{
+	width: 120rpx;
+	position: absolute;
+	right: 30rpx;
+	bottom: 60rpx;
+	font-size: 23rpx;
+	text-align: center;
+}
+.purchaseBtn button{
+	width: 100%;
+	height: 50rpx;
+	font-size: 22rpx;
+	line-height: 50rpx;
+	background-color: #ff5233;
+	padding: 0;
+	color: white;
+}
+.purchaseBtn view{
+	padding-top: 8rpx;
+	border-top: 1px solid #a7a7a7;
+	margin-top: 8rpx;
+	color: #2c94cc;
+}
+.beginBtn{
+	width: 306rpx;
+	height: 82rpx;
+	background-color: #f7f2ef;
+	color: #ff5233;
+	line-height: 82rpx;
+	line-height: 82rpx;
+	text-align: center;
+	margin: 44rpx auto;
+	font-size: 28rpx;
+	border-radius: 10px;
+}

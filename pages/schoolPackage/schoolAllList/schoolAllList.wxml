@@ -1,0 +1,36 @@
+<view class='com_box'>
+      <view class='com_width main'>
+
+        <view bindtap='goDetails' class='ListOne list_border' data-skuid="{{itemSon.sku_id}}"
+          wx:for='{{allList}}' wx:key="" wx:for-item="itemSon"
+          wx:if="{{itemSon.sku_type == 0}}">
+
+          <image class='column_img image_bg' src='{{itemSon.sku_pic_url}}'>
+          </image>
+
+          <image hidden='{{itemSon.sku_tip == 0 }}' class='tip' src='/images/tip.png'></image>
+          
+          <view class='column_msg'>
+            <view class='overflow font_28 column_title'>{{itemSon.sku_title}}</view>
+            <view class='color_f8 column_info font_24 overflow'>{{itemSon.sku_info}}</view>
+            <view class='label_box'>
+              <text hidden='{{!itemSon.label}}' class='label bg_orange'>{{itemSon.label}}</text>
+            </view>
+            <view class='space_between font_24 column_pic'>
+              <text wx:if='{{model == "android" || model == "devtools" || itemSon.sku_price == "免费订阅" }}' class='color_orange'>{{itemSon.sku_price}}</text>
+              <text wx:else class='color_orange'>查看详情</text>
+              <text hidden="{{ itemSon.sku_status == '' }}" class='color_f8'>{{itemSon.sku_status}}</text>
+      
+            </view>
+          </view>
+        </view>
+
+        <view wx:for='{{allList}}' wx:key="" wx:for-item="itemSon"
+          wx:if="{{itemSon.sku_type == 1}}" class='special' bindtap='goSpecial'
+          data-skuid="{{itemSon.sku_id}}">
+            <!-- <view class='list_header'>{{itemSon.sku_title}}</view> -->
+            <image class="image_bg special_img" src='{{itemSon.sku_pic_url}}'></image>
+        </view>
+
+      </view>
+</view>

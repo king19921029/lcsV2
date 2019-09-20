@@ -1,0 +1,115 @@
+<wxs module="filter" src="util.wxs"></wxs>
+<view class="society">
+	<view class="society_details">
+		<view class="item_title">{{detail.news_title}}</view>
+		<view class="item_time">{{detail.create_time}}</view>
+		<view class="avatar">
+		    <view class="avatar_header" data-id="{{detail.teacher_id}}" bindtap="to_recommend">
+		      <image class="ava_icon" src="{{detail.teacher_header_pic_url}}"></image>
+		      <image class="rz_v" src=""></image>
+		    </view>
+		    <view class="avatar_name">{{detail.nick_name}}</view>
+		    <button class="btn_item_middle" wx:if="{{detail.is_follow == 0}}" data-id="{{detail.teacher_id}}" bindtap="follow">关注</button>
+		</view>
+
+		<!-- <view class="item_content"><template is="wxParse" data="{{wxParseData:news_content.nodes}}"></template></view> -->
+		<view class="item_content"><rich-text nodes="{{detail.news_content}}"></rich-text></view>
+	</view>
+
+	<!-- 相关文章 -->
+	<view class="writings" wx:if="{{newsList.length > 0}}">
+		<view class="searchOver">
+			<view class="over_title top_margin">
+				<text class="title_l">相关文章</text>
+			</view>
+		</view>
+
+		<view class="writings_list">
+			<view class="writings_item" wx:for="{{newsList}}" wx:key="item" bindtap="reloadNews" data-id="{{item.id}}">
+				<view class="writings_text_l {{item.news_pic_url_small?'min_width':'no_image'}}">
+					<view>{{filter.formStr(item.news_title)}}</view>
+					<view class="writings_user">{{item.create_time}}</view>
+				</view>
+				<view class="writings_text_r" wx:if="{{item.news_pic_url_small}}">
+					<image src="{{item.news_pic_url_small}}"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 相关课程 -->
+	<view class="kc_list" wx:if="{{skuList.length >0}}">
+		<view class="searchOver">
+			<view class="over_title top_margin">
+				<text class="title_l">相关课程</text>
+			</view>
+		</view>
+
+		<!-- 列表一 -->
+	  <view class="list">
+	    <view class="list_item" data-skuid="{{item.sku_id}}" bindtap="to_kecheng" wx:for="{{skuList}}" wx:key="item">
+	      <image class="list_item_userhead" src="{{item.pic_url}}"></image>
+	      <view class="list_item_middle">
+	        <view class="list_item_middle_title">{{item.sku_title}}</view>
+	        <view class="list_item_middle_tip">{{item.sku_info}}</view>
+	      </view>
+	      <image class="list_item_arrow" src="../../images/icn_arrow.png"></image>
+	    </view>
+	  </view>
+	</view>
+
+	<!-- 评论 -->
+	<view class="message">
+		<view class="searchOver">
+			<view class="over_title top_margin">
+				<text class="title_l">评论</text>
+			</view>
+		</view>
+
+		<view wx:if="{{commentList.length == 0}}" class="no_comment">暂无评论，快快抢占沙发</view>
+
+		<!-- 评论列表一 -->
+	    <view class="message_list" wx-else>
+	    	<view class="message_item" wx:for="{{commentList}}" wx:key="item">
+	    		<view class="item_head" data-userid="item.user_id">
+	    			<image src="{{item.header_url?item.header_url:'../../images/initheader.png'}}"></image>
+	    			<view class="message_user">{{item.nick_name}}</view>
+	    			<view class="message_time">{{item.create_time}}</view>
+	    		</view>
+	    		<view class="message_text">
+	    			{{item.content}}
+	    		</view>
+
+
+
+				<view wx:if="{{item.teacher_id}}">
+					<view class="line"></view>
+		    		<view class="item_head_admin">
+		    			<view class="message_user_admin">{{item.teacher_name}}</view>
+		    			<view class="message_time_admin">{{item.report_time}}</view>
+		    		</view>
+		    		<view class="message_text">
+		    			{{item.teacher_comment}}
+		    		</view>
+				</view>
+	    	</view>
+	    </view>
+	</view>
+
+	<!-- 评论 -->
+	<view class="sub_content" wx:if="{{isMessage}}">
+		<input class="edit_input" bindinput="bindMessage" placeholder="写评论..." placeholder-style="color:black" focus bindblur="noblur"/>
+		<view class="send_message" bindtap="confirm">发布</view>
+	</view>
+
+
+
+	<view class="sub_content" wx:else>
+		<view class="sub_input" bindtap="edit_message">写评论...</view>
+		<view class="sub_icon">
+			<!-- <image src="../../images/liuyan1100@3x.png"></image> -->
+			<!-- <image src="../../images/jiaohuan@3x.png"></image> -->
+			<button open-type='share' style="background-color:white;"><image src="../../images/fenxiang@3x.png"></image></button>
+		</view>
+	</view>
+</view>

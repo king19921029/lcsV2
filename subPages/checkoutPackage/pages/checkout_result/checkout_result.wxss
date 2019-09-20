@@ -1,0 +1,145 @@
+.checkout_result{
+	width: 100%;
+	background: #fafafa;
+	padding-bottom: 120rpx;
+}
+.result_header{
+	width: 100%;
+	padding: 19rpx 60rpx;
+	height: 180rpx;
+	background-color: white;
+	border-bottom: 1px solid #f1f1f4;
+	box-sizing: border-box;
+}
+.progress_box{
+	width: 145rpx;
+	height: 145rpx;
+	position: relative;
+	float: left;
+}
+.bgCanvas{
+	width: 72px;
+	height: 72px;
+	position: absolute;
+}
+.progressCanvas{
+	width: 72px;
+	height: 72px;
+}
+.grade_ios{
+	width: 72px;
+	height: 72px;
+	font-size: 32rpx;
+	color: #ff5628;
+	text-align: center;
+	line-height: 72px;
+	position: absolute;
+	top: 0rpx;
+	left: 0rpx;
+}
+.grade_Android{
+	width: 72px;
+	height: 72px;
+	font-size: 32rpx;
+	color: #ff5628;
+	text-align: center;
+	line-height: 72px;
+	position: absolute;
+	top: 0rpx;
+	left: 0rpx;
+}
+
+
+.progressMessage{
+	margin-left: 200rpx;
+}
+.fontW{
+	font-size: 26rpx;
+	font-weight: bold;
+	margin-bottom: 20rpx;
+}
+.fontC{
+	font-size: 23rpx;
+	color: #8c8c8c;
+	margin-bottom: 20rpx;
+}
+
+.result_list{
+	width: 100%;
+	background: white;
+	margin-top: 20rpx;
+	margin-bottom: 100rpx;
+}
+.result_item{
+	width: 100%;
+	padding: 40rpx 30rpx 48rpx;
+	box-sizing: border-box;
+	overflow: hidden;
+	border-bottom: 1px solid #f1f1f4;
+}
+.yesorno{
+	width: 40rpx;
+	height: 40rpx;
+	float: left;
+}
+.question{
+	font-size: 26rpx;
+	line-height: 40rpx;
+	padding-left: 70rpx;
+	margin-bottom: 15rpx;
+}
+
+.answer_item{
+	padding-left: 70rpx;
+	overflow: hidden;
+	margin-bottom: 15rpx;
+}
+.charat{
+	float: left;
+	font-size: 26rpx;
+	line-height: 40rpx;
+}
+.answer_message{
+	font-size: 26rpx;
+	line-height: 40rpx;
+	padding-left: 40rpx;
+}
+.user_result{
+	font-size: 26rpx;
+	font-weight: bold;
+	margin: 30rpx auto;
+	padding-left: 70rpx;
+}
+.resolve{
+	font-size: 26rpx;
+	line-height: 40rpx;
+	padding-left: 70rpx;
+}
+
+.checkout_footer{
+	width: 100%;
+	height: 120rpx;
+	font-size: 30rpx;
+	color: white;
+	text-align: center;
+	line-height: 120rpx;
+	position: fixed;
+	bottom: 0;
+}
+.backHome{
+	width: 50%;
+	height: 120rpx;
+	background-color: white;
+	float: left;
+	text-align: center;
+	line-height: 120rpx;
+	color: #fe5531;
+}
+.reload{
+	width: 50%;
+	height: 120rpx;
+	float: right;
+	background-color: #fe5531;
+	text-align: center;
+	line-height: 120rpx;
+}

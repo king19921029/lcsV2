@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "笔记",
+  "usingComponents": {
+    "template-dialog": "/components/toast/toast"
+  }
+}

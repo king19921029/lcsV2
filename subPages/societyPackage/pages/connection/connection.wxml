@@ -1,0 +1,153 @@
+<wxs module="filter" src="util.wxs"></wxs>
+<image src="../../images/loading.gif" class="loadGif"></image>
+
+
+
+<view class="connection {{isIpx?'classIpx':''}}">
+	<view wx:if="{{isLogin}}">
+    <!-- header -->
+		<view class="tab">
+      <view class="tab_item {{num==1?'tab_color':''}}" data-num="1" bindtap="tabNum">
+        关注 
+      </view>
+      <view class="tab_item {{num==2?'tab_color':''}}" data-num="2" bindtap="tabNum">
+        推荐
+      </view>
+
+      <view class="section" wx:if="{{num == 1}}">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <image class="picker_down" src="../../images/quanbuhaoyou@3x.png"></image>
+          <view class="picker">
+            {{array[index]}}
+          </view>
+        </picker>
+      </view>
+		</view>
+    
+    
+		<!-- 关注 -->
+		<view class="follow border_top_sen" wx:if="{{num == 1 && index == 0}}">
+		  <!-- 列表三 -->
+		  <view class="kong_box" wx:if="{{followList.length == 0}}">
+		  	<image src="../../images/kong.jpg"></image>
+		  	<view class="no_people">您还没有关注的人</view>
+		  </view>
+
+		  <view class="list" wx:else>
+		    <view class="list_box home_list_box">
+		      <view class="list_content" data-type="{{item.user_type}}" data-userid="{{item.user_id}}" bindtap="to_recommend" wx:for="{{followList}}" wx:key="item">
+		         <view class="list_item">
+		            <image class="list_item_userhead" src="{{item.header_url?item.header_url:'../../images/initheader.png'}}"></image>
+		            <image wx:if="{{item.is_vip == '1'}}" src="../../images/v1@3x.png" class="bigV"></image>
+
+
+
+		            <view class="list_item_middle">
+		              <view class="list_item_middle_title font_28">{{item.nick_name}}</view>
+		              <view class="list_item_middle_tip font_26">{{item.info}}</view>
+		            </view>
+		            <image class="list_item_arrow" src="../../images/icn_arrow.png"></image>
+		          </view>
+		      </view>
+		    </view>
+		  </view>
+		</view>
+
+		<!-- 关注分类展示 -->
+		<view class="follow" wx:if="{{num == 1 && index == 1}}">
+
+			<view class="kong_box" wx:if="{{followList.length == 0}}">
+			  	<image src="../../images/kong.jpg"></image>
+			  	<view class="no_people">您还没有学习的课程</view>
+			</view>
+
+			<view class="kong_box" wx:if="{{user_list_arr.length == 0 && followList.length != 0}}">
+			  	<image src="../../images/kong.jpg"></image>
+			  	<view class="no_people">你关注的人，没有与你同一门课</view>
+			</view>
+
+			<view class="" wx:else>
+				<view class="list border-bottom border_top_sen" wx:for="{{followListToger}}" wx:key="list" wx:if="{{item.user_list.length != 0}}" wx:for-index="userSkuIndex">
+				    <view class="follow_banner">
+				    	<view class="kc_box font_28">
+				    		{{item.sku_title}}
+				    	</view>
+				    	<text class="together font_28">{{item.user_count_str}}</text>
+				    </view>
+				    <view class="list_box" wx:for="{{item.user_list}}" wx:key="item" wx:for-item="user" wx:for-index="userListIndex">
+				      <view class="list_content {{userListIndex == 0?'list_no_border':''}}" data-userid="{{user.user_id}}" data-type="{{user.user_type}}" bindtap="to_recommend">
+				         <view class="list_item">
+				            <image class="list_item_userhead" src="{{user.header_url?user.header_url:'../../images/initheader.png'}}"></image>
+				            <view class="list_item_middle">
+				              <view class="list_item_middle_title font_28">{{user.nick_name}}</view>
+				              <view class="list_item_middle_tip font_26">{{user.info}}</view>
+				            </view>
+				            <image class="list_item_arrow" src="../../images/icn_arrow.png"></image>
+				          </view>
+				      </view>
+				    </view>
+				    <view wx:if="{{followListToger[userSkuIndex].user_list.length != filter.splitNum(item.user_count_str)}}" class="look_more_user" data-index="{{userSkuIndex}}" bindtap="sameMore">
+				    	<image src="../../images/down.png" class="down"></image>
+				    	查看更多
+				    </view>
+			  	</view>
+			</view>
+		</view>
+
+		<!-- 推荐 -->
+		<view class="follow border_top_sen" wx:if="{{num == 2}}">
+		  <!-- 列表三 -->
+		  <view class="kong_box" wx:if="{{RecommendList.length == 0}}">
+		  	<image src="../../images/kong.jpg"></image>
+		  	<view class="no_people">还没有相关推荐</view>
+		  </view>
+
+
+		  <view class="list" wx:else>
+		    <view class="list_box home_list_box">
+		      <view class="list_content" wx:for="{{RecommendList}}" wx:key="item" wx:for-index="index">
+		         <view class="list_item">
+		            <image class="list_item_userhead" src="{{item.header_url?item.header_url:'../../images/initheader.png'}}"></image>
+		            <image wx:if="{{item.is_vip == '1'}}" src="../../images/v1@3x.png" class="bigV"></image>
+
+		            <view class="list_item_middle" data-type="{{item.user_type}}" data-userid="{{item.user_id}}" bindtap="to_recommend">
+		              <view class="list_item_middle_title font_28">{{item.nick_name}}
+		              	<!-- <text class="follow_tip" wx:if="{{item.user_type == 1}}">讲师</text> -->
+		              </view>
+		              <view class="list_item_middle_tip font_26">{{item.info}}</view>
+		            </view>
+		            <!-- <image class="list_item_arrow" src="../../images/icn_arrow.png"></image> -->
+		            <button class="btn_item_middle" wx:if="{{!item.isShow}}" data-type="{{item.user_type}}" data-userid="{{item.user_id}}" data-index="{{index}}" bindtap="follow">关注</button>
+		          </view>
+		      </view>
+		    </view>
+		  </view>
+		</view>
+	</view>
+	
+	<view wx:else class='display_flex noLogin'>
+		<view class='img_box'>
+	      <image class='no_login_img' src='../../images/canvas_nologin.png'></image>
+	      <view class='img_box_title'>
+	        <view class='font_weight'>您还没有登录哦</view>
+	        <view>注册登录后，查看学习频道下全部的内容</view>
+	      </view>
+	      <view bindtap='go_login' class='bg_orange img_box_btn'>立即注册/登录</view>
+	    </view>
+	</view>
+
+
+	<template-nav
+		type="圈子"
+		id="nav"
+		state="2"
+		stateNow="1"
+		isIpx="{{isIpx}}">
+	</template-nav>
+
+	<template-player
+		wx:if="{{isMicPlay}}"
+		bindmicGoDetails="micGoDetails"
+		name="社会">
+	</template-player>
+</view>

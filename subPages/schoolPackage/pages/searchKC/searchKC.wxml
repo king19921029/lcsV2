@@ -1,0 +1,36 @@
+<view class="kecheng">
+	<view class="section">
+	  <block>
+	    <icon class="searchIcon" type="search" size="17"/>
+	  </block>
+	  <input placeholder="为什么要做理财师" bindinput="search" auto-focus/>
+	  <text class="quxiao">取消</text>
+	</view>
+
+	<view>
+		<view class="searchOver">
+			<view class="over_title top_margin">
+				<text class="title_l">课程</text>
+			</view>
+		</view>
+
+		<view class="list">
+		    <view class="list_content">
+		      <view class="list_item flo_left">
+		        <image src="../../images/DSC_0055_mix02.jpg"></image>
+		        <text class="banTitle">刘润：理财知识80讲</text>
+		        <text class="banText">大事就在你身后，大师就在你身后，大师就在你身后</text>
+		        <text class="label">大师推荐</text>
+		        <text class="price">50讲/99学习贝</text>
+		      </view>
+		      <view class="list_item flo_right">
+		        <image src="../../images/DSC_0055_mix02.jpg"></image>
+		        <text class="banTitle">刘润：理财知识80讲</text>
+		        <text class="banText">大事就在你身后，大师就在你身后，大师就在你身后</text>
+		        <text class="label">大师推荐</text>
+		        <text class="price">50讲/99学习贝</text>
+		      </view>
+		    </view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,14 @@
+<view class='box'>
+  <view class='list' wx:for="{{seeFileplaytime}}" wx:key="" wx:for-item="item"
+  wx:for-index="idx">
+      <view class='center'>第{{idx+1}}条</view>
+      <view>日期 : {{item.date}}</view>
+      <view>uid : {{item.uid}}</view>
+      <view>cwid : {{item.cwId}}</view>
+      <view>skuid : {{item.skuId}}</view>
+      <view>fileType : {{item.fileType}}</view>
+      <view>playTime : {{item.playTime}}</view>
+      <view>playTimePoint : {{item.playTimePoint}}</view>
+  </view>
+
+</view>

@@ -1,0 +1,173 @@
+.nav_wrap{
+	width: 100%;
+	height: 110rpx;
+	border-top: 1px solid #dfdfdf;
+	position: fixed;
+	bottom:0;
+	left: 0;
+	background-color: white;
+	z-index: 888;
+}
+.menu{
+	/*width: 210rpx;*/
+	width: 28%;
+	height: 100%;
+	background-color: white;
+	overflow: hidden;
+	float: left;
+}
+.menu_choose{
+	width: 136rpx;
+	height: 72rpx;
+	background-color: #fe562f;
+	border-radius: 211rpx;
+	margin-top: 19rpx;
+	margin-left: 37rpx;
+	font-size: 27rpx;
+	color: white;
+	font-weight: bold;
+	line-height: 72rpx;
+	text-align: center;
+	position: relative;
+	text-indent: 15rpx;
+}
+.menu_choose>text{
+  margin-left: 16rpx
+}
+.menu_icon{
+	width: 40rpx;
+	height: 40rpx;
+	position: absolute;
+	left: 17rpx;
+	top: 17rpx;
+}
+.menu_icon_one{
+	width: 40rpx;
+	height: 40rpx;
+	position: absolute;
+	left: 48rpx;
+	top: 15rpx;
+}
+
+.menu_list{
+	width: 72%;
+	height: 110rpx;
+	background-color: #ffffff;
+	float: right;
+}
+.menu_item{
+	width: 24%;
+	height: 110rpx;
+	text-align: center;
+	line-height: 110rpx;
+	color: #cacaca;
+	font-size: 32rpx;
+	float: left;
+	font-weight: bold;
+}
+.width33{
+	width: 33%;
+}
+.width50{
+	width: 50%;
+}
+
+
+
+
+
+
+
+
+.menu_masking{
+	width: 100%;
+	min-height: 100%;
+	padding-bottom: 110rpx;
+	box-sizing: border-box;
+	background-color: rgba(000,000,000,.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 777;
+}
+.clickWrap{
+	width: 100%;
+	min-height: 90%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+.clickWrap image{
+	width: 80%;
+	height: 300rpx;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin-left: -40%;
+	z-index: 999999999999999;
+}
+.masking{
+	width: 100%;
+	position: absolute;
+	bottom: 110rpx;
+	z-index: 20;
+  background: #fff;
+	/*margin-top: 300rpx;*/
+}
+.masking_title{
+	font-size: 33rpx;
+	line-height: 113rpx;
+	color: #fe562f;
+	padding-left: 48rpx;
+	font-weight: bold;
+}
+.masking_list{
+	width: 100%;
+}
+.masking_item{
+	width: 100%;
+	height: 110rpx;
+	border-top: 1px solid #dfdfdf;
+	position: relative;
+}
+.before:before{
+	content: "";
+	width: 15rpx;
+	height: 110rpx;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #fe562f;
+}
+
+
+
+.masking_item text{
+	font-size: 26rpx;
+	color: #b8b8b8;
+	line-height: 110rpx;
+	margin-left: 25rpx;
+}
+.item_choose{
+	font-size: 33rpx;
+	color: #b8b8b8;
+	line-height: 110rpx;
+	padding-left: 112rpx;
+	font-weight: bold;
+}
+.mask_item_icon{
+	width: 39rpx;
+	height: 39rpx;
+	float: left;
+	margin-top: 34rpx;
+	margin-left: 52rpx;
+}
+
+
+.active_color{
+	color: #fe562f;
+}
+.classIpx{
+	padding-bottom: 16rpx;
+}

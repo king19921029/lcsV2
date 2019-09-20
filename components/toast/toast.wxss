@@ -1,0 +1,102 @@
+.toast{
+	/*width: 100%;
+	min-height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;*/
+}
+.toast_confirm{
+	width: 100%;
+	min-height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	background-color: rgba(0,0,0,.6);
+}
+.confirm_wrap{
+	width: 80%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -40%;
+	transform: translateY(-50%);
+	background-color: white;
+	border-radius: 30rpx;
+	overflow: hidden;
+}
+.tip_img{
+	width: 213rpx;
+	height: 175rpx;
+	display: block;
+	margin: 50rpx auto 30rpx;
+}
+.tip_off{
+	width: 40rpx;
+	height: 40rpx;
+	position: absolute;
+	top: 40rpx;
+	left: 40rpx;
+}
+.title{
+	font-size: 39rpx;
+	color: #ff4d1e;
+	text-align: center;
+	margin: 20rpx auto;
+}
+.tip{
+	font-size: 24rpx;
+	color: #909090;
+	text-align: center;
+}
+.btn{
+	width: 100%;
+	overflow: hidden;
+	border-top: 1px solid #e7e7e7;
+	margin-top: 43rpx;
+}
+.btn view{
+	width: 50%;
+	height: 121rpx;
+	line-height: 121rpx;
+	float: left;
+	font-size: 30rpx;
+	text-align: center;
+	color: #ff512b;
+}
+.toast_dialog{
+	width: 380rpx;
+	height: 120rpx;
+	background-color: white;
+	font-size: 30rpx;
+	border-radius: 30rpx;
+	text-align: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -60rpx;
+	margin-left: -190rpx;
+	box-shadow: 3rpx 3rpx 60rpx #ccc;
+	overflow: hidden;
+}
+.right{
+	width: 50rpx;
+	height: 50rpx;
+	float: left;
+	margin: 35rpx 20rpx 0rpx 95rpx;
+}
+.dialogtext{
+	float: left;
+	height: 120rpx;
+	line-height: 120rpx;
+}
+
+
+
+
+
+.signColor{
+	background-color: #ff512b;
+	color: white !important;
+}

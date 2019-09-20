@@ -1,0 +1,50 @@
+
+
+<view wx:if='{{token == ""}}' class='display_flex noLogin'>
+    <view class='img_box'>
+      <image class='no_login_img' src='/images/canvas_nologin.png'></image>
+      <view class='img_box_title'>
+        <view class='font_weight'>您还没有登录哦</view>
+        <view>注册登录后，查看学习频道下全部的内容</view>
+      </view>
+      <view bindtap='go_login' class='bg_orange img_box_btn'>立即注册/登录</view>
+    </view>
+</view>
+
+<view wx:elif="{{ token!='' && noteSkuList!=''  }}" class="box" >
+
+  <view class="oneline_list" wx:for="{{noteSkuList}}" wx:key="" wx:for-item="item"
+      data-id="{{item.sku_id}}" bindtap='goNotesDetails'>
+        <image class='list_img image_bg' src="{{item.pic_url}}"></image>
+        <view class='oneline_msg'>
+            <view class='oneline_name'>
+              <text class='list_msg_name'>{{item.sku_title}}</text>  
+            </view>
+            <view class='list_msg_size'>{{item.info}}</view>
+        </view>
+        <view class='oneline_icon'>
+            <image class='rigth_icon' src='../../../images/icn_arrow.png'></image>
+        </view>
+  </view>
+
+</view>
+
+<view wx:else class='display_flex noLogin'>
+    <view class='img_box'>   
+      <image class='no_notes' src='/images/notes_nologin.png'></image>
+      <view class='img_box_title'>
+        <view class='font_weight'>您还没有学习笔记</view>
+        <view>记笔记后我们会将你的笔记按照</view>
+        <view>课程的归类进入你的笔记中来</view>
+      </view>
+      <view class='bg_orange img_box_btns'></view>
+    </view>
+</view>
+
+<template-nav
+  type="学习"
+  id="nav"
+  state="1"
+  stateNow="2"
+  isIpx="{{isIpx}}"> 
+</template-nav>

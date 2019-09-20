@@ -1,0 +1,119 @@
+{
+  "pages": [
+    "pages/school/school",
+    "pages/study/study",
+    "pages/commonPage/seeFileplaytime/seeFileplaytime",
+    "pages/commonPage/noBuyDetails/noBuyDetails",
+    "pages/studyPackage/writeNotes/writeNotes",
+    "pages/studyPackage/courseTab/courseTab",
+    "pages/commonPage/purchaseSuccess/purchaseSuccess",
+    "pages/studyPackage/sharePage/sharePage",
+    "pages/studyPackage/dayCard/dayCard",
+    "pages/studyPackage/target/target",
+    "pages/schoolPackage/goodNotes/goodNotes",
+    "pages/studyPackage/notesDetails/notesDetails",
+    "pages/commonPage/courseDetails/courseDetails",
+    "pages/studyPackage/canvasTab/canvasTab",
+    "pages/commonPage/buyDetailsEnd/buyDetailsEnd",
+    "pages/webView/webView",
+    "pages/commonPage/buyCurse/buyCurse",
+    "pages/commonPage/listenTest/listenTest",
+    "pages/studyPackage/reviseNotes/reviseNotes",
+    "pages/studyPackage/notesTab/notesTab",
+    "pages/schoolPackage/schoolColumn/schoolColumn",
+    "pages/schoolPackage/schoolTeacher/schoolTeacher",
+    "pages/schoolPackage/newCourse/newCourse",
+    "pages/schoolPackage/schoolSpecial/schoolSpecial",
+    "pages/schoolPackage/schoolAllList/schoolAllList",
+    "pages/society/society"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "subPackages": [
+    {
+      "root": "subPages/personalPackage",
+      "pages": [
+        "pages/user/user",
+        "pages/account/account",
+        "pages/coupon/coupon",
+        "pages/buyhistory/buyhistory",
+        "pages/my/my",
+        "pages/feedback/feedback",
+        "pages/setting/setting",
+        "pages/userNumber/userNumber",
+        "pages/about/about",
+        "pages/protocol/protocol",
+        "pages/changePhone/changePhone",
+        "pages/usecoupon/usecoupon"
+      ]
+    },
+    {
+      "root": "subPages/schoolPackage",
+      "pages": []
+    },
+    {
+      "root": "subPages/societyPackage",
+      "pages": [
+        "pages/writings_details/writings_details",
+        "pages/kecheng_details/kecheng_details",
+        "pages/connection/connection",
+        "pages/follow_details/follow_details",
+        "pages/recommend_details/recommend_details",
+        "pages/moreList/moreList",
+        "pages/allNews/allNews"
+      ]
+    },
+    {
+      "root": "subPages/studyPackage",
+      "pages": [
+        "pages/courseTab/courseTab",
+        "pages/canvasTab/canvasTab",
+        "pages/notesTab/notesTab"
+      ]
+    },
+    {
+      "root": "subPages/searchPackage",
+      "pages": [
+        "pages/search/search",
+        "pages/searchKC/searchKC",
+        "pages/searchDB/searchDB",
+        "pages/webview/webview"
+      ]
+    },
+    {
+      "root": "subPages/loginPackage",
+      "pages": [
+        "pages/login/login",
+        "pages/sign/sign",
+        "pages/forget/forget",
+        "pages/bindPhone/bindPhone"
+      ]
+    },
+    {
+      "root": "subPages/checkoutPackage",
+      "pages": [
+        "pages/checkout/checkout",
+        "pages/checkout_detail/checkout_detail",
+        "pages/answer_sheet/answer_sheet",
+        "pages/checkout_result/checkout_result"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/school/school": {
+      "network": "all",
+      "packages": [
+        "subPages/societyPackage",
+        "subPages/personalPackage"
+      ]
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

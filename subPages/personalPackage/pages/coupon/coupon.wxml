@@ -1,0 +1,33 @@
+<view class="coupon">
+	<view class="coupon_box">
+		<view class="top_input">
+			<input  bindinput="bindInputcoupon" placeholder="请输入兑换码"/>
+			
+			<view bindtap="duihuan" wx:if="{{in_true}}" class="duihuan {{in_true?'in_true':''}}">兑换</view>
+			<view wx:else class="duihuan">兑换</view>
+		</view>
+
+
+
+		<view class="coupon_list" wx:if="{{CouponList.length > 0}}">
+			<view class="coupon_item" wx:for="{{CouponList}}" wx:key="item" wx:for-index="index" data-index="{{index}}" bindtap="choose">
+				<image class="bg_coupon" src="../../images/coupon_bg.png"></image>
+				<view class="item_money {{item.status != 0?'nouse_color_text':''}}">{{item.name}}</view>
+				<!-- <view class="touse" bindtap="to_buyCuse">立即使用<image class="touse_img_arrow" src="../../images/cc-right.png"></image></view> -->
+				<view class="chooseBox" bindtap="choose">
+					<image wx:if="{{item.checked == true}}" src="../../images/check.png"></image>
+				</view>
+				<view class="item_time {{item.status != 0?'nouse_color_text':''}}">有效期至：{{item.end_time}}</view>
+				<view class="item_rule {{item.status != 0?'nouse_color_text':''}}">{{item.info}}
+					<!-- <text class="rule_tip {{item.status != 0?'nouse_color_text':''}}">活动优惠券</text> -->
+				</view>
+			</view>
+		</view>
+
+
+		<view class="no_coupon" wx:else>
+			<image src="../../images/coupon_unusable.jpg"></image>
+			<text>暂无优惠券</text>
+		</view>
+	</view>
+</view>

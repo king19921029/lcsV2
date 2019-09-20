@@ -1,0 +1,261 @@
+
+.box{
+  font-size: 30rpx;
+  padding-bottom: 120rpx;
+}
+.header{
+  width: 100%;
+  border-top: 1rpx solid #ededed;
+  display: flex;
+  flex-direction: column;
+}
+.header_tab{
+  height: 96rpx;
+  border-bottom: 1px solid #dfdfe1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.study_tab{
+  position: absolute;
+  left: 17rpx;
+  top:18rpx;
+  border:1px solid #d9d9d9;
+  border-radius: 8rpx;
+  background: #fff; 
+  z-index: 999; 
+  padding:0rpx 8rpx;
+}
+.study_tab .day_font{
+  border-bottom: 1px solid #d9d9d9;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  line-height:0;
+  padding-bottom: 5rpx;
+}
+.sev_font{
+  padding: 15rpx 0;
+  font-weight: bold;
+  color: #8a8a8a;
+}
+.day_font{
+  font-weight: bold;
+  color:#fe5430;
+  font-size:32rpx;
+}
+.bottom_sev_font{
+  font-weight: bold;
+  color:#fe5430;
+  font-size:32rpx;
+  border-bottom: 1px solid #d9d9d9;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  line-height:0;
+  padding-bottom: 5rpx;
+}
+.bottom_day_font{
+  padding: 15rpx 0;
+  font-weight: bold;
+  color: #8a8a8a;
+}
+.init_box{
+  position: relative;
+}
+.san_icon{
+  margin-left: 25rpx;
+  /* position: absolute; */
+  /* top: 17rpx; */
+  /* right:0; */
+  width: 20rpx;
+  height: 16rpx;
+  
+}
+.go_card{
+  padding: 10rpx 28rpx;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.data_box{
+  margin-top: 15rpx;
+  /* height: 220rpx; */
+  border: 1px solid #f3f3f3;
+  box-shadow: 0 0 20rpx rgba(178, 178, 178, 0.3);
+  margin-bottom:30rpx;
+  padding:30rpx 0 60rpx 0;
+}
+.data_box_header{
+  display: flex;
+  justify-content: space-between;
+  width: 84%;
+  margin-left: 8%;
+  font-size: 28rpx;
+}
+.data_content{
+  width: 90%;
+  /* margin-top: 30rpx; */
+  margin-left: 5%;
+}
+.data_content_font{
+  display: flex;
+  justify-content: space-between;
+}
+.data_content_font .color_f8{
+  line-height: 62rpx;
+  font-size: 20rpx;
+}
+.course_name{
+  width: 300rpx;
+  color: #010101;
+  font-size: 28rpx;
+  line-height: 30rpx;
+  text-align: center;
+}
+
+.data_content_ge{
+  display: flex;
+  justify-content: space-between;
+  margin-top: -10rpx;
+}
+.for_data{
+  margin-top: 68rpx;
+}
+.footer_font{
+  text-align: center;
+  margin-top: 80rpx;
+  color: #414141;
+  font-size: 28rpx;
+}
+
+
+
+
+/* 在学课程 */
+.compare_header{
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  margin-top: 20rpx;
+}
+.day{
+  height: 110rpx;
+  justify-content: space-between;
+  position: relative;
+  font-weight: bold;
+}
+
+.compare_list,.oneline_list{
+  width:94%;
+  margin-left:6%;
+  border-bottom: 1px solid #ececec;
+  padding: 40rpx 0;
+  display: flex;
+}
+.com_border_bottom{
+  border-bottom: 1px solid #ececec;
+}
+.compare_list:last-child{
+  border-bottom:none;
+  padding-bottom: 45rpx;
+}
+.list_img{
+  display:block;
+  width: 130rpx;
+  height: 172rpx;
+  border-radius: 8rpx;
+}
+.list_msg{
+  width: 67%;
+  height: 172rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  margin-left: 32rpx;
+}
+.list_msg_name{
+  font-weight: 500;
+}
+.list_msg_size{
+  font-size: 24rpx;
+  color: #8f8f8f;
+}
+
+/* .progress{
+  border-radius: 30rpx;
+  overflow: hidden;
+} */
+/* 无课程时 */
+.no_skuList_box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.no_skuList_title{
+  margin-top: 80rpx;
+  color: #787878;
+  font-size: 27rpx;
+  font-weight: bold;
+}
+.no_skuList_btn{
+  width: 376rpx;
+  height: 78rpx;
+  text-align: center;
+  border:1px solid #fe5430;
+  font-weight: bold;
+  color:#fe5430;
+  border-radius: 10rpx;
+  line-height: 78rpx;
+  font-size: 30rpx;
+  margin-top: 46rpx;
+}
+/* 在线课程 */
+.oneline{
+  margin-bottom: 30rpx;
+}
+.oneline_msg{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 40rpx;
+  width: 65%;
+}
+.oneline_name .list_msg_size{
+  display: block;
+  font-size: 24rpx
+}
+.list_msg_name{
+  display: block;
+  font-size: 30rpx;
+}
+.oneline_icon{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  width: 5%;
+}
+.rigth_icon{
+  width: 16rpx;
+  height: 24rpx;
+}
+
+.echars_img{
+  margin-top:15rpx;
+  height: 520rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50rpx;
+  padding-top: 30rpx;
+  border: 1px solid #f3f3f3;
+  box-shadow: 0 0 20rpx rgba(178, 178, 178, 0.3);
+}
+
+.right_progress{
+  transform: rotateY(180deg)
+} 
+
+
+
+
